@@ -1,0 +1,62 @@
+########################################################################################################
+__________________________________________________
+
+STEPS TO Install Linux USB Driver for Quectel BG96:
+__________________________________________________
+
+
+
+1)firstly download new version of the linux as linux 4.19.14 .
+                                               -------------
+2)creat one directory  for location as
+  ex: cd ~/work/BG96_src/
+ 
+steps as :  ->cd ~/work/BG96_src/
+                       ----------
+            -> cd linux-4.19.14/   (u hv to download this version at work/BG_96 directory location)
+   
+            -> cd linux-4.15.0/drivers/usb/serial
+
+            ->qolsys@qolsys-desktop:~/work/BG96_src/linux-4.19.14/drivers/usb/serial$ ls
+     
+
+aircable.c         io_edgeport.h            mct_u232.c      qcserial.mod.o
+ark3116.c          io_ionsp.h               mct_u232.h      qcserial.o
+belkin_sa.c        io_ti.c                  metro-usb.c     quatech2.c
+belkin_sa.h        io_ti.h                  modules.order   safe_serial.c
+built-in.o         io_usbvend.h             Module.symvers  sierra.c
+bus.c              ipaq.c                   mos7720.c       spcp8x5.c
+ch341.c            ipw.c                    mos7840.c       ssu100.c              iamnotsure
+console.c          ir-usb.c                 mxuport.c       symbolserial.c
+cp210x.c           iuu_phoenix.c            navman.c        ti_usb_3410_5052.c
+cyberjack.c        iuu_phoenix.h            omninet.c       upd78f0730.c
+cypress_m8.c          
+  ( such as some file was present we reqired only option.c in tht we hv to make some changes.as per outr device)
+ 
+            ->vim option.c
+    (changes hv to made at ...)
+  
+    static const struct usb_device_id option_ids[] = {
+        { USB_DEVICE(0x2C7C, 0x0296) },   //Quectel BG96  (first id is vendor id nd second one is product id)
+          ----------------------------
+        { USB_DEVICE(OPTION_VENDOR_ID, OPTION_PRODUCT_COLT) },
+        { USB_DEVICE(OPTION_VENDOR_ID, OPTION_PRODUCT_RICOLA) },
+        { USB_DEVICE(OPTION_VENDOR_ID, OPTION_PRODUCT_RICOLA_LIGHT) },
+
+
+           ->cd ..
+         
+           ->  make menuconfig
+    
+           -> sudo make -C /lib/modules/`uname -r`/build M=`pwd`/drivers/usb/serial obj-m=option.o modules
+           ->sudo make -C /lib/modules/`uname -r`/build M=`pwd`/drivers/usb/serial obj-m=usb_wwan.o
+           ->sudo make -C /lib/modules/`uname -r`/build M=`pwd`/drivers/usb/serial obj-m=usb_wwan.o modules
+           ->sudo make -C /lib/modules/`uname -r`/build M=`pwd`/drivers/usb/serial obj-m=qcserial.o modules
+           ->sudo cp drivers/usb/serial/option.ko /lib/modules/`uname -r`/kernel/drivers/usb/serial
+           ->sudo cp drivers/usb/serial/qcserial.ko /lib/modules/`uname -r`/kernel/drivers/usb/serial
+           ->sudo depmod
+           ->sudo reboot
+
+
+
+*****************************************************************************************************************
