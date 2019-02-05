@@ -1,0 +1,44 @@
+*********************************************************************************************************
+DATE:20/11/2018
+---------------
+Vantron code compile
+=========================
+after going to path $ AGIT/iqremote2_v3
+1) export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+   export PATH=$JAVA_HOME/bin:$PATH
+   export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
+
+2) $ . build/envsetup.sh
+
+3)$ lunch tab07_rk68-userdebug
+
+4)$ cd kernel
+
+5)$ make tab07-rk68_defconfig
+
+6)$ make tab07-rk68.img
+
+7)$ cd ..
+
+8)$ make -j16
+
+note:if make failed for that firstly u hv to install jdk8 if not for tht follow the steps
+-----    1) ->$ sudo add-apt-repository ppa:openjdk-r/ppa
+            ->$ sudo apt-get update 
+            ->$ sudo apt-get install openjdk-8-jdk
+            ->$ sudo update-alternatives --config java
+  after they asking for input which u hv to want jdk7 or jdk8 
+ once again do:
+ $ make -j16
+
+NOTE:during make it may be failed for tht uhv to firstly run following comands:
+------------------------------------------------------------------------------
+To avoid Jack server errors during compilations please export the following arguements and run the commands
+===========================================================================================================
+export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4096m"
+out/host/linux-x86/bin/jack-admin kill-server
+out/host/linux-x86/bin/jack-admin start-server
+
+9)$ ./mkimage.sh
+
+**********************************************************************************************************

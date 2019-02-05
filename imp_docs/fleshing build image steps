@@ -1,0 +1,37 @@
+################################################# Fleshing New Image ####################################
+
+1)go to the build image link:
+ 
+            ftp://192.168.100.250/gen2release/
+            ----------------------------------
+   ->after going to tht link they ask for username and password
+   ->USERNAME: releaseg2
+   ->PassWord: releaseg2
+   ->go to: gen2_primary_flash_images
+
+   ->that showing number of folder we hv to choose wht version u want
+   ->in that there is a & v (a:AT & T ,v:VERIZON )
+   ->in that download .zip file in any folder 
+
+2)connect ur device through USB 
+ 
+3)go to that directory where u download tht and flash that image as
+
+    $ sh qflash.sh
+
+4)after flashing u hv to install engtools in that device 
+
+ NOTE:for tht ur device required battery it cant be done without battery
+      so firstly connect battery & ac also needed
+
+5)check device is bootup (turn on or not )if on then connect wifi
+
+6)go to softwere updation nd do to write there 
+
+  engtoolsv20
+  ----------
+
+(NOTE:some thing are meesing in the step we hv to see tht things properly.)
+###########################################################################################################
+
+

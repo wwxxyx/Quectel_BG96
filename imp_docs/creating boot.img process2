@@ -1,0 +1,61 @@
+**********************************************CLIENT*******************************
+
+1)add some statement in  that init.qolsys.rc file .
+ that file present in this path 
+ ~/AGIT/android_5.1.1/qolsysappcode/qolsysconfig$ vim init.qolsys.rc 
+
+ statement like :
+
+    service client /system/bin/server
+       class main
+	oneshot
+  
+     we have  to set property for client:
+    
+    ~/AGIT/android_5.1.1/qolsysappcode/qolsysconfig$ vim init.qolsys.rc
+
+
+	on property:qol.client.test=1
+         start client
+
+     if u dont want domain then not right disabled.
+
+--------------------------------------------------------------------------------------
+2)make one .te file ex client.te in path:
+
+  ~/AGIT/android_5.1.1/external/sepolicy$ vim client.te
+
+   in that .te file we have to write some of the thing which are as below:
+	type client,domain;
+        type client_exec, exec_type,file_type;
+        #int_daemon_domain(client)
+        qolsys_socket(client)
+--------------------------------------------------------------------------------------
+3)after do some addition in file_contexts file .path of that as below:
+   
+   ~/AGIT/android_5.1.1/external/sepolicy$ vim file_contexts
+
+	we have to add this statement:
+		/system/bin/client              u:object_r:client_exec:s0
+ 
+--------------------------------------------------------------------------------------
+4)after that u hv to make it means u to use this command
+
+  ./make.sh 2.3.0priv
+
+--------------------------------------------------------------------------------------
+
+5)after all this u hv to flash that boot.img file which will we get after make 
+complition they provide some path at that path we get that boot.img file 
+
+we hv to flash that boot.img in device......
+
+--------------------------------------------------------------------------------------
+6) for flashing step 
+    connect device through usb:
+          a)connect devices
+          b)adb reboot bootloader
+          c)sudo fastboot devices
+  	  d)sudo fastboot  flash boot boot.img.
+	  e)sudo fastboot reboot
+--------------------------------------------------------------------------------------

@@ -1,0 +1,36 @@
+
+*********************************************COMPILATION STEPS Android 5.1.1*******************************************
+
+1)Goto to that location where ur write ur code check carefully where any mistake is their in code or not
+if not then go back to privious directory with cd ../../  .
+
+2). build/envsetup.sh
+
+3)cat make.sh 
+ 
+   in that make.sh we get one line u hv to copy that line . That line is
+ 
+   choosecombo 1 msm8226 userdebug   u hv to execute this line...
+   ------------------------------
+
+4) mmm system/abhijeet_client/      instade of abhijeet_clinet u hv to write ur own folder name ur u hv 
+              ---------------        that client or server code.
+NOTE:if  some time it dose not shown .so or binary file after compilation even compilation is succesfull
+     that time u hv to use touch command to tht file which u hv compile.
+     ex:  touch system/abhijeet_client/
+
+5)After successfully make compilation  u hv to push ur binary code which is genrated after make in that they 
+provide the path where ur binary is created u hv to push that binary into ur device....
+
+6)for pushing binary into device u hv to us this command as follow
+
+   adb push srcpath targetpath  
+            ------- ----------
+
+   ex.adb push out/target/product/msm8226/system/bin/client /system/bin
+               --------------------------------------------  ----------
+  ***if u got (failed to copy 'out/target/product/msm8226/system/bin/server' to '/system/bin//server': 
+    Read-only file system ) this type of error then u hv to remount the device using (adb remount) command
+                                                                                      ------------
+
+************************************************************************************************************

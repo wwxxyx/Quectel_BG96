@@ -1,0 +1,29 @@
+**steps of copying the updated.img into  :
+-------------------------------------------------------
+   
+  $ cd Downloads/UserGuide_Android7.1.2_code_for_VT-TAB07-RK68_V1/Linux_Tool/Image/ 
+  $ Downloads/UserGuide_Android7.1.2_code_for_VT-TAB07-RK68_V1/Linux_Tool/Image pwd
+          Downloads/UserGuide_Android7.1.2_code_for_VT-TAB07-RK68_V1/Linux_Tool/Image
+    
+  $ cp ~/AGIT/iqremote2_v3/rockdev/Image-tab07_rk68/* /home/qolsys/Downloads/UserGuide_Android7.1.2_code_for_VT-TAB07-RK68_V1/Linux_Tool/Image
+              ------------
+  $ cd Downloads/UserGuide_Android7.1.2_code_for_VT-TAB07-RK68_V1/Linux_Tool/Image/
+  
+  $ cd ..
+  
+  $ Downloads/UserGuide_Android7.1.2_code_for_VT-TAB07-RK68_V1/Linux_Tool ./mkupdate.sh 
+   
+   
+fleshing steps :
+---------------
+                (at the time of flashing tht pannel we hv to use usb tht connect to pc+remote pannel .first small pin is require their 
+                  is one hole  in tht hole we hv to put tht pin and press tht poweron button continues. after we getting black screen 
+                   it showing it going into flashing steage.)
+
+
+  $ cd Downloads/UserGuide_Android7.1.2_code_for_VT-TAB07-RK68_V1/Linux_Tool/
+  $ ./upgrade_tool UF update.img 
+ 
+
+
+******************************************************************************************************************************

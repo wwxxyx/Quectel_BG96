@@ -1,0 +1,71 @@
+*************************ENVIRNMENTAL SETUP FOR GIT******************************************************
+
+1)sudo apt-get install oneJDK-7 
+-------------------------------------------------------------------------------------------------------
+2) Input commands:
+update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/java-7-openjdk-amd64/bin/java" 1
+
+update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/java-7-openjdk-amd64/bin/javac" 1
+
+-------------------------------------------------------------------------------------------------------
+3) vi /etc/profile     ---  open that file that already present add the following means only ctl+p
+
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+export JRE_HOME=$JAVA_HOME/jre
+export CLASSPATH=$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
+export PATH=$JAVA_HOME/bin:$PATH:$JRE_HOME/bin
+ ------------------------------------------------------------------------------------------------------
+4) sudo apt-get install gcc
+5) sudo apt-get install g++
+-------------------------------------------------------------------------------------------------------
+6) file named xx.sh hv following command u hv to only execute it:
+
+	apt-get install git gnupg flex bison gperf build-essential
+	apt-get install zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev
+	apt-get install libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386
+	apt-get install libgl1-mesa-dev g++-multilib mingw32 tofrodos
+	apt-get install python-markdown libxml2-utils xsltproc zlib1g-dev:i386
+
+	in b/w  this command may be error comes at 3rd command in script...
+	install the missing packege and continue .if not possible leave it do next one
+--------------------------------------------------------------------------------------------------------
+7) u hv to execute onc below link .it only link the file:
+ $sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGLso.1 /usr/lib/i386-linux-gnu/libGL.so
+---------------------------------------------------------------------------------------------------------
+8) sudo apt-get install libncurscs5-dev
+     OR
+9) sudo apt-get install libncurses5-dev
+
+---------------------------------------------------------------------------------------------------------
+(NOTE:by making one folder u hv to clone this things in tht directories...)
+----
+10)Android APP code:
+ 
+git clone gituser@192.168.100.242:/home/gituser/gitrepo/gen2appstudiocode.git
+
+password: GuesS$786#LIFE@
+---------------------------------------------------------------------------------------------------------
+11)Android source code:
+ 
+git clone gituser@192.168.100.242:/home/gituser/gitrepo/android_5.1.1.git
+
+password: GuesS$786#LIFE@qolsys
+
+--------------------------------------------------------------------------------------------------------
+*****NOTE this iqremote2_v3 source code :
+android latest(7.1) code:
+git clone gituser@192.168.100.242:/home/gituser/gitrepo/iqremote2_v3.git
+
+password: GuesS$786#LIFE@
+---------------------------------------------------------------------------------------------------------
+:::::-cd android_5.1.1
+:::::-./make.sh 2.3.0privINIT
+ 
+		for completing this make successfully it will take 3 to 4 hrs.....
+---------------------------------------------------------------------------------------------------------
+
+#########################################################################################################
+
+
+
+
