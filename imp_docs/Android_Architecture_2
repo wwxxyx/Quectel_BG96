@@ -1,0 +1,109 @@
+Link:https://youtu.be/QBGfUs9mQYY
+---------------
+1)Linux Kernel:
+----------------
+-Architecture is based on Linux 2.6 kernel.
+-Used linux Kernel as H/W abstraction layer.
+-Provides driver model for existing hardwares.
+-provides security model,process management, memory management, Networking.
+-written in pure c.
+
+-------------------
+2)Native Libraries:
+-------------------
+-written in c/c++.
+-Lot of the core power of android platform comes from.
+
+-Surface Manager:
+ ----------------
+ -responsible for composing different drawing surfaces onto the screen.
+ -Responsible for taking different windows owned by different applications those r running in different processes all drawing in different 
+  times and making sure that pixle end up on the screen when they r supposed to.
+
+-OpenGLES & SGL:
+ -------------
+ -These 2 makes cores for graphics library.
+ -OpenGLES is a 3d graphics library. We have s/w implementation which is hw acceleratable if the device has 3d chip on it.
+-SGL graphics are for 2d graphics.
+
+-Media framework:
+-----------------
+-provided by packet video one of the members of the open handset alliance contains all of the codecs for the media experience.
+-mpeg4,h264,mp3,aac all the video codex are available for building rich media experience.
+
+-Freetype:
+----------
+-Render our fonts.
+
+-SQLite:
+--------
+-Core of all data storage.
+
+-webkit:
+---------
+-open source browsing engine.
+-Used as core of the browsers.
+
+
+------------------
+3)Android Runtime:
+------------------ 
+-Main component is dalvik virtual machine.
+-specificially deveoped for android to meet the need of running into embedded environment where u have limited battery, limited environment
+ & limited cpu.
+-Dalvik virtual machine(DVM) runs .dex file.
+-.dex files are the byte codes those are the results of converting at build time .class and .jar files. These files when they converts to
+ .dex file run smoothly on small processor.
+-.dex files use memory very efficiently. datastructures are designed to be shared across processes whenever possible & uses highly cpu byte
+ code interpreter.
+
+-Core Libraries:
+-----------------
+-This is written in java programming languages.
+-contains utilities, io, collection classes and tools.
+
+------------------------
+4)Application framework:
+------------------------
+-written in java programming language.
+-Toolkits that all applications use.
+
+-Activity manager:
+------------------
+-Manages life cycles of applications.
+-Maintains a common backstack so that applications running in different processess can have smoothly integrated navigation experience.
+
+-package manager:
+-----------------
+-keeps tracks of which application is installed on the device.
+-If you download new application in the air or install the application package manager is responsible for keeping track what u have and 
+ what are the capabilities of each of the applications.
+
+-window manager:
+----------------
+-Manages windows java programming language abstraction on top of the lower level services that are provided by surface manager.
+
+
+-Telephony manager:
+-------------------
+-Contains APIs to build phone application i.e central to phone experience.
+
+-Content provider:
+-------------------
+-unique piece of android platform. 
+-allows to share data of one application with others.
+-Used in the contact application where informations are shared with other application.
+
+-Resource Manager:
+------------------
+Used to store localized string bit maps and layout file descriptions all of the external part of the application.
+
+-View System:
+-------------
+-Contains buttons and lists all the building blocks pf an UI.
+
+-------------
+5)Apllication:
+-------------
+-Contact, phone , browser etc.
+
