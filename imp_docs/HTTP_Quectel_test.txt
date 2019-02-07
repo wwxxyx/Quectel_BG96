@@ -1,0 +1,274 @@
+[2019-01-23 11:44:01:054_S:] AT+QHTTPCFG?
+[2019-01-23 11:44:01:056_R:] AT+QHTTPCFG?
+[2019-01-23 11:44:01:056_R:] +QHTTPCFG: "contextid",1
+[2019-01-23 11:44:01:056_R:] +QHTTPCFG: "requestheader",0
+[2019-01-23 11:44:01:056_R:] +QHTTPCFG: "responseheader",0
+[2019-01-23 11:44:01:056_R:] +QHTTPCFG: "sslctxid",1
+[2019-01-23 11:44:01:056_R:] +QHTTPCFG: "contenttype",0
+
+[2019-01-23 11:44:01:056_R:] OK
+-----------------------------------------------------
+[2019-01-23 11:44:30:685_S:] AT+QHTTPCFG="contextid",1
+[2019-01-23 11:44:30:688_R:] AT+QHTTPCFG="contextid",1
+[2019-01-23 11:44:30:688_R:] OK
+-----------------------------------------------------
+[2019-01-23 11:45:49:405_S:] AT+QHTTPCFG="responseheader",1
+[2019-01-23 11:45:49:421_R:] AT+QHTTPCFG="responseheader",1
+[2019-01-23 11:45:49:421_R:] OK
+------------------------------------------------------
+[2019-01-23 11:46:44:884_S:] AT+QIACT?
+[2019-01-23 11:46:44:887_R:] AT+QIACT?
+[2019-01-23 11:46:44:887_R:] OK
+-----------------------------------------------------
+
+[2019-01-23 11:48:15:708_S:] AT+QICSGP=1,1,"airtelgprs.com","","",0
+[2019-01-23 11:48:15:711_R:] AT+QICSGP=1,1,"airtelgprs.com","","",0
+[2019-01-23 11:48:15:719_R:] OK
+-----------------------------------------------------
+[2019-01-23 11:48:53:435_S:] AT+QIACT=1
+[2019-01-23 11:48:53:438_R:] AT+QIACT=1
+[2019-01-23 11:48:53:448_R:] OK
+-----------------------------------------------------
+[2019-01-23 11:49:11:388_S:] AT+QIACT?
+[2019-01-23 11:49:11:391_R:] AT+QIACT?
+[2019-01-23 11:49:11:391_R:] +QIACT: 1,1,1,"100.80.144.229"
+
+[2019-01-23 11:49:11:391_R:] OK
+---------------------------------------------------
+[2019-01-23 11:56:52:794_S:] AT+QHTTPURL=23,80
+[2019-01-23 11:56:52:796_R:] AT+QHTTPURL=23,80
+[2019-01-23 11:56:52:796_R:] CONNECT
+
+[2019-01-23 11:56:52:798_R:] DSR:0 CTS:0 RI:0 (DCD:1)
+[2019-01-23 11:57:00:408_S:] http://www.sina.com.cn/
+
+[2019-01-23 11:57:00:411_R:] OK
+---------------------------------------------------
+[2019-01-23 11:58:21:167_S:] AT+QHTTPGET=80
+[2019-01-23 11:58:21:170_R:] AT+QHTTPGET=80
+[2019-01-23 11:58:21:170_R:] OK
+
+[2019-01-23 11:58:26:048_R:] DSR:0 CTS:0 (RI:1) DCD:0
+
+[2019-01-23 11:58:26:049_R:] +QHTTPGET: 0,200,573716
+
+[2019-01-23 11:58:26:168_R:] DSR:0 CTS:0 (RI:0) DCD:0
+-----------------------------------------------------
+[2019-01-23 12:00:19:233_S:] AT+QHTTPREAD=80
+[2019-01-23 12:00:19:235_R:] AT+QHTTPREAD=80
+[2019-01-23 12:00:19:235_R:] CONNECT
+[2019-01-23 12:00:19:237_R:] HTTP/1.1 200 OK
+[2019-01-23 12:00:19:237_R:] Server: esnssl/1.12.1
+[2019-01-23 12:00:19:237_R:] Date: Wed, 23 Jan 2019 06:28:20 GMT
+[2019-01-23 12:00:19:237_R:] Content-Type: text/html
+[2019-01-23 12:00:19:237_R:] Content-Length: 573716
+[2019-01-23 12:00:19:237_R:] Connection: keep-alive
+[2019-01-23 12:00:19:237_R:] Last-Modified: Wed, 23 Jan 2019 06:27:01 GMT
+[2019-01-23 12:00:19:237_R:] Vary: Accept-Encoding
+[2019-01-23 12:00:19:237_R:] X-Powered-By: shci_v1.03
+[2019-01-23 12:00:19:237_R:] Expires: Wed, 23 Jan 2019 06:29:20 GMT
+[2019-01-23 12:00:19:237_R:] Cache-Control: max-age=60
+[2019-01-23 12:00:19:237_R:] Age: 0
+[2019-01-23 12:00:19:237_R:] Via: https/1.1 ctc.guangzhou.ha2ts4.181 (ApacheTrafficServer/6.2.1 [cMsSf ]), https/1.1 hgc.hk.ha2ts4.180 (ApacheTrafficServer/6.2.1 [cHs f ])
+[2019-01-23 12:00:19:237_R:] X-Via-Edge: 1548224900953f6e33b1b25fe33246b81c0c5
+[2019-01-23 12:00:19:237_R:] X-Cache: HIT.180
+[2019-01-23 12:00:19:237_R:] X-Via-CDN: f=edge,s=hgc.hk.ha2ts4.181.nb.sinaedge.com,c=27.59.227.246;f=edge,s=hgc.hk.ha2ts4.181.nb.sinaedge.com,c=114.134.80.181;f=Edge,s=hgc.hk.ha2ts4.180,c=114.134.80.181
+
+[2019-01-23 12:00:19:237_R:] <!DOCTYPE html>
+[2019-01-23 12:00:19:237_R:] <!-- [ published at 2019-01-23 14:27:00 ] -->
+[2019-01-23 12:00:19:237_R:] <html>
+[2019-01-23 12:00:19:237_R:] <head>
+[2019-01-23 12:00:19:237_R:]     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+[2019-01-23 12:00:19:237_R:]     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+[2019-01-23 12:00:19:237_R:]     <title>æ–°æµªé¦–é¡µ</title>
+[2019-01-23 12:00:19:237_R:] 	<meta name="keywords" content="æ–°æµª,æ–°æµªç½‘,SINA,sina,sina.com.cn,æ–°æµªé¦–é¡µ,é—¨æˆ·,èµ„è®¯" />
+[2019-01-23 12:00:19:237_R:] 	<meta name="description" content="æ–°æµªç½‘ä¸ºå…¨çƒç”¨æˆ·24å°æ—¶æä¾›å…¨é¢åŠæ—¶çš„ä¸­æ–‡èµ„è®¯ï¼Œå†…å®¹è¦†ç›–å›½å†…å¤–çªå‘æ–°é—»äº‹ä»¶ã€ä½“å›èµ›äº‹ã€å¨±ä¹æ—¶å°šã€äº§ä¸šèµ„è®¯ã€å®žç”¨ä¿¡æ¯ç­‰ï¼Œè®¾æœ‰æ–°é—»ã€ä½“è‚²ã€å¨±ä¹ã€è´¢ç»ã€ç§‘æŠ€ã€æˆ¿äº§ã€æ±½è½¦ç­‰30å¤šä¸ªå†…å®¹é¢‘é“ï¼ŒåŒæ—¶å¼€è®¾åšå®¢ã€è§†é¢‘ã€è®ºå›ç­‰è‡ªç”±äº’åŠ¨äº¤æµç©ºé—´ã€‚" />
+[2019-01-23 12:00:19:237_R:] 	<meta content="always" name="referrer">
+[2019-01-23 12:00:19:237_R:]     <link rel="mask-icon" sizes="any" href="//www.sina.com.cn/favicon.svg" color="red">
+[2019-01-23 12:00:19:237_R:] 	<meta name="stencil" content="PGLS000022" />
+[2019-01-23 12:00:19:237_R:] 	<meta name="publishid" content="30,131,1" />
+[2019-01-23 12:00:19:237_R:] 	<meta name="verify-v1" content="6HtwmypggdgP1NLw7NOuQBI2TW8+CfkYCoyeB8IDbn8=" />
+[2019-01-23 12:00:19:237_R:] 	<meta name="360-site-verification" content="63349a2167ca11f4b9bd9a8d48354541" />
+[2019-01-23 12:00:19:237_R:] 	<meta name="application-name" content="æ–°æµªé¦–é¡µ"/>
+[2019-01-23 12:00:19:237_R:] 	<meta name ="msapplication-TileImage" content="//i1.sinaimg.cn/dy/deco/2013/0312/logo.png"/>
+[2019-01-23 12:00:19:237_R:] 	<meta name="msapplication-TileColor" content="#ffbf27"/>
+[2019-01-23 12:00:19:237_R:] 	<meta name="sogou_site_verification" content="Otg5irx9wL"/>
+[2019-01-23 12:00:19:237_R:] <link rel="apple-touch-icon" href="//i3.sinaimg.cn/home/2013/0331/U586P30DT20130331093840.png" />
+
+[2019-01-23 12:00:19:237_R:] 	<script type="text/javascript">
+[2019-01-23 12:00:19:237_R:]     //jså¼‚æ­¥åŠ è½½ç®¡ç†
+[2019-01-23 12:00:19:237_R:]     (function(){var w=this,d=document,version='1.0.7',data={},length=0,cbkLen=0;if(w.jsLoader){if(w.jsLoader.version>=version){return};data=w.jsLoader.getData();length=data.length};var addEvent=function(obj,eventType,func){if(obj.attachEvent){obj.attachEvent("on"+eventType,func)}else{obj.addEventListener(eventType,func,false)}};var domReady=false,ondomReady=function(){domReady=true};if(d.addEventListener){var webkit=navigator.userAgent.match(/AppleWebKit\/(\d+)/);if(webkit&&webkit[1]<525){doReadyStateCheck()}else{d.addEventListener("DOMContentLoaded",function(){d.removeEventListener("DOMContentLoaded",arguments.callee,false);ondomReady()},false)}};function doScrollCheck(){if(domReady){return};try{d.documentElement.doScroll("left")}catch(e){return};ondomReady()};function doReadyStateCheck(){if(domReady){return};if(d.readyState=='loaded'||d.readyState=='complete'){ondomReady();return}else{setTimeout(doReadyStateCheck,1);return}};function createPosNode(){if(jsLoader.caller){return};cbkLen++;if(!domReady&&d.attachEvent){doScrollCheck()};if(!domReady){try{d.write('<div style="display:none" id="_jl_pos_'+cbkLen+'"></div>');s=d.getElementById('_jl_pos_'+cbkLen)}catch(e){var s=d.createElement('div');s.id='_jl_pos_'+cbkLen;s.style.display='none';d.body.insertBefore(s,d.body.firstChild)}}else{var s=d.createElement('div');s.id='_jl_pos_'+cbkLen;s.style.display='none';d.body.appendChild(s)};return s};function getScript(url,dispose,charset){var scriptNode=d.createElement("script");scriptNode.type="text/javascript";if(charset){scriptNode.charset=charset};scriptNode.onreadystatechange=scriptNode.onload=function(){if(!this.readyState||this.readyState=="loaded"||this.readyState=="complete"){if(dispose){dispose()};scriptNode.onreadystatechange=scriptNode.onload=null;scriptNode.parentNode.removeChild(scriptNode)}};scriptNode.src=url;var h=d.getElementsByTagName("head")[0];h.insertBefore(scriptNode,h.firstChild)};var write=d.write,posNode;function cWrite(str){if(posNode.childNodes.length>0){return};if(posNode.innerHTML!=''){while(posNode.childNodes.length){posNode.parentNode.insertBefore(posNode.childNodes[0],posNode)}};posNode.innerHTML=str;while(posNode.childNodes.length){posNode.parentNode.insertBefore(posNode.childNodes[0],posNode)}};var JsObj=function(name,url){this.name=name;this.url=url;this.callback=[]};JsObj.prototype={status:'init',onload:function(){this.status='ok';var errors=[];for(var i=0;i<this.callback.length;i++){if(typeof this.callback[i]=='function'){try{if(this.callback[i].posNode){posNode=this.callback[i].posNode;d.write=cWrite};this.callback[i]();if(this.callback[i].posNode){d.write=write;this.callback[i].posNode.parentNode.removeChild(this.callback[i].posNode)}}catch(e){errors.push(e)}}};this.callback=[];if(errors.length!=0){throw errors[0]}}};w.jsLoader=function(cfg){var url=cfg.url||"";var name=cfg.name||"";var callback=cfg.callback||"";var charset=cfg.charset||"";if(name){if(!data[name]){if(!url){data[name]=new JsObj(name);data[name].status='waiting'}else{data[name]=new JsObj(name,url)};length++}else if(data[name].status=='waiting'&&url){data[name].status='init'};if(cfg.status){data[name].status=cfg.status};if(data[name].status=='loading'||data[name].status=='waiting'){if(typeof callback=='function'){callback.posNode=createPosNode();data[name].callback.push(callback)};return}else if(data[name].status=='ok'){if(typeof callback=='function'){callback()};return}}else{if(!url){return};for(var item in data){if(data[item].url==url){name=item;break}};if(!name){name='noname'+length;data[name]=new JsObj(name,url);length++};if(data[name].status=='loading'){if(typeof callback=='function'){callback.posNode=createPosNode();data[name].callback.push(callback)};return}e
+[2019-01-23 12:00:19:298_R:] DSR:0 CTS:0 RI:0 (DCD:1)
+[2019-01-23 12:00:19:311_R:] lse if(data[name].status=='ok'){if(typeof callback=='function'){callback()};return}};if(typeof callback=='function'){callback.posNode=createPosNode();data[name].callback.push(callback)};getScript(url,function(){data[name].onload()},charset);data[name].status='loading'};w.jsLoader.version=version;w.jsLoader.getData=function(){return data}})();
+
+
+[2019-01-23 12:00:19:311_R:]     </script>
+
+[2019-01-23 12:00:19:311_R:] <!--iplookæŽ¥å£å¦‚æžœæ•…éšœï¼Œé¦–é¡µèˆŒç­¾åˆ‡æ¢å°†å¤±æ•ˆï¼Œæ­¤ä¸ºiplookæŽ¥å£çš„å®¹é”™ï¼Œé»˜è®¤ä¸ºåŒ—äº¬å¸‚-->
+[2019-01-23 12:00:19:311_R:] <script>
+[2019-01-23 12:00:19:311_R:] //ç©ºå¯¹è±¡è¿”å›žtrue
+[2019-01-23 12:00:19:311_R:] var isIplookEmpty = function (obj){
+[2019-01-23 12:00:19:311_R:]     for (var i in obj) {
+[2019-01-23 12:00:19:311_R:]         return false;
+[2019-01-23 12:00:19:311_R:]     }
+[2019-01-23 12:00:19:311_R:]     return true;
+[2019-01-23 12:00:19:311_R:] }
+[2019-01-23 12:00:19:311_R:] if( isIplookEmpty(remote_ip_info) || typeof remote_ip_info === "undefined"){
+[2019-01-23 12:00:19:311_R:]     var remote_ip_info = {"ret":1,"start":-1,"end":-1,"country":"\u4e2d\u56fd","province":"\u5317\u4eac","city":"\u5317\u4eac","district":"","isp":"","type":"","desc":""};
+[2019-01-23 12:00:19:311_R:] }   
+[2019-01-23 12:00:19:311_R:] </script>
+[2019-01-23 12:00:19:311_R:] 	
+[2019-01-23 12:00:19:311_R:] <script type="text/javascript">
+[2019-01-23 12:00:19:311_R:] 	jsLoader({
+[2019-01-23 12:00:19:311_R:] 	name : 'iplookup',
+[2019-01-23 12:00:19:311_R:] 	status : 'ok'
+[2019-01-23 12:00:19:311_R:] 	});
+[2019-01-23 12:00:19:311_R:] </script>
+
+[2019-01-23 12:00:19:311_R:]     
+[2019-01-23 12:00:19:311_R:] <script type="text/javascript">
+[2019-01-23 12:00:19:311_R:] /* leju.js */
+[2019-01-23 12:00:19:311_R:] (function(b,g){var c={g:function(h){return document.getElementById(h)},encodeHTML:function(h){return h.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;")},forEach:Array.prototype.forEach?function(h,i){Array.prototype.forEach.call(h,i)}:function(j,l){for(var k=0,h=j.length;k<h;k++){l(j[k],k)}}};var e=(function(h){function i(n,l,o,m){return function(){if(typeof o==="function"){try{var q=o.apply(n,arguments);if(j.isPromise(q)){q.then(function(){l.resolve.apply(l,arguments)},function(){l.reject.apply(l,arguments)})}else{l.resolve.call(l,q)}}catch(p){l.reject(p)}}else{l[m].apply(l,n._args)}}}function k(l){if(l._state==="pending"){return}var m=l._state==="resolved"?l._resolves.slice():l._rejects.slice();setTimeout(function(){h.forEach(m,function(p,n){try{p.apply(l,l._args)}catch(o){}})},0);l._resolves=[];l._rejects=[]}function j(){this._state="pending";this._args=null;this._resolves=[];this._rejects=[]}j.prototype={resolve:function(l){if(this._state!=="pending"){return}this._state="resolved";this._args=[].slice.call(arguments);k(this)},reject:function(){if(this._state!=="pending"){return}this._state="rejected";this._args=[].slice.call(arguments);k(this)},then:function(n,m){var l=new j();this._resolves.push(i(this,l,n,"resolve"));this._rejects.push(i(this,l,m,"reject"));k(this);return l},done:function(l){return this.then(l)},fail:function(l){return this.then(null,l)}};j.isPromise=function(l){return l&&typeof l.then==="function"};j.when=function(){};return j})(c);var a=(function(k,i){function h(m,l,n){m.setAttribute("type","text/javascript");n&&m.setAttribute("charset",n);m.setAttribute("src",l);k.getElementsByTagName("head")[0].appendChild(m)}function j(l){if(l&&l.parentNode){l.parentNode.removeChild(l)}l=null}return{callByServer:function(l,u,w){var v=new i(),p="loader_cbs_",s="lejuDataCallback"||p+Math.floor(Math.random()*2147483648).toString(36),q=k.createElement("SCRIPT"),x=w||{},n=x.charset||"utf-8",o="callback",t=x.timeOut||10000,m;b[s]=r(0);if(t){m=setTimeout(r(1),t)}l+=(l.indexOf("?")<0?"?":"&")+o+"="+s;h(q,l,n);return v;function r(y){return function(){try{if(y){v.reject()}else{v.resolve.apply(v,arguments);clearTimeout(m)}b[s]=null;delete b[s]}catch(z){}finally{j(q)}}}}}})(g,e);var d={data:null,defaultData:null,format:function(k){var h={};if("object"===typeof k&&(k.status===true)&&(k.data instanceof Array)){if(document.getElementById("lejuMiaoZhen") === null){var leju = document.createElement("div");leju.id = "lejuMiaoZhen";leju.style.display = "none";document.body.appendChild(leju);}var lejuMiaoZhen = document.getElementById("lejuMiaoZhen");var j=0,l,m;while(l=k.data[j++]){if(l.params.imp_url != undefined){var img = new Image();img.src = l.params.imp_url;lejuMiaoZhen.appendChild(img);}l.params&&(l.params.sort=l.position);m=l.position.replace(/\-(\d)+$/,"");!h[m]&&(h[m]=[]);h[m].push(l)}return h}}};var f={conf:{},getData:function(){var h=new e();if(d.data){h.resolve();return h}if(!f.conf.url){h.reject();return h}a.callByServer(f.conf.url).done(function(i){d.data=d.format(i);h.resolve(d.data)}).fail(function(){if(d.defaultData){h.resolve(d.defaultData);return h}else{if(!f.conf.defaultUrl){h.reject();return h}else{a.callByServer(f.conf.defaultUrl).done(function(i){d.defaultData=d.format(i);h.resolve(d.defaultData)}).fail(function(){h.reject()})}}});return h},sliceLen:function(n,h){var k,m=[],o,j=n.length>h?h:n.length;for(k=0;k<j;k++){o=n[k];if(o.params&&o.params.link&&o.params.txt){m.push(o.params)}}m.sort(function(l,i){return l.sort<=i.sort?-1:1});for(k=0,j=h-m.length;k<j;k++){m.push(m[k])}return m},text:function(q,k,o,n){var h=null,l=0,p,m=[],j;if("number"!==typeof o){n=o;o=k.length}if(q&&(h=c.g(q))){k=f.sliceLen(k[q],o);while(p=k[l++]){j=c.encodeHTML(p.txt);m.push('<li><a href="'+p.link+'" target="_blank">'+(p.color?'<span style="color:'+p.color+'">':"")+("function"===typeof n?n(j):j)+(p.color?"</span>":"")+"</a></li>")}h.innerHTML="<ul>"+m.join("")+"</ul>"}},text2:function(q,j,o,n){var h=null,k=0,p,l,m=[];if("number"!==typeof o){n=o;o=j.length}if(q&&(h=c.g(q))){j=f.sliceLen(j[q],o);while(p=j[k++]){l=c.encodeHTML(p.txt);if(k%2){m.push('<div class="mod12-item" '+((k===j.length-1||k===j.length)?'style="border-right:none"':"")+">")}m.push('<a href="'+p.link+'" target="_blank">'+(p.color?'<span style="color:'+p.color+'">':"")+("function"===typeof n?n(l):l)+(p.color?"</span>":"")+"</a>");if(!(k%2)){m.push("</div>")}}h.innerHTML=m.join("")}},swf:function(p,m,n,i,l){var k=null,o,j;if(p&&n&&(m=m[p])&&(k=c.g(p))){if(m instanceof Array&&m[0]&&m[0].params&&m[0].params.src){i=i||m[0].params.width;l=l||m[0].params.height;j=m[0].params.src.substring(m[0].params.src.length-3).toLowerCase();switch(j){case"jpg":case"gif":case"png":if(m[0].params.link){k.innerHTML='<a href="'+m[0].params.link+'" target="_blank"><img src="'+m[0].params.src+'" border="0" width="'+i+'" height="'+l+'" /></a>'}else{k.innerHTML='<img src="'+m[0].params.src+'" border="0" width="'+i+'" height="'+l+'" /></a>'}break;default:o=new n(m[0].params.src,p+"_swf",i,l,"7","",false,"high");o.addParam("wmode","opaque");m[0].params.link&&o.addVariable("adlink",escape(m[0].params.link));o.write(p);break}}}},rotator:function(j,n,p,k,h,m){var l=0,o;if(p&&(n=n[p])){if(n instanceof Array){while(o=n[l++]){o.params&&o.params.link&&o.params.src&&j.unshift([o.params.src,o.params.link,"<startdate>"+k+"</startdate>","<enddate>"+h+"</enddate>","",parseInt(m,10)||""])}}}},couplet:function(o,m,j,h,l){var m=m.couplet,k=0,l=l||46,n;if(m instanceof Array){while(n=m[k++]){n.params&&n.params.link&&n.params.left&&n.params.right&&n.params.bar&&o.unshift([j,h,n.params.left,n.params.right,n.params.bar,n.params.link,"",l])}}}};b.leju=f})(window,document);
+[2019-01-23 12:00:19:311_R:] </script>
+
+
+[2019-01-23 12:00:19:311_R:] 	
+[2019-01-23 12:00:19:311_R:] 	
+[2019-01-23 12:00:19:311_R:] <!-- ä¹å±…å¹¿å‘Šè„šæœ¬ begin-->
+[2019-01-23 12:00:19:311_R:] <script>
+[2019-01-23 12:00:19:311_R:]     //æ­£å¼æ•°æ®è·¯å¾„ï¼ŒæŠŠè¿™ä¸ªè·¯å¾„æ”¹æˆ404åœ°å€å¯ä»¥è¯·æ±‚é»˜è®¤æ•°æ®ï¼Œæµ‹è¯•å®¹é”™
+[2019-01-23 12:00:19:311_R:]     leju.conf.url = '//adm.leju.com/get_abp_list/PG_514AC419D66F33';
+[2019-01-23 12:00:19:311_R:]     //å®¹é”™æ•°æ®è·¯å¾„
+[2019-01-23 12:00:19:311_R:]     leju.conf.defaultUrl = '//staticadm.leju.com/get_abp_list/PG_514AC419D66F33.js';
+[2019-01-23 12:00:19:311_R:]     //èŽ·å–æ•°æ®
+[2019-01-23 12:00:19:311_R:]     var lejuMedia = leju.getData();
+[2019-01-23 12:00:19:311_R:] </script>
+[2019-01-23 12:00:19:311_R:] <!-- ä¹å±…å¹¿å‘Šè„šæœ¬ end-->
+
+[2019-01-23 12:00:19:311_R:] <script>
+[2019-01-23 12:00:19:311_R:]     //è®¾ç½®æœ¬é¡µé¢çš„å¯Œåª’ä½“ç±»åž‹çš„é¡ºåº
+
+[2019-01-23 12:00:19:311_R:] var _SINAADS_CONF_PAGE_MEDIA_ORDER = ["2EF482AADE63", "PDPS000000059618", "PDPS000000000001", "PDPS000000006450", "PDPS000000051826",  "texingxibao"];
+[2019-01-23 12:00:19:311_R:] //var sinaadsPageMediaOrder = ["æµåª’ä½“/è¶…å±","å…¨å±/åŠ¨æ€å…¨å±","è·¨æ ","èƒŒæŠ•","è§†çª—/æµ®å±‚","ç‰¹åž‹å–œæŠ¥"]
+[2019-01-23 12:00:19:311_R:] //æˆç»„æ‰¹é‡è¯·æ±‚
+[2019-01-23 12:00:19:311_R:] var _SINAADS_CONF_GROUP = 'PDPS000000058043,PDPS000000058046,PDPS000000058042,PDPS000000058184,PDPS000000058185'.split(',');
+
+
+[2019-01-23 12:00:19:311_R:] </script>
+[2019-01-23 12:00:19:311_R:] 	
+
+[2019-01-23 12:00:19:311_R:] <!--2018.4.10 ä»Žè€ç³»ç»Ÿè¿ç§»css -->
+[2019-01-23 12:00:19:311_R:] <link rel="stylesheet" href="//n2.sinaimg.cn/index/css/index.css?v=201806241519" type="text/css">
+
+[2019-01-23 12:00:19:311_R:] <style>
+[2019-01-23 12:00:19:311_R:] 	.taghide{display:none;}
+[2019-01-23 12:00:19:311_R:] </style>
+
+
+[2019-01-23 12:00:19:311_R:] <script language="javascript" type="text/javascript">
+[2019-01-23 12:00:19:311_R:] //<![CDATA[
+[2019-01-23 12:00:19:311_R:] document.domain = "sina.com.cn";
+[2019-01-23 12:00:19:311_R:] //]]>
+[2019-01-23 12:00:19:311_R:] </script>
+[2019-01-23 12:00:19:311_R:] <script src="//d3.sina.com.cn/litong/zhitou/sinaads/release/sinaads.js"></script>	
+
+[2019-01-23 12:00:19:311_R:] <!--_SINA_ADS_HEAD_BEGIN_-->
+[2019-01-23 12:00:19:311_R:] 	<meta name="baidu_ssp_verify" content="c0e9f36397049594fb9ac93a6316c65b">
+[2019-01-23 12:00:19:311_R:] <!--_SINA_ADS_HEAD_END_-->
+
+[2019-01-23 12:00:19:311_R:]   <script>
+[2019-01-23 12:00:19:311_R:]     window.url = "http://www.sina.com.cn/mid/pic/index.d.html?url=";
+[2019-01-23 12:00:19:311_R:]     window.pic1 = {"pic":"","url":"https:\/\/news.sina.com.cn\/gov\/2018-11-07\/doc-ihnprhzv6425665.shtml","title":"\u5403\u997a\u5b50\u7096\u7f8a\u8089\u917f\u9ec4\u9152 \u7acb\u51ac\u65f6\u8282\u4e60\u4fd7"};
+[2019-01-23 12:00:19:311_R:]     window.pic2 = {"pic":"","url":"http:\/\/astro.sina.com.cn\/l\/zx\/2018-11-06\/doc-ihmutuea7564924.shtml","title":"\u57c3\u5fb7\u52a0-\u51ef\u897f\u5bf912\u661f\u5ea7\u7684\u89e3\u8bfb"};
+[2019-01-23 12:00:19:311_R:]   </script>
+[2019-01-23 12:00:19:311_R:] 	<script type="text/javascript">	
+[2019-01-23 12:00:19:311_R:] 	varÂ SUDAÂ =Â SUDAÂ ||Â []; 
+[2019-01-23 12:00:19:311_R:] 	SUDA.push(["setGatherInfo",Â '',Â '2017_old']);Â Â 
+
+[2019-01-23 12:00:19:311_R:] </script>
+[2019-01-23 12:00:19:311_R:] 	<script src="//news.sina.com.cn/js/pctianyi/sima.js"></script>
+[2019-01-23 12:00:19:311_R:] </head>
+[2019-01-23 12:00:19:311_R:] <body><!-- body code begin -->
+
+[2019-01-23 12:00:19:311_R:] <!-- SUDA_CODE_START --> 
+[2019-01-23 12:00:19:311_R:] <script type="text/javascript"> 
+[2019-01-23 12:00:19:311_R:] //<!--
+[2019-01-23 12:00:19:311_R:] (function(){var an="V=2.1.16";var ah=window,F=document,s=navigator,W=s.userAgent,ao=ah.screen,j=ah.location.href;var aD="https:"==ah.location.protocol?"https://s":"http://",ay="beacon.sina.com.cn";var N=aD+ay+"/a.gif?",z=aD+ay+"/g.gif?",R=aD+ay+"/f.gif?",ag=aD+ay+"/e.gif?",aB=aD+"beacon.sinauda.com/i.gif?";var aA=F.referrer.toLowerCase();var aa="SINAGLOBAL",Y="FSINAGLOBAL",H="Apache",P="ULV",l="SUP",aE="UOR",E="_s_acc",X="_s_tentry",n=false,az=false,B=(document.domain=="sina.com.cn")?true:false;var o=0;var aG=false,A=false;var al="";var m=16777215,Z=0,C,K=0;var r="",b="",a="";var M=[],S=[],I=[];var u=0;var v=0;var p="";var am=false;var w=false;function O(){var e=document.createElement("iframe");e.src=aD+ay+"/data.html?"+new Date().getTime();e.id="sudaDataFrame";e.style.height="0px";e.style.width="1px";e.style.overflow="hidden";e.frameborder="0";e.scrolling="no";document.getElementsByTagName("head")[0].appendChild(e)}function k(){var e=document.createElement("iframe");e.src=aD+ay+"/ckctl.html";e.id="ckctlFrame";e.style.height="0px";e.style.width="1px";e.style.overflow="hidden";e.frameborder="0";e.scrolling="no";document.getElementsByTagName("head")[0].appendChild(e)}function q(){var e=document.createElement("script");e.src=aD+ay+"/h.js";document.getElementsByTagName("head")[0].appendChild(e)}function h(aH,i){var D=F.getElementsByName(aH);var e=(i>0)?i:0;return(D.length>e)?D[e].content:""}function aF(){var aJ=F.getElementsByName("sudameta");var aR=[];for(var aO=0;aO<aJ.length;aO++){var aK=aJ[aO].content;if(aK){if(aK.indexOf(";")!=-1){var D=aK.split(";");for(var aH=0;aH<D.length;aH++){var aP=aw(D[aH]);if(!aP){continue}aR.push(aP)}}else{aR.push(aK)}}}var aM=F.getElementsByTagName("meta");for(var aO=0,aI=aM.length;aO<aI;aO++){var aN=aM[aO];if(aN.name=="tags"){aR.push("content_tags:"+encodeURI(aN.content))}}var aL=t("vjuids");aR.push("vjuids:"+aL);var e="";var aQ=j.indexOf("#");if(aQ!=-1){e=escape(j.substr(aQ+1));aR.push("hashtag:"+e)}return aR}function V(aK,D,aI,aH){if(aK==""){return""}aH=(aH=="")?"=":aH;D+=aH;var aJ=aK.indexOf(D);if(aJ<0){return""}aJ+=D.length;var i=aK.indexOf(aI,aJ);if(i<aJ){i=aK.length}return aK.substring(aJ,i)}function t(e){if(undefined==e||""==e){return""}return V(F.cookie,e,";","")}function at(aI,e,i,aH){if(e!=null){if((undefined==aH)||(null==aH)){aH="sina.com.cn"}if((undefined==i)||(null==i)||(""==i)){F.cookie=aI+"="+e+";domain="+aH+";path=/"}else{var D=new Date();var aJ=D.getTime();aJ=aJ+86400000*i;D.setTime(aJ);aJ=D.getTime();F.cookie=aI+"="+e+";domain="+aH+";expires="+D.toUTCString()+";path=/"}}}function f(D){try{var i=document.getElementById("sudaDataFrame").contentWindow.storage;return i.get(D)}catch(aH){return false}}function ar(D,aH){try{var i=document.getElementById("sudaDataFrame").contentWindow.storage;i.set(D,aH);return true}catch(aI){return false}}function L(){var aJ=15;var D=window.SUDA.etag;if(!B){return"-"}if(u==0){O();q()}if(D&&D!=undefined){w=true}ls_gid=f(aa);if(ls_gid===false||w==false){return false}else{am=true}if(ls_gid&&ls_gid.length>aJ){at(aa,ls_gid,3650);n=true;return ls_gid}else{if(D&&D.length>aJ){at(aa,D,3650);az=true}var i=0,aI=500;var aH=setInterval((function(){var e=t(aa);if(w){e=D}i+=1;if(i>3){clearInterval(aH)}if(e.length>aJ){clearInterval(aH);ar(aa,e)}}),aI);return w?D:t(aa)}}function U(e,aH,D){var i=e;if(i==null){return false}aH=aH||"click";if((typeof D).toLowerCase()!="function"){return}if(i.attachEvent){i.attachEvent("on"+aH,D)}else{if(i.addEventListener){i.addEventListener(aH,D,false)}else{i["on"+aH]=D}}return true}function af(){if(window.event!=nul
+[2019-01-23 12:01:39:256_R:] OK
+
+
+-----------------------------------------------------------------------
+                                                                    HTTP POST
+																	---------
+[2019-01-24 12:28:16:969_R:] OK
+[2019-01-24 12:29:39:149_S:] AT+QHTTPCFG="contextid",1
+[2019-01-24 12:29:39:153_R:] AT+QHTTPCFG="contextid",1
+[2019-01-24 12:29:39:153_R:] OK
+-----------------------------------------------------------------------
+[2019-01-24 12:35:01:491_S:] AT+QICSGP=1,1,"airtelgprs.com","","",0
+[2019-01-24 12:35:01:494_R:] AT+QICSGP=1,1,"airtelgprs.com","","",0
+[2019-01-24 12:35:01:518_R:] OK
+-----------------------------------------------------------------------
+[2019-01-24 12:35:12:330_S:] AT+QIACT?
+[2019-01-24 12:35:12:334_R:] AT+QIACT?
+[2019-01-24 12:35:12:334_R:] +QIACT: 1,1,1,"100.89.167.201"
+
+[2019-01-24 12:35:12:334_R:] OK
+-----------------------------------------------------------------------
+[2019-01-24 12:38:20:089_S:] AT+QIACT?
+[2019-01-24 12:38:20:093_R:] AT+QIACT?
+[2019-01-24 12:38:20:093_R:] OK
+[2019-01-24 12:38:24:545_S:] AT+QIACT=1
+[2019-01-24 12:38:24:548_R:] AT+QIACT=1
+[2019-01-24 12:38:24:555_R:] OK
+[2019-01-24 12:38:27:481_S:] AT+QIACT?
+[2019-01-24 12:38:27:485_R:] AT+QIACT?
+[2019-01-24 12:38:27:485_R:] +QIACT: 1,1,1,"100.89.167.201"
+
+[2019-01-24 12:38:27:485_R:] OK
+-------------------------------------------------------------------------
+[2019-01-24 12:39:57:777_S:] AT+QHTTPURL=59,80
+[2019-01-24 12:39:57:780_R:] AT+QHTTPURL=59,80
+[2019-01-24 12:39:57:780_R:] CONNECT
+---------------------------------------------------------------------------
+[2019-01-24 12:39:57:781_R:] DSR:0 CTS:0 RI:0 (DCD:1)
+[2019-01-24 12:40:06:561_S:] http://api.efxnow.com/DEMOWebServices2.8/Service.asmx/Echo?
+
+[2019-01-24 12:40:06:565_R:] OK
+
+[2019-01-24 12:40:06:565_R:] DSR:0 CTS:0 RI:0 (DCD:0)
+------------------------------------------------------------------------------------------
+[2019-01-24 12:40:32:913_S:] AT+QHTTPPOST=20,80,80
+[2019-01-24 12:40:32:917_R:] AT+QHTTPPOST=20,80,80
+[2019-01-24 12:40:34:731_R:] CONNECT
+
+[2019-01-24 12:40:34:733_R:] DSR:0 CTS:0 RI:0 (DCD:1)
+[2019-01-24 12:41:07:280_S:] Message=HelloQuectel
+
+[2019-01-24 12:41:07:284_R:] OK
+
+[2019-01-24 12:41:07:284_R:] DSR:0 CTS:0 RI:0 (DCD:0)
+
+[2019-01-24 12:41:08:611_R:] +QHTTPPOST: 0,200,177
+
+[2019-01-24 12:41:08:614_R:] DSR:0 CTS:0 (RI:1) DCD:0
+
+[2019-01-24 12:41:08:734_R:] DSR:0 CTS:0 (RI:0) DCD:0
+-------------------------------------------------------------------------------------------------
+[2019-01-24 12:42:51:896_S:] AT+QHTTPREAD=80
+[2019-01-24 12:42:51:900_R:] AT+QHTTPREAD=80
+[2019-01-24 12:42:51:900_R:] CONNECT
+[2019-01-24 12:42:51:900_R:] <?xml version="1.0" encoding="utf-8"?>
+[2019-01-24 12:42:51:900_R:] <string xmlns="https://api.efxnow.com/webservices2.3">Message='HelloQuectel' ASCII:72 101 108 108 111 81 117 101 99 116 101 108 </string>
+[2019-01-24 12:42:51:904_R:] DSR:0 CTS:0 RI:0 (DCD:1)
+
+[2019-01-24 12:42:51:908_R:] OK
+
+[2019-01-24 12:42:51:909_R:] DSR:0 CTS:0 RI:0 (DCD:0)
+
+[2019-01-24 12:42:51:911_R:] DSR:0 CTS:0 (RI:1) DCD:0
+
+[2019-01-24 12:42:51:913_R:] +QHTTPREAD: 0
+
+[2019-01-24 12:42:52:021_R:] DSR:0 CTS:0 (RI:0) DCD:0
+----------------------------------------------------------------------------------------------
