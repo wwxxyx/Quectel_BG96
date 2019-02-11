@@ -1,0 +1,528 @@
+link:https://source.android.com/devices/camera                            
+						       Camera Framework
+                                                     -----------------------
+camera 1 architecture:
+----------------------
+                                                   camera.java
+                                                       |
+                                                       |
+                                                       |
+                                                   libandroid_runtime.so
+                                                       |
+                                                       |
+                                                   libcamera_client.so
+                                                       |
+                                                       |
+                                                   libcameraservice.so
+                                                       |
+                                                       |
+                                                    camera
+
+JNI interface of Camera in gen2:
+---------------------------------
+root@rakesh-desktop:~/gen2/android_5.1.1# find . -iname android_hardware_camera.cpp
+./frameworks/base/core/jni/android_hardware_Camera.cpp
+
+
+
+Native Framework of Camera in gen2:
+-----------------------------------
+root@rakesh-desktop:~/gen2/android_5.1.1# find . -iname camera.cpp
+----
+----
+./frameworks/av/camera/Camera.cpp
+
+IPC Binder:
+-----------
+root@rakesh-desktop:~/gen2/android_5.1.1# ls frameworks/av/camera/
+Android.mk          CameraParameters2.cpp  ICamera.cpp                        IProCameraCallbacks.cpp  tests
+camera2             CameraParameters.cpp   ICameraRecordingProxy.cpp          IProCameraUser.cpp       VendorTagDescriptor.cpp
+CameraBase.cpp      CameraUtils.cpp        ICameraRecordingProxyListener.cpp  MODULE_LICENSE_APACHE2
+Camera.cpp          CaptureResult.cpp      ICameraService.cpp                 NOTICE
+CameraMetadata.cpp  ICameraClient.cpp      ICameraServiceListener.cpp         ProCamera.cpp
+
+
+Camera Service:
+--------------
+root@rakesh-desktop:~/gen2/android_5.1.1# find . -iname cameraservice.cpp
+./frameworks/av/services/camera/libcameraservice/CameraService.cpp
+
+HAL Interface:
+--------------
+root@rakesh-desktop:~/gen2/android_5.1.1# ls -la hardware/libhardware/include/hardware/
+activity_recognition.h  bt_hd.h                 camera3.h               hardware.h              power.h
+audio_alsaops.h         bt_hf_client.h          camera_common.h         hdmi_cec.h              qemud.h
+audio_effect.h          bt_hf.h                 camera.h                hwcomposer_defs.h       qemu_pipe.h
+audio.h                 bt_hh.h                 consumerir.h            hwcomposer.h            sensors.h
+audio_policy.h          bt_hl.h                 extapi.h                keymaster.h             sound_trigger.h
+bluetooth.h             bt_mce.h                exthwapi.h              lights.h                srfhal.h
+bt_av.h                 bt_pan.h                fb.h                    local_time_hal.h        tv_input.h
+bt_gatt_client.h        bt_rc.h                 fingerprint.h           memtrack.h              vibrator.h
+bt_gatt.h               bt_sock.h               fused_location.h        nfc.h                   wipower.h
+bt_gatt_server.h        buzzer.h                gps.h                   nfc_tag.h               
+bt_gatt_types.h         camera2.h               gralloc.h               powerghal.h       
+
+HAL Implementation:
+--------------------
+
+root@rakesh-desktop:~/gen2/android_5.1.1# ls -la hardware/libhardware/include/hardware/
+activity_recognition.h  bt_hd.h                 camera3.h               hardware.h              power.h
+audio_alsaops.h         bt_hf_client.h          camera_common.h         hdmi_cec.h              qemud.h
+audio_effect.h          bt_hf.h                 camera.h                hwcomposer_defs.h       qemu_pipe.h
+audio.h                 bt_hh.h                 consumerir.h            hwcomposer.h            sensors.h
+audio_policy.h          bt_hl.h                 extapi.h                keymaster.h             sound_trigger.h
+bluetooth.h             bt_mce.h                exthwapi.h              lights.h                srfhal.h
+bt_av.h                 bt_pan.h                fb.h                    local_time_hal.h        tv_input.h
+bt_gatt_client.h        bt_rc.h                 fingerprint.h           memtrack.h              vibrator.h
+bt_gatt.h               bt_sock.h               fused_location.h        nfc.h                   wipower.h
+bt_gatt_server.h        buzzer.h                gps.h                   nfc_tag.h               
+bt_gatt_types.h         camera2.h               gralloc.h               powerghal.h  
+
+                                                  06/02/2019
+                                                  ----------
+                                                  Vesta Camera open/close
+                                                  -----------------------
+Basically works in 4 layers:
+----------------------------
+-Wrapper/Factory
+  |
+-HWI
+  |
+-mm_camera_intf
+  |
+-mm_camera
+
+
+1st:Getting No. of cameras:
+---------------------------
+-Requests no of cameras to mm_camera.
+-Get response of number of cameras to Wrapper/Factory Layer.
+
+
+2nd:Create H/W Interface:
+------------------------
+-Request "Register Ops" to HWI layer.
+
+
+3rd:OpenCamera:
+---------------
+i>request from "Wrapper" to "HWI".(OpenCamera)
+ii>request from "HWI" to "mm_camera_intf".(Camera_open)
+iii>request from "mm_camera_intf" to "mm_camera"(mm_Camera_open)
+iv>
+---
+  -Open Video Node
+  -Create Socket
+  -Launch evt cmd Th
+  -Launch poll th
+v>response from "mm_camera" to "mm_camera_intf".
+vi>response from "mm_camera_intf" to "HWI".
+vii>Register "Reg evt Handler" from "HWI" 
+
+                                              
+                                                 Camera HAL Architecture:
+                                                --------------------------
+Link:https://source.android.com/devices/camera
+----------------------------------------------
+Application framework:
+----------------------
+At the application framework level is the app's code, which uses the Camera 2 API to interact with the camera hardware. 
+Internally, this code calls corresponding Binder interfaces to access the native code that interacts with the camera.
+                                          ------
+
+
+                                               
+                                               Binder
+                                                |
+                                                |
+                                                   
+                                                  -------------
+                                                  Android camera AOSP
+                                                  -------------------
+
+AOSP:Android Open Source Project:
+----------------------------------
+1st:Android Framework:
+-----------------------
+Java:
+------
+root@rakesh-desktop:~/gen2/iqpanel_quantum# ls frameworks/base/core/java/android/hardware/
+camera2                 GeomagneticField.java     location                   SensorEventListener2.java  SerialPort.java
+CameraInfo.java         hdmi                      package.html               SensorEventListener.java   soundtrigger
+Camera.java             IConsumerIrService.aidl   radio                      Sensor.java                SystemSensorManager.java
+ConsumerIrManager.java  input                     SensorAdditionalInfo.java  SensorListener.java        TriggerEvent.java
+display                 ISerialManager.aidl       SensorEventCallback.java   SensorManager.java         TriggerEventListener.java
+fingerprint             LegacySensorManager.java  SensorEvent.java           SerialManager.java         usb
+
+JNI:
+----
+root@rakesh-desktop:~/gen2/iqpanel_quantum# ls frameworks/base/core/jni/
+
+2nd:Camera Service:
+-------------------
+
+
+                                                   08/02/2019
+
+link:https://www.youtube.com/watch?v=Lald5txnoHw&t=45s
+------------------------------------------------------
+Camera 2.0 APIS:
+----------------
+6 classes and callback interface
+
+Camera Class:
+------------
+-Contains all methods for camera life cycle.
+-open & release.
+-Access to camera control.
+-preview
+-capture
+-lock and unlock.
+-Actions:StartAutoFocus,StartSmoothZoom & startFaceDetection
+Camera.Parameter Class:
+Camera.Camerainfo Class:Orientation of Front and back camera Image
+Camera.Size:Width and Length of the Image
+Camera.Face:face-id,coordination of left eye,right eye,mouth,outer bounds of the face
+Camera.Area:Rectangular bounds with a weight,Auto focus,Auto White balance,Auto Exposure
+
+
+Android Framework Camera:
+-------------------------------
+                                   Applications
+                                  --------------
+                                       |
+                                       |
+                                 Application FrameWork
+                                 ---------------------
+                                       |
+                                       |
+                                Native libraries
+                                -----------------
+                                       |
+                                       |
+                                  Camera HAL
+                                 ------------
+                                       |
+                                       |
+                                  Camera Driver
+                                 ----------------
+                                       |
+                                       |
+                                  camera Hardware
+---------------------------------------------------------------------------------------
+Camera Subsystem:
+------------------
+                             
+				   Applications
+                                  --------------
+                                       |
+                                       |
+                                  Application Framework
+                                  --------------------
+                                       |
+                                       |                        Hardware Independent
+                                  Camera Services
+                                       |
+                                       |
+                               ---------------------------
+                                  Camera Interface HAL
+                                       |
+                                       |
+                                  Camera Device Driver
+                                       |                         Hardware Dependent
+                                       |
+                                  Camera Hardware
+------------------------------------------------------------------------------------------
+-------------
+Process View:
+-------------
+Camera Service resides inside the Media service
+                                  1st:API
+                                       |
+                                       | Request acces to camera through Binder IPC(ICamera)
+                                       |
+                                  2nd:Camera Service----->resides inside the Media service
+                                       |
+                                       | if the API has all the permission "Camera Service" grant it permission by creating 
+                                       | "Camera Hardware Object(either front facing /back facing camera object)"
+                                       |
+                                  3rd:Back/Front facing Camera
+                                      hardware object
+                                       |
+                                       | System Call
+                                       |
+                                  4th:Kernel Driver
+----------------------
+Inside the Camera App:
+---------------------
+                                 Application Code
+                                       |
+                                       |
+                                 Andoid Framework code Camera.java
+                                       |
+                                       |
+                             ---------------------------
+                             |                         |
+                             |                         |
+                        Core Libraries                JNI
+                             |                         |
+                             |                         | 
+                     Dalvik Virtual Machine        android_hardware_Camera.cpp
+                             |                         |
+                             |                         |
+                             ---------------------------
+                                       |
+                                       |
+                                   Ibinder Interface
+                                       |
+                                       |
+                                   Camera Service
+                                (libcameraservice.so)
+------------------------                                     
+android_hardware_Camera:
+--------------------------
+-allocate memory for JPEG format in Java Memory heap.
+-Creates persistent context for callbacks from native code to Java(JNICameraContext)
+-Holds reference to the Java Camera,Face and Area objects.
+
+root@rakesh-desktop:~/gen2/iqpanel_quantum# find . -iname android_hardware_Camera.cpp
+./frameworks/base/core/jni/android_hardware_Camera.cpp
+
+--------------------
+Ibinders Interfaces:
+--------------------
+ICameraClient:
+--------------
+root@rakesh-desktop:~/gen2/iqpanel_quantum# find . -iname ICameraClient.cpp
+./frameworks/av/camera/ICameraClient.cpp
+
+
+root@rakesh-desktop:~/gen2/iqpanel_quantum# find . -iname ICameraClient*
+----
+----
+----
+./frameworks/av/include/camera/android/hardware/ICameraClient.h
+./frameworks/av/camera/ICameraClient.cpp
+./frameworks/av/camera/aidl/android/hardware/ICameraClient.aidl
+
+ICameraService:
+---------------
+/home/rakesh/gen2/iqpanel_quantum/frameworks/av/include/camera/ICameraServiceProxy.h
+/home/rakesh/gen2/iqpanel_quantum/frameworks/av/camera/ICameraServiceProxy.cpp
+/home/rakesh/gen2/iqpanel_quantum/frameworks/av/camera/aidl/android/hardware/ICameraServiceListener.aidl
+/home/rakesh/gen2/iqpanel_quantum/frameworks/av/camera/aidl/android/hardware/ICameraService.aidl
+/home/rakesh/gen2/iqpanel_quantum/frameworks/av/camera/aidl/android/hardware/ICameraServiceProxy.aidl
+
+ICamera:
+--------
+/home/rakesh/gen2/iqpanel_quantum/frameworks/av/camera/ICamera.cpp
+Camera Service:(libcameraservice.so):
+--------------------------------------
+root@rakesh-desktop:~/gen2/iqpanel_quantum# find . -iname Android.mk | xargs grep -irn "LOCAL_MODULE:= libcameraservice"
+./frameworks/av/services/camera/libcameraservice/Android.mk:83:LOCAL_MODULE:= libcameraservice
+
+
+root@rakesh-desktop:~/gen2/iqpanel_quantum# vim frameworks/av/services/camera/libcameraservice/Android.mk +83
+----
+----
+
+ 25 LOCAL_SRC_FILES :=  \
+ 26     CameraService.cpp \
+ 27     CameraFlashlight.cpp \
+ 28     common/Camera2ClientBase.cpp \
+ 29     common/CameraDeviceBase.cpp \
+ 30     common/CameraModule.cpp \
+ 31     common/FrameProcessorBase.cpp \
+ 32     api1/CameraClient.cpp \
+ 33     api1/Camera2Client.cpp \
+ 34     api1/client2/Parameters.cpp \
+ 35     api1/client2/FrameProcessor.cpp \
+ 36     api1/client2/StreamingProcessor.cpp \
+ 37     api1/client2/JpegProcessor.cpp \
+ 38     api1/client2/CallbackProcessor.cpp \
+ 39     api1/client2/JpegCompressor.cpp \
+ 40     api1/client2/CaptureSequencer.cpp \     -------->These files combinely generates libcameraservice.so "Camera Service" file
+ 41     api1/client2/ZslProcessor.cpp \
+ 42     api2/CameraDeviceClient.cpp \
+ 43     device3/Camera3Device.cpp \
+ 44     device3/Camera3Stream.cpp \
+ 45     device3/Camera3IOStreamBase.cpp \
+ 46     device3/Camera3InputStream.cpp \
+ 47     device3/Camera3OutputStream.cpp \
+ 48     device3/Camera3ZslStream.cpp \
+ 49     device3/Camera3DummyStream.cpp \
+ 50     device3/StatusTracker.cpp \
+ 51     device3/Camera3BufferManager.cpp \
+ 52     gui/RingBufferConsumer.cpp \
+ 53     utils/CameraTraces.cpp \
+ 54     utils/AutoConditionLock.cpp \
+ 55     utils/TagMonitor.cpp
+
+----
+----
+----
+----
+ 83 LOCAL_MODULE:= libcameraservice
+----
+----
+----
+
+----------
+HAL files:
+----------
+camera.h:(HAL file written by Vendors)--->Hardware interface
+--------------------------------------
+root@rakesh-desktop:~/gen2/iqpanel_quantum# find . -iname camera.h
+./system/core/include/system/camera.h
+./kernel/arch/arm/mach-omap1/include/mach/camera.h
+./frameworks/av/include/camera/Camera.h
+./hardware/libhardware/include/hardware/camera.h
+./hardware/libhardware/modules/usbcamera/Camera.h
+./hardware/libhardware/modules/camera/Camera.h
+./external/eigen/demos/opengl/camera.h
+
+camera2.h:
+----------
+root@rakesh-desktop:~/gen2/iqpanel_quantum# find . -iname camera2.h
+./hardware/libhardware/include/hardware/camera2.h
+
+root@rakesh-desktop:~/gen2/iqpanel_quantum# find . -iname camera3.h
+./hardware/libhardware/include/hardware/camera3.h
+
+other possible hal files:
+------------------------
+root@rakesh-desktop:~/gen2/iqpanel_quantum/hardware/libhardware/include/hardware# ls
+activity_recognition.h  bt_gatt_server.h  bt_sock.h        fingerprint.h     hwcomposer_defs.h     memtrack.h   sensors.h
+audio_alsaops.h         bt_gatt_types.h   buzzer.h         fused_location.h  hwcomposer.h          nfc.h        sound_trigger.h
+audio_effect.h          bt_hf_client.h    camera2.h        gatekeeper.h      img_gralloc_public.h  nfc_tag.h    srfhal.h
+audio.h                 bt_hf.h           camera3.h        gps.h             input.h               nvram.h      thermal.h
+audio_policy.h          bt_hh.h           camera_common.h  gps_internal.h    keymaster0.h          powerghal.h  tv_input.h
+bluetooth.h             bt_hl.h           camera.h         gralloc1.h        keymaster1.h          power.h      vehicle_camera.h
+boot_control.h          bt_mce.h          consumerir.h     gralloc.h         keymaster2.h          qemud.h      vehicle.h
+bt_av.h                 bt_pan.h          context_hub.h    hardware.h        keymaster_common.h    qemu_pipe.h  vibrator.h
+bt_common_types.h       bt_rc.h           extapi.h         hdmi_cec.h        keymaster_defs.h      radio.h      vr.h
+bt_gatt_client.h        bt_rtkbt.h        exthwapi.h       hw_auth_token.h   lights.h              rga.h
+bt_gatt.h               bt_sdp.h          fb.h             hwcomposer2.h     local_time_hal.h      rk_fh.h
+
+---------------------------------------------------------------------------------------------------------------------
+-From Android 4.2 version "libcameraservice.so" can talk with 2 HAL files(camera.h & camera2.h)
+
+                                                     libcameraservice.so
+                                                        /\
+                                                       /  \
+                                                      /    \
+                                                     /      \
+                                                camera.h ---------
+                                                          Glue class---Camera2Client,Camera2Device(enables the libcameraservice.so service 
+                                                                     to talk with hal)
+                                                          ---------
+                                                             |
+                                                             |
+                                                         camera2.h
+                                       -------------------------------------
+                                            
+
+      
+-Camera2Client:
+ --------------
+root@rakesh-desktop:~/gen2/iqpanel_quantum# find . -iname *.h | xargs grep -irn Camera2Client
+./frameworks/av/services/camera/libcameraservice/common/Camera2ClientBase.h:17:#ifndef ANDROID_SERVERS_CAMERA_CAMERA2CLIENT_BASE_H
+./frameworks/av/services/camera/libcameraservice/common/Camera2ClientBase.h:18:#define ANDROID_SERVERS_CAMERA_CAMERA2CLIENT_BASE_H
+./frameworks/av/services/camera/libcameraservice/common/Camera2ClientBase.h:31:class Camera2ClientBase :
+./frameworks/av/services/camera/libcameraservice/common/Camera2ClientBase.h:49:    Camera2ClientBase(const sp<CameraService>& cameraService,
+./frameworks/av/services/camera/libcameraservice/common/Camera2ClientBase.h:57:    virtual ~Camera2ClientBase();
+./frameworks/av/services/camera/libcameraservice/api1/Camera2Client.h:17:#ifndef ANDROID_SERVERS_CAMERA_CAMERA2CLIENT_H
+./frameworks/av/services/camera/libcameraservice/api1/Camera2Client.h:18:#define ANDROID_SERVERS_CAMERA_CAMERA2CLIENT_H
+./frameworks/av/services/camera/libcameraservice/api1/Camera2Client.h:22:#include "common/Camera2ClientBase.h"
+./frameworks/av/services/camera/libcameraservice/api1/Camera2Client.h:48:class Camera2Client :
+./frameworks/av/services/camera/libcameraservice/api1/Camera2Client.h:49:        public Camera2ClientBase<CameraService::Client>
+./frameworks/av/services/camera/libcameraservice/api1/Camera2Client.h:89:    Camera2Client(const sp<CameraService>& cameraService,
+./frameworks/av/services/camera/libcameraservice/api1/Camera2Client.h:99:    virtual ~Camera2Client();
+./frameworks/av/services/camera/libcameraservice/api1/Camera2Client.h:117:     * Interface used by independent components of Camera2Client.
+./frameworks/av/services/camera/libcameraservice/api1/client2/CallbackProcessor.h:31:class Camera2Client;
+./frameworks/av/services/camera/libcameraservice/api1/client2/CallbackProcessor.h:44:    CallbackProcessor(sp<Camera2Client> client);
+./frameworks/av/services/camera/libcameraservice/api1/client2/CallbackProcessor.h:58:    wp<Camera2Client> mClient;
+./frameworks/av/services/camera/libcameraservice/api1/client2/CallbackProcessor.h:82:    status_t processNewCallback(sp<Camera2Client> &client);
+./frameworks/av/services/camera/libcameraservice/api1/client2/FrameProcessor.h:33:class Camera2Client;
+./frameworks/av/services/camera/libcameraservice/api1/client2/FrameProcessor.h:42:    FrameProcessor(wp<CameraDeviceBase> device, sp<Camera2Client> client);
+./frameworks/av/services/camera/libcameraservice/api1/client2/FrameProcessor.h:48:    wp<Camera2Client> mClient;
+./frameworks/av/services/camera/libcameraservice/api1/client2/FrameProcessor.h:54:    void processNewFrames(const sp<Camera2Client> &client);
+./frameworks/av/services/camera/libcameraservice/api1/client2/FrameProcessor.h:60:            const sp<Camera2Client> &client);
+./frameworks/av/services/camera/libcameraservice/api1/client2/FrameProcessor.h:64:            const sp<Camera2Client> &client);
+./frameworks/av/services/camera/libcameraservice/api1/client2/FrameProcessor.h:110:    void callbackFaceDetection(sp<Camera2Client> client,
+./frameworks/av/services/camera/libcameraservice/api1/client2/ZslProcessor.h:34:class Camera2Client;
+./frameworks/av/services/camera/libcameraservice/api1/client2/ZslProcessor.h:49:    ZslProcessor(sp<Camera2Client> client, wp<CaptureSequencer> sequencer);
+....
+...
+
+-Camera2Device:
+ -------------
+Metadata:
+---------
+-2 kinds of Meta data:
+ --------------------
+ static & frame based
+ static does not change(available without opening the camera(Camera info class))*_INFO--->are static ones
+
+-----------------------------------
+android open source AOSP Structure:(Iqpanel_quantum_source_code)
+-----------------------------------
+1st:Android Framework:
+----------------------
+Java:
+-----
+root@rakesh-desktop:~/gen2/iqpanel_quantum# ls frameworks/base/core/java/android/hardware/
+camera2                 GeomagneticField.java     location                   SensorEventListener2.java  SerialPort.java
+CameraInfo.java         hdmi                      package.html               SensorEventListener.java   soundtrigger
+Camera.java             IConsumerIrService.aidl   radio                      Sensor.java                SystemSensorManager.java
+ConsumerIrManager.java  input                     SensorAdditionalInfo.java  SensorListener.java        TriggerEvent.java
+display                 ISerialManager.aidl       SensorEventCallback.java   SensorManager.java         TriggerEventListener.java
+fingerprint             LegacySensorManager.java  SensorEvent.java           SerialManager.java         usb
+
+JNI:
+----
+root@rakesh-desktop:~/gen2/iqpanel_quantum# find frameworks/base/core/ -type d -iname jni
+frameworks/base/core/jni       
+...
+...
+...
+
+Camera Service:
+---------------
+root@rakesh-desktop:~/gen2/iqpanel_quantum# find . -type d -iname libcameraservice
+./frameworks/av/services/camera/libcameraservice
+
+Ibinder Interface:
+-------------------
+Icamera:
+---------
+root@rakesh-desktop:~/gen2/iqpanel_quantum# find . -iname icamera.h
+./frameworks/av/include/camera/android/hardware/ICamera.h
+
+Ibinder implementation:
+-----------------------
+root@rakesh-desktop:~/gen2/iqpanel_quantum# find . -iname icamera.cpp
+./frameworks/av/camera/ICamera.cpp
+
+Camera HAL interface:
+---------------------
+root@rakesh-desktop:~/gen2/iqpanel_quantum# find . -iname camera2.h
+./hardware/libhardware/include/hardware/camera2.h
+
+Camera HAL implementation by different vendor:
+----------------------------------------------
+root@rakesh-desktop:~/gen2/iqpanel_quantum# find hardware/*/ -type d -iname camera 
+hardware/libhardware/modules/camera
+hardware/qcom/camera
+hardware/rockchip/camera------------------------------------>This is the implementation for iqpanel_quantum
+hardware/ti/omap4-aah/camera
+hardware/ti/omap4xxx/camera
+
+
+Camera Metadata:
+-----------------
+root@rakesh-desktop:~/gen2/iqpanel_quantum# find . -iname camera_metadata_tags.h
+./system/media/camera/include/system/camera_metadata_tags.h
+
+
+          
