@@ -1,0 +1,100 @@
+1. Linux Kernel Configure by "make menuconfig"
+  1.1 USB Driver Configure for UC15/UC20/EC20
+    Device Drivers  --->
+      [*] USB support  --->
+        <*> USB Serial Converter support
+          [*] USB Generic Serail Driver
+          [*] USB Driver for GSM and CMDA modems
+          
+ 		drivers/usb/serial/option.c
+		#if 1 //Added by Quectel
+			{ USB_DEVICE(0x05C6, 0x9090) }, /* Quectel UC15 */
+			{ USB_DEVICE(0x05C6, 0x9003) }, /* Quectel UC20 */
+			{ USB_DEVICE(0x05C6, 0x9215) }, /* Quectel EC20 */
+			{ USB_DEVICE(0x2C7C, 0x0125) }, /* Quectel EC25 */
+			{ USB_DEVICE(0x2C7C, 0x0121) }, /* Quectel EC21 */
+		#endif
+
+		#if 1 //Added by Quectel
+			//Quectel UC20's interface 4 can be used as USB Network device
+			if (serial->dev->descriptor.idVendor == cpu_to_le16(0x05C6) && serial->dev->descriptor.idProduct == cpu_to_le16(0x9003)
+				&& serial->interface->cur_altsetting->desc.bInterfaceNumber >= 4)
+				return -ENODEV;
+			//Quectel EC20's interface 4 can be used as USB Network device
+			if (serial->dev->descriptor.idVendor == cpu_to_le16(0x05C6) && serial->dev->descriptor.idProduct == cpu_to_le16(0x9215)
+				&& serial->interface->cur_altsetting->desc.bInterfaceNumber >= 4)
+				return -ENODEV;
+			//Quectel EC25&EC21 's interface 4 can be used as USB Network device
+			if (serial->dev->descriptor.idVendor == cpu_to_le16(0x2C7C)
+				&& serial->interface->cur_altsetting->desc.bInterfaceNumber >= 4)
+				return -ENODEV;
+		#endif
+		
+		drivers/usb/serial/usb_wwan.c
+		#if 1 //Added by Quectel for Zero Packet
+			if (dir == USB_DIR_OUT) {
+				struct usb_device_descriptor *desc = &serial->dev->descriptor;
+				if (desc->idVendor == cpu_to_le16(0x05C6) && desc->idProduct == cpu_to_le16(0x9090))
+					urb->transfer_flags |= URB_ZERO_PACKET;
+				if (desc->idVendor == cpu_to_le16(0x05C6) && desc->idProduct == cpu_to_le16(0x9003))
+					urb->transfer_flags |= URB_ZERO_PACKET;
+				if (desc->idVendor == cpu_to_le16(0x05C6) && desc->idProduct == cpu_to_le16(0x9215))
+					urb->transfer_flags |= URB_ZERO_PACKET;
+				if (desc->idVendor == cpu_to_le16(0x2C7C))
+					urb->transfer_flags |= URB_ZERO_PACKET;
+			}
+		#endif
+		
+  1.2 USB Driver Configure for UG95/UG96
+    Device Drivers  --->
+      [*] USB support  --->
+        <*> USB Modem (CDC ACM) support
+  
+	  drivers/usb/class/cdc-acm.c
+	  #if 1 //add by Quectel
+			if (usb_dev->descriptor.idVendor == 0x1519 && usb_dev->descriptor.idProduct == 0x0020)
+				snd->urb->transfer_flags |= URB_ZERO_PACKET;
+		#endif
+  
+  1.3 PPP Configure
+    Device Drivers  --->
+      [*] Network device support  --->
+        <*> PPP (point-to-point protocol) support
+        <*> PPP support for async serial ports
+        <*> PPP support for sync tty ports
+        <*> PPP Deflate compression
+
+2. init.rc Configure
+  add service ril-daemon and service quectel-pppd in init.rc, as below:
+  service ril-daemon /system/bin/rild -l /system/lib/libreference-ril.so
+    class main
+    socket rild stream 660 root radio 
+    socket rild-debug stream 666 radio system 
+    user root 
+    group radio cache inet misc audio sdcard_rw log
+
+  the init.rc 's location depend on your project, for example:
+    system/core/rootdir/init.rc
+    device/fsl/imx6/init.rc
+    device/ti/am335xevm_sk/init.am335xevm.rc
+    device/generic/x86/init.rc
+    device/samsung/smdkv210/init.rc
+    
+3. modifying the Right of service ril-daemon
+    serivce ril-daemon require root privilege. 
+    comment out the function switchUser() in the file hardware/ril/rild/rild.c. as below:
+    OpenLib:
+    #endif
+      //switchUser();
+      
+4. extract Quectel's reference-ril.zip to hardware/ril/reference-ril/
+
+5. re-build your android source code
+
+6. check Quectel's RIL output files
+		system/bin/rild <-> hardware/ril/rild/
+		system/bin/pppd <-> external/ppp/pppd/	
+		system/bin/chat <-> hardware/ril/reference-ril/
+		system/lib/libreference-ril.so <-> hardware/ril/reference-ril/
+		system/etc/ppp/ip-down <-> hardware/ril/reference-ril/
+		system/etc/ppp/ip-up <-> hardware/ril/reference-ril/	

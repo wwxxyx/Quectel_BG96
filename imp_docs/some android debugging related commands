@@ -1,0 +1,110 @@
+******************************** debugging related command************************************
+--->connect your android device with system now and run following command:
+
+1)To check the device has connected : adb devices
+
+2)To install the app: adb install
+
+3)To uninstall the app: adb uninstall
+
+4)To see all the logs: adb logcat
+
+5)To see the log from specific device: adb -s logcat
+
+6)To see thread logs: adb logcat -v thread
+
+7)to see the radio/telephony logs: adb logcat -b radio
+
+8)To see the device events: adb logcat event
+
+9)To see specific messages, you can use ActivityManager: adb logcat ActivityManager:I MyApp:D *:S
+
+10)To filter out the logs of different level: adb logcat *:W
+
+11)To enter into the device shell: adb shell or adb -s shell
+
+12)Now you can user most of the linux command like:
+              ls -> list of files
+              ps -> to see the process running
+              cat -> check the file content
+              cd dir/ -> Go to different location in device
+              exit -> To exit from code command
+
+13)To see colorful logs: adb logcat -c
+
+14)To save the logs in sdcard:adb root
+              adb logcat -d -f /sdcard/logcat.log *:V
+
+15)Clear the device logs: adb logact -c
+
+16)reboot the device: adb reboot
+
+17)To record the screen: adb screenrecord /sdcard/filename.mp4
+adb pull /sdcard/filename.mp4
+
+***Crash/Error Logs:
+   ----------------
+Application Not Responding(ANR):
+---------------------------------
+An ANR happens when some long operation takes place in the “main” thread. This is the event loop thread, and if it is busy, Android cannot process any further GUI events in the application, and thus throws up an ANR dialog.
+pull the anr file, when file created:
+adb root (maybe you don’t need to run it)
+adb pull /data/data/(Your Package)/traces.txt
+OR
+adb shell “cp /data/anr/traces.txt /sdcard/anr_trace.txt”
+adb pull /sdcard/anr_trace.txt
+
+***CRASH Log:
+   ---------
+Whenever application get crash on device, it generate a log file which you can get from here:
+adb shell “cp /data/tombstones/tombstone_00 /sdcard/tombstones_00.txt”
+adb pull /sdcard/tombstones_00.txt
+OR
+adb pull /data/tombstones
+adb pull /data/tombstones/tombstone_00
+adb pull /data/tombstones/tombstone_01
+
+***Get Memory Logs:
+   ----------------
+1)Get Memory Information: adb shell dumpsys meminfo ‘your apps package name’
+                           OR
+                          adb shell dumpsys meminfo ‘your apps package name’ -d
+
+2)Memory Usage: adb shell cat /proc/meminfo
+
+3)Get All process memory Information: adb shell dumpsys meminfo
+
+4)Get Available or free memory information: adb shell vmstat
+adb shell busybox free -m
+
+5)Get detail information:
+adb shell top
+Another way to get the information:
+adb shell cat /proc/meminfo
+
+************************************************************************************
+**Other Useful Debug Commands:
+  ---------------------------
+1)Get All battery information: adb shell dumpsys battery
+
+2)Get Wifi information: adb shell dumpsys wifi
+
+3)Get cpu inforation: adb shell dumpsys cpuinfo
+
+4)Check all the broadcasting message: adb shell dumpsys activity broadcasts
+
+5)If you want to see, which services available: adb shell service list
+
+6)To see all the activity on device: adb shell dumpsys activity
+
+7)If you want to see, what the mean of each value in dumpsys use -h as:
+adb shell dumpsys activity -h
+adb shell dumpsys meminfo -h
+adb shell dumpsys batteryinfo -h
+
+8)If you want to check for the error in you app:
+ adb shell dumpsys | grep myapp | grep Error
+
+9)If you want to copy the heap dump from emulator:
+adb pull /data/misc/heap-dump-tm-pid.hprof address.hprof
+********************************************************************************************************

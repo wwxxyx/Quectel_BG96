@@ -1,0 +1,562 @@
+-Through TCP/IP AT commands, the host can configure a PDP context
+-activate/deactivate the PDP context.
+-start/close socket service and send/receive data via socket service.
+PDP context:
+------------
+A PDP context specifies access to an external packet-switching network. The data associated with the PDP context contains information such as the 
+type of packet-switching network, the MS PDP address that is the IP address, the reference of GGSN, and the requested QoS.
+
+1st:AT+CPIN?---->sim status
+------------
+[2019-01-16 17:55:35:337_S:] AT+CPIN?
+[2019-01-16 17:55:35:337_R:] AT+CPIN?
+[2019-01-16 17:55:35:337_R:] +CPIN: READY----------------------->SIM status
+
+[2019-01-16 17:55:35:337_R:] OK
+
+2nd:AT+CREG?--->CS domain service check
+-------------
+[2019-01-16 17:59:03:182_S:] AT+CREG?
+[2019-01-16 17:59:03:182_R:] AT+CREG?
+[2019-01-16 17:59:03:182_R:] +CREG: 0,1--- Registered, home network--------------------------------------------->Module has registered to CS domain service
+
+                                    |
+				    |
+				Disable network
+				registration 
+				unsolicited 
+				result code
+
+
+[2019-01-16 17:59:03:182_R:] OK
+
+3rd:AT+CGREG?--->PS domain service check
+--------------
+[2019-01-16 18:08:10:950_S:] AT+CGREG?
+[2019-01-16 18:08:10:966_R:] AT+CGREG?
+[2019-01-16 18:08:10:966_R:] +CGREG: 0,1-- Registered, home network .The UE is in GMM state GMM-REGISTERED or GMM-ROUTING-AREA-UPDATING-
+                                           INITIATED INITIATED on the home PLMN. 
+                                     |
+                                     |
+				     |
+				     |
+				Disable network
+				registration 
+				unsolicited 
+				result code
+
+[2019-01-16 18:08:10:966_R:] OK
+
+
+4th:Configure PDP context.
+-----
+AT+QICSGP------->Configure Context Profile(Configure APN, user name, password,auth type)
+-----------
+[2019-01-16 18:39:17:545_S:] AT+QICSGP=?
+[2019-01-16 18:39:17:545_R:] AT+QICSGP=?
+[2019-01-16 18:39:17:545_R:] +QICSGP: (1-16),(1-3),<APN>,<username>,<password>,(0-3)
+
+                        <contextid>     Integer type, context profile ID, range is 1-16
+			<contexttype>   Integer type, protocol type  
+                                        1 IPV4
+			<apn>           String type, access point name-->airtelgprs.com
+			<username>      String type, user name
+			<password>      String type, password
+			<authentication>Integer type, the Authentication methods
+                            0 - NONE
+                            1 - PAP  
+                            2 - CHAP 
+                            3 - PAH_OR_CHAP
+-----------------------------------------------------------							
+							
+[2019-01-16 18:44:43:983_S:] AT+QICSGP=1---->(1=<contextid>)
+[2019-01-16 18:44:43:983_R:] AT+QICSGP=1
+[2019-01-16 18:44:43:983_R:] +QICSGP: 1,"airtelgprs.com","","",0
+                                      |          |        |  | |
+                                      |          |        |  | |
+                                      |          |        |  | Authentication type
+                                      |          |        |  | 
+                                contexttype	APN	user pwd
+                                                        name								
+-------------------------------------------------------------
+AT+QICSGP=1,1,"UNINET","","",1 //Configure context 1. APN is “UNINET” for China Unicom.
+-------------------------------------------------------------------------------
+
+5th:Configure Qos???
+-------------------
+Not able to configure
+
+
+6th:Activating the PDP context:
+-------------------------------
+AT+QIACT:
+---------
+examples:
+---------
+[2019-01-16 19:13:50:467_S:] AT+QIACT=?
+[2019-01-16 19:13:50:467_R:] AT+QIACT=?
+[2019-01-16 19:13:50:467_R:] +QIACT: (1-16)
+
+[2019-01-16 19:13:50:467_R:] OK
+---
+
+[2019-01-16 19:14:45:328_S:] AT+QIACT?
+[2019-01-16 19:14:45:328_R:] AT+QIACT?----->returns currently activated PDP contexts
+[2019-01-16 19:14:45:328_R:] OK
+----
+[2019-01-16 19:16:54:098_S:] AT+QIACT=1---->1 context id has APN="airtelgprs.com"
+[2019-01-16 19:16:54:098_R:] AT+QIACT=1----->Activate the configured PDP context.
+[2019-01-16 19:16:54:848_R:] OK
+---
+
+7th:Query IP address of the PDP:
+-------------------------------
+Now check for the activated PDP contexts.
+[2019-01-16 19:19:28:618_S:] AT+QIACT?
+[2019-01-16 19:19:28:618_R:] AT+QIACT?
+[2019-01-16 19:19:28:618_R:] +QIACT: 1,1,1,"100.76.185.114"
+                                     | | |    |
+				     | | |  Local IP address of the BG96 module
+				     | | |  after PDP context is activated.
+				     | | |
+				     | | protocol
+                      		     | | 1->Ipv4
+				     | |
+				     | contextstate
+				     | 0-Deactivated
+				     | 1-Activated
+				     |
+				contextid
+				(1-16)
+[2019-01-16 19:19:28:618_R:] OK
+
+
+8th:Open Connection:
+--------------------
+<service_type> is “TCP LISTENER”-->
+----------------------------------
+-module acts as TCP Server.
+-After accepting a new TCP connection, the module will automatically specify a <connectID> and report a URC as “+QIURC:
+ “incoming”,<connectID>,<serverID>,<remoteIP>,<remote_port>”. The range of <connectID> is 0-11.
+AT+QIOPEN:
+----------
+
+[2019-01-16 19:33:17:378_S:] AT+QIOPEN=?
+[2019-01-16 19:33:17:394_R:] AT+QIOPEN=?
+[2019-01-16 19:33:17:394_R:] +QIOPEN: (1-16),(0-11),"TCP/UDP/TCP LISTENER/UDP SERVICE","<IP_address>/<domain_name>",<remote_port>,<local_port>,(0-2)
+				
+                                 (1-16)-->PDPContextid(For this example 1("airtelgprs.com"))
+				                 (0-11)-->connectid
+			                     "TCP/UDP/TCP LISTENER/UDP SERVICE"--->Service type
+                                 <IP_address>-->If <service_type> is TCP or UDP, it indicates the IP address of remote server, such as
+                                                “220.180.239.212”.
+                                                If <service_type> is TCP LISTENER or UDP SERVICE, please enter “127.0.0.1”.
+                                 <remote_port>-->The port of the remote server, only valid when <service_type> is “TCP” or “UDP”.
+                                                 The range is 0-65535.	
+	                             <local_port>--->The local port. The range is 0-65535.
+                                                 If <service_type> is “TCP LISTENER” or “UDP SERVICE”, this parameter must be specified.
+                                                 If <service_type> is “TCP” or “UDP”, if <local_port> is 0, then the local port will be
+                                                 assigned automatically. Otherwise the local port is assigned as specified.
+                                 (0-2)---------->err
+                                 <access_mode>---->0-->Buffer access mode-->"AT+QIRD" command is needed to read response.
+                                                   1-->Direct push mode--->No "AT+QIRD" command is required to read response
+                                                   2-->Transparent access mode
+[2019-01-16 19:33:17:394_R:] OK
+-------
+
+[2019-01-16 19:34:45:092_S:] AT+QIOPEN?
+[2019-01-16 19:34:45:107_R:] AT+QIOPEN?
+[2019-01-16 19:34:45:107_R:] OK
+-------
+example1:TCP Client Works in Direct Push Mode
+---------
+AT+QIOPEN=1,0,"TCP","www.google.com",80,0,1 ////Context is 1 and <connectID> is 0.
+
+[2019-01-17 12:45:23:365_S:] AT+QIOPEN=1,0,"TCP","www.google.com",80,0,1
+[2019-01-17 12:45:23:369_R:] AT+QIOPEN=1,0,"TCP","www.google.com",80,0,1
+[2019-01-17 12:45:23:369_R:] OK
+
+[2019-01-17 12:45:24:241_R:] +QIOPEN: 0,0
+
+
+
+example2:TCP Client Works in Transparent access mode
+--------
+AT+QIOPEN=1,0,"TCP","www.google.com",80,0,2
+
+
+9th:Query Socket Service Status:(important to know whether the TCP/UDP is working or not)
+--------------------------------
+AT+QISTATE:
+----------
+examples:
+---------
+AT+QISTATE=<query_type>,<contextID>:
+------------------------------------
+AT+QISTATE=0,1   //it will show the connection status for the specified contexid
+           | |
+	   | |
+	   | for this example PDPContextID = 1 is for "airtelgprs.com"(PDPContext info will be known from "AT+QIACT?" command )
+	   |
+	   |
+	   |
+	   0-->Show connection status for ContextID--(PDPContext)
+	   1-->Show connection status for connection ID(Socket Service Index)
+
+[2019-01-17 12:50:48:643_S:] AT+QISTATE=0,1
+[2019-01-17 12:50:48:647_R:] AT+QISTATE=0,1
+[2019-01-17 12:50:48:647_R:] +QISTATE: 0,"TCP","172.217.27.228",80,10451,4,1,0,1,"usbmodem"
+
+	   
+overall idea:
+-------------
+                                         1st:AT+QICSGP------------->Configure the PDPcontext
+					                     2nd:AT+QIACT-------------->Activate PDPContext
+					                     3rd:AT+QIACT?-------------->Query the PDPcontext.
+					                     4th:AT+QIOPEN--------------->Open Socket as(TCP LISTNER,UDP SERVICE,UDP or TCP) with   
+                                                                      connectionID, IP_address & ports
+					                     5th:AT+QISTATE-------------->Query the Socket about service type(TCP LISTNER,UDP SERVICE,UDP or 
+                                                                     TCP or TCP INCOMING),IP address, Connection ID etc.
+					                     6th:AT+QISEND---------------->Send data and recieve response as Direct push mode or access mode
+					                     7th:AT+QICLOSE--------------->close the connection
+
+					 
+					 
+					 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                       --------------------------------------
+													   TCP Client work in Direct Access Mode:
+													   --------------------------------------
+													   
+													   1st:Configure PDPContext(APN,USerId,PAssword)
+/* Use AT+CPIN? to query the SIM status */
+[2019-01-17 16:37:46:123_S:] AT+CPIN?
+[2019-01-17 16:37:46:125_R:] AT+CPIN?
+[2019-01-17 16:37:46:125_R:] +CPIN: READY
+
+[2019-01-17 16:37:46:125_R:] OK
+
+/* Use AT+CREG?/AT+CGREG? to query network registration status */
+[2019-01-17 16:37:46:127_S:] AT+CREG?
+[2019-01-17 16:37:46:129_R:] AT+CREG?
+[2019-01-17 16:37:46:129_R:] +CREG: 0,1
+
+[2019-01-17 16:37:46:129_R:] OK
+[2019-01-17 16:37:46:132_S:] AT+CGREG?
+[2019-01-17 16:37:46:135_R:] AT+CGREG?
+[2019-01-17 16:37:46:135_R:] +CGREG: 0,1
+
+[2019-01-17 16:37:46:135_R:] OK
+
+/* Use AT+QICSGP=1,1,"airtelgprs.com","","",0 to set APN as "airtelgprs.com",user name as "",password as ""*/
+[2019-01-17 16:37:46:137_S:] AT+QICSGP=1,1,"airtelgprs.com","","",0
+[2019-01-17 16:37:46:138_R:] AT+QICSGP=1,1,"airtelgprs.com","","",0
+[2019-01-17 16:37:46:146_R:] OK
+
+/* Query the status of the context profile */
+[2019-01-17 16:37:46:148_S:] AT+QIACT?
+[2019-01-17 16:37:46:150_R:] AT+QIACT?
+[2019-01-17 16:37:46:150_R:] OK
+
+/* Activate context profile */
+[2019-01-17 16:37:46:158_S:] AT+QIACT=1
+[2019-01-17 16:37:46:161_R:] AT+QIACT=1
+[2019-01-17 16:37:46:987_R:] OK
+
+/* Query the status of the context profile */
+[2019-01-17 16:37:46:993_S:] AT+QIACT?
+[2019-01-17 16:37:46:996_R:] AT+QIACT?
+[2019-01-17 16:37:46:997_R:] +QIACT: 1,1,1,"100.78.25.235"
+
+[2019-01-17 16:37:46:997_R:] OK
+---------------------------------------------------------------------
+                                                    2nd:Connection creation(Creating Socket with Remote and local IP and Port)
+													    Service type-->TCP
+														access mode--->Direct Push Mode
+/* Use ATV1 to set the response format */
+[2019-01-17 16:39:21:147_S:] ATV1
+[2019-01-17 16:39:21:150_R:] ATV1
+[2019-01-17 16:39:21:150_R:] OK
+
+/* Use AT+QIOPEN=1,0,"TCP","220.180.239.212",8009,0,1 to connect to a TCP server (IP address: 220.180.239.212:8009). */
+[2019-01-17 16:39:21:160_S:] AT+QIOPEN=1,0,"TCP","220.180.239.212",8009,0,1
+[2019-01-17 16:39:21:162_R:] AT+QIOPEN=1,0,"TCP","220.180.239.212",8009,0,1
+[2019-01-17 16:39:21:162_R:] OK
+
+[2019-01-17 16:39:22:041_R:] +QIOPEN: 0,0
+
+[2019-01-17 16:39:22:044_R:] DSR:0 CTS:0 (RI:1) DCD:0
+
+[2019-01-17 16:39:22:163_R:] DSR:0 CTS:0 (RI:0) DCD:0
+----------------------------------------------------------------------
+                                                           3rd:Data Sending & receiving Response
+
+/* Use AT+QISEND=0 to send data to server, ">" from the UART or USB port indicates the following input data is considered as data to be sent.
+ After receiving ">", input data (TEST), the maximum length of the data is 1460, the data beyond 1460 will be omitted. Then use <CTRL+Z> to send data. 
+ When receive SEND OK means the data has been sent */
+[2019-01-17 16:40:16:627_S:] AT+QISEND=0
+[2019-01-17 16:40:16:630_R:] AT+QISEND=0
+[2019-01-17 16:40:16:630_R:] > hi
+[2019-01-17 16:40:16:835_R:] SEND OK
+
+/* Use AT+QISEND=0,0 to query whether all the data have been sent out */
+[2019-01-17 16:40:16:839_S:] AT+QISEND=0,0
+[2019-01-17 16:40:16:841_R:] AT+QISEND=0,0
+[2019-01-17 16:40:16:842_R:] +QISEND: 2,0,2
+
+[2019-01-17 16:40:16:842_R:] OK
+[2019-01-17 16:40:17:850_S:] AT+QISEND=0,0
+[2019-01-17 16:40:17:854_R:] AT+QISEND=0,0
+[2019-01-17 16:40:17:854_R:] +QISEND: 2,0,2
+
+[2019-01-17 16:40:17:854_R:] OK
+
+[2019-01-17 16:40:17:920_R:] +QIURC: "recv",0,2
+[2019-01-17 16:40:17:920_R:] hi
+
+[2019-01-17 16:40:17:924_R:] DSR:0 CTS:0 (RI:1) DCD:0
+
+[2019-01-17 16:40:18:043_R:] DSR:0 CTS:0 (RI:0) DCD:0
+[2019-01-17 16:40:18:861_S:] AT+QISEND=0,0
+[2019-01-17 16:40:18:863_R:] AT+QISEND=0,0
+[2019-01-17 16:40:18:864_R:] +QISEND: 2,2,0
+
+[2019-01-17 16:40:18:864_R:] OK
+
+
+------------------------------------------------------------------------------
+                                                             step 4: to close TCP/IP connection
+/* Use ATE1 to enable echo mode */
+[2019-01-17 16:53:32:553_S:] ATE1
+[2019-01-17 16:53:32:556_R:] ATE1
+[2019-01-17 16:53:32:556_R:] OK
+
+/* Use AT+QICLOSE=0 to close the connection of TCP/UDP */
+[2019-01-17 16:53:32:558_S:] AT+QICLOSE=0
+[2019-01-17 16:53:32:561_R:] AT+QICLOSE=0
+[2019-01-17 16:53:42:562_R:] OK
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+													   --------------------------------------
+													   TCP Client work in Buffer Access Mode:
+													   --------------------------------------
+													   1st:Configure PDPContext(APN,USerId,PAssword)
+----
+/* Use AT+CPIN? to query the SIM status */
+[2019-01-17 17:43:27:016_S:] AT+CPIN?
+[2019-01-17 17:43:27:018_R:] AT+CPIN?
+[2019-01-17 17:43:27:018_R:] +CPIN: READY
+
+[2019-01-17 17:43:27:018_R:] OK
+
+/* Use AT+CREG?/AT+CGREG? to query network registration status */
+[2019-01-17 17:43:27:020_S:] AT+CREG?
+[2019-01-17 17:43:27:024_R:] AT+CREG?
+[2019-01-17 17:43:27:024_R:] +CREG: 0,1
+
+[2019-01-17 17:43:27:024_R:] OK
+[2019-01-17 17:43:27:025_S:] AT+CGREG?
+[2019-01-17 17:43:27:027_R:] AT+CGREG?
+[2019-01-17 17:43:27:027_R:] +CGREG: 0,1
+
+[2019-01-17 17:43:27:027_R:] OK
+
+/* Use AT+QICSGP=1,1,"airtelgprs.com","","",0 to set APN as "airtelgprs.com",user name as "",password as ""*/
+[2019-01-17 17:43:27:030_S:] AT+QICSGP=1,1,"airtelgprs.com","","",0
+[2019-01-17 17:43:27:032_R:] AT+QICSGP=1,1,"airtelgprs.com","","",0
+[2019-01-17 17:43:27:040_R:] OK
+
+/* Query the status of the context profile */
+[2019-01-17 17:43:27:042_S:] AT+QIACT?
+[2019-01-17 17:43:27:044_R:] AT+QIACT?
+[2019-01-17 17:43:27:044_R:] OK
+
+/* Activate context profile */
+[2019-01-17 17:43:27:052_S:] AT+QIACT=1
+[2019-01-17 17:43:27:055_R:] AT+QIACT=1
+[2019-01-17 17:43:27:768_R:] OK
+
+/* Query the status of the context profile */
+[2019-01-17 17:43:27:774_S:] AT+QIACT?
+[2019-01-17 17:43:27:778_R:] AT+QIACT?
+[2019-01-17 17:43:27:778_R:] +QIACT: 1,1,1,"100.84.193.137"
+
+[2019-01-17 17:43:27:778_R:] OK
+------------------------------------------------
+
+                                                        2nd:Connection creation(Creating Socket with Remote and local IP and Port)
+													    Service type-->TCP
+														access mode--->Buffer Access Mode
+/* Use ATV1 to set the response format */
+[2019-01-17 17:45:44:768_S:] ATV1
+[2019-01-17 17:45:44:770_R:] ATV1
+[2019-01-17 17:45:44:770_R:] OK
+
+/* Use AT+QIOPEN=1,0,"TCP","220.180.239.212",8009,0,0 to connect to a TCP server (IP address: 220.180.239.212:8009). */
+[2019-01-17 17:45:44:779_S:] AT+QIOPEN=1,0,"TCP","220.180.239.212",8009,0,0
+[2019-01-17 17:45:44:782_R:] AT+QIOPEN=1,0,"TCP","220.180.239.212",8009,0,0
+[2019-01-17 17:45:44:782_R:] OK
+
+[2019-01-17 17:45:45:764_R:] +QIOPEN: 0,0
+
+---------------------------------------------
+                                                         3rd:Data Sending & receiving Response
+/* Use AT+QISEND=0 to send data to server, ">" from the UART or USB port indicates the following input data is considered as data to be sent. 
+After receiving ">", input data (TEST), the maximum length of the data is 1460, the data beyond 1460 will be omitted. 
+Then use <CTRL+Z> to send data. When receive SEND OK means the data has been sent */
+[2019-01-17 17:53:02:326_S:] AT+QISEND=0
+[2019-01-17 17:53:02:328_R:] AT+QISEND=0
+[2019-01-17 17:53:02:328_R:] > ho
+[2019-01-17 17:53:02:532_R:] SEND OK
+
+/* Use AT+QISEND=0,0 to query whether all the data have been sent out */
+[2019-01-17 17:53:02:536_S:] AT+QISEND=0,0
+[2019-01-17 17:53:02:538_R:] AT+QISEND=0,0
+[2019-01-17 17:53:02:538_R:] +QISEND: 4,2,2
+
+[2019-01-17 17:53:02:538_R:] OK
+
+[2019-01-17 17:53:03:412_R:] DSR:0 CTS:0 (RI:1) DCD:0
+
+[2019-01-17 17:53:03:413_R:] +QIURC: "recv",0
+
+[2019-01-17 17:53:03:532_R:] DSR:0 CTS:0 (RI:0) DCD:0
+[2019-01-17 17:53:03:548_S:] AT+QISEND=0,0
+[2019-01-17 17:53:03:550_R:] AT+QISEND=0,0
+[2019-01-17 17:53:03:551_R:] +QISEND: 4,4,0
+
+[2019-01-17 17:53:03:551_R:] OK
+[2019-01-17 17:53:03:559_S:] AT+QIRD=0
+[2019-01-17 17:53:03:562_R:] AT+QIRD=0
+[2019-01-17 17:53:03:562_R:] +QIRD: 2
+[2019-01-17 17:53:03:562_R:] ho
+
+[2019-01-17 17:53:03:562_R:] OK
+
+---------------------------------------------
+                                                           step 4: to close TCP/IP connection
+
+/* Use ATE1 to enable echo mode */
+[2019-01-17 17:57:42:159_S:] ATE1
+[2019-01-17 17:57:42:161_R:] ATE1
+[2019-01-17 17:57:42:161_R:] OK
+
+/* Use AT+QICLOSE=0 to close the connection of TCP/UDP */
+[2019-01-17 17:57:42:163_S:] AT+QICLOSE=0
+[2019-01-17 17:57:42:166_R:] AT+QICLOSE=0
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+[2019-01-17 18:08:13:705_S:] AT+CPIN?
+[2019-01-17 18:08:13:707_R:] AT+CPIN?
+[2019-01-17 18:08:13:707_R:] +CPIN: READY
+
+[2019-01-17 18:08:13:707_R:] OK
+[2019-01-17 18:08:41:593_S:] AT+CREG?
+[2019-01-17 18:08:41:597_R:] AT+CREG?
+[2019-01-17 18:08:41:597_R:] +CREG: 0,1
+
+[2019-01-17 18:08:41:597_R:] OK
+[2019-01-17 18:09:39:624_S:] AT+QICSGP=1,1,"airtelgprs.com","","",0
+[2019-01-17 18:09:39:627_R:] AT+QICSGP=1,1,"airtelgprs.com","","",0
+[2019-01-17 18:09:39:634_R:] OK
+[2019-01-17 18:10:07:168_S:] AT+QIACT?
+[2019-01-17 18:10:07:171_R:] AT+QIACT?
+[2019-01-17 18:10:07:171_R:] OK
+[2019-01-17 18:10:30:984_S:] AT+QIACT=1
+[2019-01-17 18:10:30:987_R:] AT+QIACT=1
+[2019-01-17 18:10:34:157_R:] OK
+[2019-01-17 18:10:47:768_S:] AT+QIACT?
+[2019-01-17 18:10:47:771_R:] AT+QIACT?
+[2019-01-17 18:10:47:771_R:] +QIACT: 1,1,1,"100.84.28.125"
+
+[2019-01-17 18:10:47:771_R:] OK
+---------------------------------------------
+
+[2019-01-17 18:13:44:327_S:] ATV1
+[2019-01-17 18:13:44:330_R:] ATV1
+[2019-01-17 18:13:44:330_R:] OK
+[2019-01-17 18:18:04:893_S:] AT+QIOPEN=1,2,"UDP SERVICE","127.0.0.1",0,3030,0
+[2019-01-17 18:18:04:895_R:] AT+QIOPEN=1,2,"UDP SERVICE","127.0.0.1",0,3030,0
+[2019-01-17 18:18:04:895_R:] OK
+
+[2019-01-17 18:18:04:897_R:] +QIOPEN: 2,0
+
+[2019-01-17 18:18:04:899_R:] DSR:0 CTS:0 (RI:1) DCD:0
+
+[2019-01-17 18:18:05:020_R:] DSR:0 CTS:0 (RI:0) DCD:0
+
+---------------------------------------------
+
+[2019-01-17 18:21:14:276_S:] AT+QISTATE=0,1
+[2019-01-17 18:21:14:278_R:] AT+QISTATE=0,1
+[2019-01-17 18:21:14:278_R:] +QISTATE: 2,"UDP SERVICE","100.84.28.125",0,3030,2,1,2,0,"usbmodem"
+
+[2019-01-17 18:21:14:278_R:] OK
+
+---------------------------------------------
+
+[2019-01-17 18:31:50:262_S:] AT+QISEND=2,10,"220.180.239.212",8009
+[2019-01-17 18:31:50:265_R:] AT+QISEND=2,10,"220.180.239.212",8009
+[2019-01-17 18:31:50:265_R:] > hi
+[2019-01-17 18:32:05:576_R:] SEND OK
+[2019-01-17 18:34:48:693_S:] AT+QISEND=2,10,"220.180.239.212",8009
+[2019-01-17 18:34:48:697_R:] AT+QISEND=2,10,"220.180.239.212",8009
+[2019-01-17 18:34:48:698_R:] > 123456789
+[2019-01-17 18:35:01:262_R:] SEND OK
+[2019-01-17 18:37:54:485_S:] AT+QISEND=2,0
+[2019-01-17 18:37:54:488_R:] AT+QISEND=2,0
+[2019-01-17 18:37:54:488_R:] +QISEND: 30,30,0
+
+[2019-01-17 18:37:54:488_R:] OK
+[2019-01-17 18:38:07:716_S:] AT+QISEND=2,0
+[2019-01-17 18:38:07:719_R:] AT+QISEND=2,0
+[2019-01-17 18:38:07:719_R:] +QISEND: 30,30,0
+
+[2019-01-17 18:38:07:719_R:] OK
+[2019-01-17 18:38:11:948_S:] AT+QISEND=2,0
+[2019-01-17 18:38:11:950_R:] AT+QISEND=2,0
+[2019-01-17 18:38:11:951_R:] +QISEND: 30,30,0
+
+[2019-01-17 18:38:11:951_R:] OK
+
+[2019-01-17 18:42:31:386_S:] AT+QIRD=2
+[2019-01-17 18:42:31:390_R:] AT+QIRD=2
+[2019-01-17 18:42:31:390_R:] +QIRD: 0
+
+[2019-01-17 18:42:31:390_R:] OK
+
+---------------------------------------------
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------													   
+                                                                     ----
+                                                                     PING
+																	 ----
+[2019-01-17 16:49:59:794_S:] AT+QPING=1,"www.google.com"
+[2019-01-17 16:49:59:796_R:] AT+QPING=1,"www.google.com"
+[2019-01-17 16:49:59:796_R:] OK
+
+[2019-01-17 16:50:00:708_R:] DSR:0 CTS:0 (RI:1) DCD:0
+
+[2019-01-17 16:50:00:709_R:] +QPING: 0,"172.217.163.196",32,235,255
+
+[2019-01-17 16:50:00:831_R:] DSR:0 CTS:0 (RI:0) DCD:0
+
+[2019-01-17 16:50:00:947_R:] +QPING: 0,"172.217.163.196",32,241,255
+
+[2019-01-17 16:50:01:146_R:] +QPING: 0,"172.217.163.196",32,198,255
+
+[2019-01-17 16:50:01:149_R:] DSR:0 CTS:0 (RI:1) DCD:0
+
+[2019-01-17 16:50:01:268_R:] DSR:0 CTS:0 (RI:0) DCD:0
+
+[2019-01-17 16:50:01:349_R:] +QPING: 0,"172.217.163.196",32,203,255
+
+[2019-01-17 16:50:01:351_R:] DSR:0 CTS:0 (RI:1) DCD:0
+
+[2019-01-17 16:50:01:352_R:] +QPING: 0,4,4,0,198,241,218
+
+[2019-01-17 16:50:01:471_R:] DSR:0 CTS:0 (RI:0) DCD:0
+

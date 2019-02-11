@@ -1,0 +1,60 @@
+**************************************************************************************************************************
+
+CODE COMMIT STEPS:    (14/12/2018  FIRST COMMIT)
+-----------------
+1)after all changes make i hv to see what are changes i made thts why i first
+  -> $ git pull
+  
+   (it showing the such file which are alredy merge tht file i hv to remove using rm command
+     ex. error: The following untracked working tree files would be overwritten by merge:
+	hardware/libhardware/include/hardware/buzzer.h
+	hardware/libhardware/include/hardware/extapi.h
+	system/buzzertest1/Android.mk
+	system/buzzertest1/buzzertest1.c
+	system/buzzertest1/buzzertest1.h
+	system/buzzertest2/Android.mk
+	system/buzzertest2/buzzertest2.c
+	system/buzzertest2/buzzertest2.h
+	system/eepromapi/Android.mk
+   ->tht  file i hv to remove  $ rm filename
+
+ NOTE:  ->bt when i looking towords my changes maked it may be deleted bt there is my patch file 
+ ----     alredy made system_changes.patch with tht patch file i can recover my buzzerhal file
+          as for tht there is some command are there as
+  
+2)   -> $ patch -p0 --dry-run < system_changes.patch 
+                  ----------
+      (--dry-run check tht file which are in tht patch it shows file name )
+   
+   
+3)   -> $ patch -p0 < system_changes.patch 
+       (this comment add this patch to our file )
+
+4)   ->after that i hv to check once again $ git pull
+     ->if they showing any overriding file that i hv to remove once again 
+
+5)    ->if on some file rm is not working tht why  we hv to use new command shown by Jitendra sir as
+     ->$ qolsys@qolsys-desktop:~/AGIT/iqpanel_quantum$ git stash
+       it giving some result as shown:
+       (Saved working directory and index state WIP on master: c051df4 IQRV-35:Porting Klogd changes to Vantron Lite Repo
+        HEAD is now at c051df4 IQRV-35:Porting Klogd changes to Vantron Lite Repo )
+
+6) ->after that patch command i hv to use git add as
+
+7)  -> $ git add system/buzzerhal  (git add file path)
+
+8)  -> $ git status (it showing tht changes i made)
+
+9)  -> $ git commit -m "D4009 IQQ-3: Buzzerhal merging to vantron quantum"  (in "" we hv to write wht changes u want )
+                       --------------------------------------------------
+10) -> $ git push origin master  (THIS COMMAND PUSH UR CODE INTO MASTER DIRECTORY(SERVER))
+  
+11) -> $ git log  (it showing tht who are commited   .... today i made my first commite)
+   
+       commit d606039a16ad27ad29aca332e92d11d5d2585f12
+       Author: Abhijeet <abhijeet.krishna@qolsys.com>
+       Date:   Fri Dec 14 12:16:47 2018 +0530
+
+       D4009 IQQ-3: Buzzerhal addition to vantron Quantum
+
+**************************************************************************************************************************s

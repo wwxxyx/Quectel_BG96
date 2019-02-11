@@ -1,0 +1,33 @@
+*************************************************************************************************************
+
+1)$ git status system/    ( ex.system/  it shows the file path where u want to search the changes u make.)
+               -------  
+2)$ git add system/buzzehal/ (ex.system/buzzehal/ it means u hv to write ur own file path.)
+           ----------------
+3) $ git diff HEAD --no-prefix -U10000  system/buzzehal/  >> system_changes.patch  
+                                        ---------------     -------------------- 
+   
+   (ex.system/buzzhal u hv to write file path & system_changes.patch it shows ur patch file u can give 
+    any name to ur patch file as  .patch )
+
+4) u can check ur file as ex. vim system_changes.patch .
+                              ------------------------ 
+
+5)go to that phabricator account
+   ->1)click on Differential
+   ->2)Right side corner press creat diff.
+   ->after that  u hv to browse file option .   
+   ->and follow the step after that nd fill the required detail.
+
+      ex.. TITLE   : Merging system native changes to IQR code base
+           SUMMARY : Merging Buzzehal & Extapihal code for iqpannel_Vantron_lite
+                     Merging System changes to vantron lite
+
+               OR
+                   IQRV-27:Porting iqpanel2 native changes to vantron lite
+                   Summary:
+                          Porting iqpanel2 native changes to vantron lite
+                   Test Plan:
+                            Porting iqpanel2 native changes to vantron lite
+
+************************************************************************************************************* 

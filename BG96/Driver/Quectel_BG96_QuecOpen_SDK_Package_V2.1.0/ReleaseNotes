@@ -1,0 +1,35 @@
+####################          Quectel BG96/BG36 SDK Package (V2.0) For QuecOpen Solution        ####################
+====================================================================================================================
+Version     :  Quectel_BG96/BG36_QuecOpen_SDK_Package_V2.0.0
+When        :  2018-3-10
+Who         :  Hyman Ding
+Match Kernel:  BG96 -- BG96MAR02A07M1G_BETA0310A
+			   BG36 -- BG36MAR02A04M1G_BETA0310A
+ChangeLists :  Initial
+====================================================================================================================
+Version     :  Quectel_BG96/BG36_QuecOpen_SDK_Package_V2.0.1
+When        :  2018-3-23
+Who         :  Hyman Ding
+Match Kernel:  BG96 -- BG96MAR02A07M1G_BETA0322A
+			   BG36 -- BG36MAR02A05M1G_BETA0322A
+ChangeLists :  01, Add example for LwM2M operation.
+====================================================================================================================
+Version     :  Quectel_BG96/BG36_QuecOpen_SDK_Package_V2.0.2
+When        :  2018-4-25
+Who         :  Hyman Ding
+Match Kernel:  BG96 -- BG96MAR02A07M1G_BETA0425B
+			   BG36 -- BG36MAR02A06M1G_BETA0425B
+ChangeLists :  01, Update QAPI headr files;
+               02, Add build_oem_example.bat build script;
+               03, Add QAPI for Release assistance indication(RAI).
+====================================================================================================================
+Version     :  Quectel_BG96/BG36_QuecOpen_SDK_Package_V2.1.0
+When        :  2018-8-1
+Who         :  Hyman Ding
+Match Kernel:  BG96 -- 
+			   BG36 -- 
+ChangeLists :  01, Update QAPI headr files/lib files;
+               02, Fixed the build error of SMS example;
+               03, Add example for ATFWD;
+			   04, Optimization for time example.
+====================================================================================================================
