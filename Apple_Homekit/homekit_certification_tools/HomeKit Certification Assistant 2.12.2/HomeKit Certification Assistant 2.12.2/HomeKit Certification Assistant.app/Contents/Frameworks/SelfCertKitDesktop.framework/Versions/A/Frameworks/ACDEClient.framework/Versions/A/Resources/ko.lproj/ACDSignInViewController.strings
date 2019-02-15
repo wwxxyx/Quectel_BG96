@@ -1,0 +1,30 @@
+
+/* Class = "NSTextFieldCell"; title = "Apple ID"; ObjectID = "1kE-wT-UDL"; */
+"1kE-wT-UDL.title" = "Apple ID";
+
+/* Class = "NSTextFieldCell"; title = "Password"; ObjectID = "3FK-DG-auY"; */
+"3FK-DG-auY.title" = "암호";
+
+/* Class = "NSTextFieldCell"; title = "An Apple ID is your username for everything you do with Apple: Shop the iTunes Store, enable iCloud on your devices, and more."; ObjectID = "FvG-w6-lcW"; */
+"FvG-w6-lcW.title" = "Apple ID는 iTunes Store에서 구입을 하거나 기기에서 iCloud를 활성화하는 등의 모든 Apple 서비스에 사용하는 사용자 이름입니다.";
+
+/* Class = "NSButtonCell"; title = "Remember my password in the keychain"; ObjectID = "GJC-AT-CBW"; */
+"GJC-AT-CBW.title" = "키체인에 내 암호 저장";
+
+/* Class = "NSButtonCell"; title = "Forgot your password?"; ObjectID = "T7a-UG-ZdG"; */
+"T7a-UG-ZdG.title" = "암호를 잊으셨습니까?";
+
+/* Class = "NSButtonCell"; title = "Forgot your Apple ID?"; ObjectID = "UxP-Wj-gT4"; */
+"UxP-Wj-gT4.title" = "Apple ID를 잊으셨습니까?";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "edu-6M-L88"; */
+"edu-6M-L88.title" = "취소";
+
+/* Class = "NSButtonCell"; title = "Sign In"; ObjectID = "iWU-8z-MAR"; */
+"iWU-8z-MAR.title" = "로그인";
+
+/* Class = "NSButtonCell"; title = "Create Apple ID"; ObjectID = "p3G-Hd-wDn"; */
+"p3G-Hd-wDn.title" = "Apple ID 생성";
+
+/* Class = "NSTextFieldCell"; title = "Sign in with your Apple ID to download from iBooks."; ObjectID = "y06-7n-RZt"; */
+"y06-7n-RZt.title" = "Apple ID로 로그인";

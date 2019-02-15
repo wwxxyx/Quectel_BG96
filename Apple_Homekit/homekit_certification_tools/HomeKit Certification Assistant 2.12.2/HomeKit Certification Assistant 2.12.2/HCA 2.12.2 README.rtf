@@ -1,0 +1,98 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671
+{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fswiss\fcharset0 Helvetica-Oblique;
+\f3\fswiss\fcharset0 Helvetica-BoldOblique;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\csgenericrgb\c0\c0\c0;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid1\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww15380\viewh13560\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 System Requirements\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b0 \cf0 \
+HomeKit Certification Assistant (HCA) 2.12.2 requires macOS Mojave 10.14 or later (latest release recommended), which is available for download from the App Store.\
+ \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b \cf0 Release Notes\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b0 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\i \cf0 \expnd0\expndtw0\kerning0
+What\'92s new in HCA 2.12.2
+\f1\i0 \cf2 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\cf2 \
+\pard\pardeftab720\partightenfactor0
+\cf3 Important:\cf0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\cf0 	- If you have a previous version of HCA installed on your Mac, please run the \'93Uninstall_TKCaptureAssistant.sh\'94 script included in this zip file before installing the latest version of this tool.\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 Test Cases:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\cf0  	- \cf2 Fixed an issue with TCH083 incorrectly comparing firmware revision values.\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\i \cf0 Known Issues:
+\f1\i0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\cf0  	- \cf2 HCA Save function will fail after completing certification. Please wait until prompted during the submission process to save.\
+\cf0  	- \cf2 HomeKit Companion: The HomeKit Companion session can disconnect when performing the second NFC write attempt during TCF042 on macOS 10.14. When the pop-up appears, select "Cancel" and attempt the operation again.\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 Getting Started
+\f3\i \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\i0\b0 \cf3 Open the user guide from the Help menu or review the \'93HCA User Guide.pdf\'94 (available in \'93HomeKit Certification Assistant 2.12.1.zip\'94) for instructions on how to use HCA during the certification process.\cf0 \
+\
+\cf3 Once HCA has completed all tests for the accessory, select the "Submit Results" button to complete the HCA trace phase of certification.\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 Filing Bugs
+\f3\i \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b0 \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 To ensure that we address your issue as effectively as possible:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0
+\f1\i0 \cf3 \kerning1\expnd0\expndtw0 	
+\f2\i - \expnd0\expndtw0\kerning0
+Report all HCA issues to bugreport.apple.com under \'93HomeKit Accessory Development | Certification Tools\'94.\
+	- In the version/build section, include the build number for HCA.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 	- \expnd0\expndtw0\kerning0
+In the configuration section, include the build number for macOS.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 	- \expnd0\expndtw0\kerning0
+In the configuration section, include the MFi Product Plan ID for your accessory and the firmware version.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 	- \expnd0\expndtw0\kerning0
+Describe your results and how they differ from what is expected.\
+\pard\tx220\tx720\pardeftab720\li371\fi-372\partightenfactor0
+\ls1\ilvl0\cf3 \kerning1\expnd0\expndtw0 	- \expnd0\expndtw0\kerning0
+In the \'93Additional notes\'94 section, explain the impact on your development (e.g., inconvenience, blocking certification, etc.).\
+\pard\tx220\tx385\pardeftab720\li362\fi-363\partightenfactor0
+\ls1\ilvl0\cf3 \kerning1\expnd0\expndtw0 	- \expnd0\expndtw0\kerning0
+In the \'93Additional notes\'94 section, include any additional configuration, spec language, workarounds, or other relevant information.\
+\pard\tx220\tx720\pardeftab720\li380\fi-381\partightenfactor0
+\ls1\ilvl0\cf3 \kerning1\expnd0\expndtw0 	- \expnd0\expndtw0\kerning0
+A trace or screenshot with annotations is strongly recommended to help understand your issue in a timely manner. Additional logs and/or videos will help expedite a fix.
+\f1\i0 \cf2 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\cf2 \
+\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf2 \
+\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>keychain-access-groups</key>
+	<array>
+		<string>P9Z4AN7VHQ.*</string>
+	</array>
+	<key>com.apple.application-identifier</key>
+	<string>P9Z4AN7VHQ.com.apple.HomeKit-Accessory-Simulator</string>
+	<key>com.apple.developer.team-identifier</key>
+	<string>P9Z4AN7VHQ</string>
+	<key>com.apple.videoconference.allow-conferencing</key>
+	<true/>
+	<key>com.apple.coreaudio.allow-amr-decode</key>
+	<true/>
+	<key>com.apple.coreaudio.allow-amr-encode</key>
+	<true/>
+	<key>com.apple.private.tcc.allow</key>
+	<array>
+		<string>kTCCServiceCamera</string>
+		<string>kTCCServiceMicrophone</string>
+	</array>
+</dict>
+</plist>

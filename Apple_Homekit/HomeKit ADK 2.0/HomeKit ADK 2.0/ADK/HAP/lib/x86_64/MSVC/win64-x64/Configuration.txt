@@ -1,0 +1,13 @@
+Description:       MSVC for Windows x64
+Architecture:      x86_x64
+Compiler URL:      https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017
+Compiler version:  Visual Studio 2017 Build Tools
+Compile flags:     /W3
+                   /WX
+                   /Wall
+                   /Y-
+                   /Zl
+                   /wd4715
+                   /wd4716 
+Data cache:        processor may have data cache
+Byte ordering:     little endian

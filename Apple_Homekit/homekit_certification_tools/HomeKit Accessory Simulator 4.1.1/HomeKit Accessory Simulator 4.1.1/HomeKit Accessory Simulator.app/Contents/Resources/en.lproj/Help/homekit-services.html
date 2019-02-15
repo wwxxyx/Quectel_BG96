@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Services</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="HomeKit, HomeKit Accessory Simulator, Home Kit, Home Kit Accessory Simulator, service, services" />
+	<meta name="description" content="How to add and remove services to an accessory." />
+	<link href="style.css" rel="stylesheet" media="all" type="text/css" />
+</head>
+<body>
+<div>
+	<a name="services" id="services"></a> 
+</div>
+<h1>
+	<img src="icon32x32.png" height="32" width="32" alt="Icon" /> Services 
+</h1>
+<p>
+	To add a service to an accessory, bridge, or bridged accessory, select the item from the accessory list so that it is visible in the main view. Select the "Add Service..." button at the bottom of the main view. 
+</p>
+<p>
+	This will bring up the options for the new service. There is an option to create a custom service type as well as to create one of the Apple defined services. Custom services require a valid UUID to be entered (selecting a custom service generates a valid UUID but this may be changed if needed). A name for the service may also be entered. When not adding a custom service, there is an additional option to automatically add all the optional characteristics for the service with default value constraints. These characteristics may be removed after the service has been created. 
+</p>
+<p>
+	Once the service details are completed, select the "Finish" button to add the service. 
+</p>
+<p>
+	Apple defined services include any required characteristics for that service. There is an option available in the application Preferences to automatically include all optional characteristics when adding Apple defined services. 
+</p>
+<p>
+	Services may be removed by selecting the "X" button in the upper-right corner of the service. Services may also be hidden from the services view by clicking on the up arrow button in the upper-right corner of the view.
+</p>
+<p>
+	There are several pieces of information about services which may be passed on to HomeKit apps. 
+</p>
+<ul>
+	<li>A service may be marked as the primary service of the accessory, to help indicate the accessory's primary function. This is set in the Primary Service drop down list below the Pairings count.</li>
+	<li>A service may be marked as linked to another service, to indicate some logical relationship. This is set in the Linked Services drop down list to the left of the remove service "X" button.</li>
+	<li>A service may be marked hidden, as a way to indicate that it's not necessary to display to the average user. This is set via the Hidden checkbox to the left of the Linked Services drop down list.</li>
+</ul>
+</body>
+</html>

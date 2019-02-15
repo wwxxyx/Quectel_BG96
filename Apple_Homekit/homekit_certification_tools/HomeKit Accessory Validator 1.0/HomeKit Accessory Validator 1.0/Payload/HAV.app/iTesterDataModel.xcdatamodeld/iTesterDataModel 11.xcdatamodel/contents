@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14205" systemVersion="" minimumToolsVersion="Xcode 7.0" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="API" representedClassName="API" syncable="YES">
+        <attribute name="apiClass" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="display" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expectedAllowedValues" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expectedType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nonInternalAllowed" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="usage" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="APICategory" inverseName="apis" inverseEntity="APICategory" syncable="YES"/>
+        <relationship name="parameters" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="APIParameter" inverseName="api" inverseEntity="APIParameter" syncable="YES"/>
+    </entity>
+    <entity name="APICategory" representedClassName="APICategory" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="apis" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="API" inverseName="category" inverseEntity="API" syncable="YES"/>
+        <relationship name="technology" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Technology" inverseName="apicategories" inverseEntity="Technology" syncable="YES"/>
+    </entity>
+    <entity name="APIParameter" representedClassName="APIParameter" syncable="YES">
+        <attribute name="defaultValue" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="display" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expectedAllowedValues" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="keyboardType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="kpiName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="optional" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="api" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="API" inverseName="parameters" inverseEntity="API" syncable="YES"/>
+    </entity>
+    <entity name="APIParameterEnum" representedClassName="APIParameterEnum" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="enumvalues" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="APIParameterEnumValue" inverseName="associatedEnum" inverseEntity="APIParameterEnumValue" syncable="YES"/>
+    </entity>
+    <entity name="APIParameterEnumValue" representedClassName="APIParameterEnumValue" syncable="YES">
+        <attribute name="display" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="associatedEnum" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="APIParameterEnum" inverseName="enumvalues" inverseEntity="APIParameterEnum" syncable="YES"/>
+    </entity>
+    <entity name="HomeKit" representedClassName="HomeKit" syncable="YES">
+        <attribute name="accessoryName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="characteristicName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="characteristicType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="homeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="possibleAPIIdentifiers" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="readWrite" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="serviceName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="test" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Test" inverseName="homekitConfig" inverseEntity="Test" syncable="YES"/>
+    </entity>
+    <entity name="Logging" representedClassName="Logging" syncable="YES">
+        <attribute name="apiClass" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dumpAPIIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="loggingOffAPIIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="loggingOnAPIIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="loggingStatusOffAPIIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="loggingStatusOnAPIIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="logLocations" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Radar" representedClassName="Radar" syncable="YES">
+        <attribute name="attachmentsCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="classification" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="componentName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="componentVersion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fingerprint" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fixOrder" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lastModifiedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="originator" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pendingUploads" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priority" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="reproducible" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="resolution" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="substate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Technology" representedClassName="Technology" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="apicategories" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="APICategory" inverseName="technology" inverseEntity="APICategory" syncable="YES"/>
+    </entity>
+    <entity name="Test" representedClassName="Test" syncable="YES">
+        <attribute name="apiClass" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="apiIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="apiName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="complexTypes" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="currentTestCounter" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="display" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expected" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="inReport" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="issue" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="result" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="technology" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="verificationDisabled" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="header" maxCount="1" deletionRule="Cascade" destinationEntity="TestHeader" inverseName="test" inverseEntity="TestHeader" syncable="YES"/>
+        <relationship name="homekitConfig" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HomeKit" inverseName="test" inverseEntity="HomeKit" syncable="YES"/>
+        <relationship name="results" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="TestResult" inverseName="test" inverseEntity="TestResult" syncable="YES"/>
+        <relationship name="testAPIParameters" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="TestAPIParameter" inverseName="test" inverseEntity="TestAPIParameter" syncable="YES"/>
+    </entity>
+    <entity name="TestAPIParameter" representedClassName="TestAPIParameter" syncable="YES">
+        <attribute name="allowedValues" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customInputName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="test" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Test" inverseName="testAPIParameters" inverseEntity="Test" syncable="YES"/>
+    </entity>
+    <entity name="TestHeader" representedClassName="TestHeader" syncable="YES">
+        <attribute name="autoLogging" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="carrierBundleVersion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dumpLogFrequency" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dumpLogOnFail" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="failCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="handleFailureAs" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isExpanded" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="iterations" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="mmsResultsSent" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parentid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="readOnly" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="remainingIterations" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="rootIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="runIf" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stopDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stopOnFail" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stopOnFailCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="timeZone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="version" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="test" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Test" inverseName="header" inverseEntity="Test" syncable="YES"/>
+    </entity>
+    <entity name="TestResult" representedClassName="TestResult" syncable="YES">
+        <attribute name="actual" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="currentIterationStartDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="currentIterationStopDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="errorAPI" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="errorCode" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="errorDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="errorDomain" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expected" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="logIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="logs" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="result" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="test" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Test" inverseName="results" inverseEntity="Test" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="API" positionX="27" positionY="189" width="128" height="208"/>
+        <element name="APICategory" positionX="169" positionY="-36" width="128" height="90"/>
+        <element name="APIParameter" positionX="169" positionY="144" width="128" height="210"/>
+        <element name="APIParameterEnum" positionX="45" positionY="207" width="128" height="75"/>
+        <element name="APIParameterEnumValue" positionX="502" positionY="264" width="128" height="103"/>
+        <element name="HomeKit" positionX="-0" positionY="-33" width="128" height="165"/>
+        <element name="Logging" positionX="45" positionY="189" width="128" height="150"/>
+        <element name="Radar" positionX="-459" positionY="72" width="128" height="300"/>
+        <element name="Technology" positionX="-279" positionY="171" width="128" height="105"/>
+        <element name="Test" positionX="-747" positionY="45" width="128" height="315"/>
+        <element name="TestAPIParameter" positionX="-504" positionY="153" width="128" height="120"/>
+        <element name="TestHeader" positionX="313" positionY="-18" width="128" height="465"/>
+        <element name="TestResult" positionX="-252" positionY="342" width="128" height="225"/>
+    </elements>
+</model>

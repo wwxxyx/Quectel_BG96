@@ -1,0 +1,6 @@
+framework module PTPKit {
+  umbrella header "PTPKit.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,32 @@
+Description:       GCC for NDS32 N10
+Architecture:      NDS32
+Compile flags:     --short-enums
+                   -DMINIMAL_STACK_SIZE=128
+                   -Os
+                   -Wall
+                   -Werror
+                   -Wextra
+                   -Wno-padded
+                   -falign-functions=4
+                   -fconserve-stack
+                   -fdata-sections
+                   -ffreestanding
+                   -ffunction-sections
+                   -fno-builtin
+                   -fno-delete-null-pointer-checks
+                   -fno-omit-frame-pointer
+                   -fno-stack-protector
+                   -fno-strict-aliasing
+                   -fno-strict-overflow
+                   -g0
+                   -malign-functions
+                   -march=v3
+                   -mcmodel=large
+                   -mcpu=n10
+                   -mno-fp-as-gp
+                   -mv3push
+                   -pedantic
+                   -pedantic-errors
+                   -std=c99
+Data cache:        processor may have data cache
+Byte ordering:     little endian

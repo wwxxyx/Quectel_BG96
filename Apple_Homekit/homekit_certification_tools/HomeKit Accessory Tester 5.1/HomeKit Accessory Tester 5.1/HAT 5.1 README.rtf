@@ -1,0 +1,86 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671
+{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fswiss\fcharset0 Helvetica-Oblique;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgenericrgb\c0\c0\c0;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid1\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww29460\viewh16960\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 System \cf2 Requirements
+\f1\b0 \
+\
+HomeKit Accessory Tester (HAT) 5.1 requires macOS Mojave 10.14 or later (latest release recommended), which is available for download from the App Store.\
+ \
+
+\f0\b Release Notes
+\f1\b0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\i \cf2 \expnd0\expndtw0\kerning0
+What\'92s new in HAT 5.1
+\f1\i0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf2 Important:\cf0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\cf0 	- If you have a previous version of HAT installed on your Mac, please run the \'93Uninstall_TKCaptureAssistant.sh\'94 script included in this zip file before installing the latest version of this tool.\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 General:\cf0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\cf0 	- Added support for Apple TV Remotes accessory category.\
+	- Added support for HomeKit Data Stream.\
+	- Resolved issue that intermittently prevented HAT from seeing the first frame from an IP camera stream.\
+	- Resolved issue that caused the accessory discovery progress bar to never complete.\
+	- HAT will now display the Complete Local Name for BLE accessories.\cf2 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+
+\f2\i Known Issues:
+\f1\i0 \kerning1\expnd0\expndtw0 \
+\pard\tx720\pardeftab720\fi203\partightenfactor0
+\cf2 - Controllers assigned to shared keystores are not visible after relaunching HAT; please recreate the controllers and assign them back to the shared keystore when necessary.\
+- iCloud Relay: Test with one iCloud Relay controller; using multiple controllers is not supported.\
+- Switching between BLE controllers while connected is not supported. Manually disconnect from the active controller using the disconnect button before using a different controller.\
+- TCB011 is not supported; HAT does not support Pair-Resume to the same accessory from multiple BLE controllers.\
+- BLE characteristic values are not updated when an Encrypted Broadcast Notification is received.\
+- If an IP accessory is not visible in HAT after performing WAC, restart the controller's Bonjour discovery.\
+- In some cases, HAT may hang when attempting to quit the application after using iCloud Relay. Please save before force-quitting the application.\
+- Event color highlighting may be incorrect when an EVENT is sent to the controller after an HTTP request and before the response.\
+\expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf2 Filing Bugs
+\f1\b0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\i \cf2 To ensure that we address your issue as effectively as possible:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0
+\f1\i0 \cf2 \kerning1\expnd0\expndtw0 	
+\f2\i - \expnd0\expndtw0\kerning0
+Report all HAT issues to bugreport.apple.com under \'93HomeKit Accessory Development | Certification Tools\'94.\
+	- In the version/build section, include the build number for HAT.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 	- \expnd0\expndtw0\kerning0
+In the configuration section, include the build number for macOS.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 	- \expnd0\expndtw0\kerning0
+In the configuration section, include the MFi Product Plan ID for your accessory and the firmware version.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 	- \expnd0\expndtw0\kerning0
+Describe your results and how they differ from what is expected.\
+\pard\tx220\tx720\pardeftab720\li371\fi-372\partightenfactor0
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 	- \expnd0\expndtw0\kerning0
+In the \'93Additional notes\'94 section, explain the impact on your development (e.g., inconvenience, blocking certification, etc.).\
+\pard\tx220\tx385\pardeftab720\li362\fi-363\partightenfactor0
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 	- \expnd0\expndtw0\kerning0
+In the \'93Additional notes\'94 section, include any additional configuration, spec language, workarounds, or other relevant information.\
+\pard\tx220\tx720\pardeftab720\li380\fi-381\partightenfactor0
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 	- \expnd0\expndtw0\kerning0
+A trace or screenshot with annotations is strongly recommended to help understand your issue in a timely manner. Additional logs and/or videos will help expedite a fix.\'a0}

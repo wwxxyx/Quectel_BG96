@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>The HomeKit Accessory Simulator Window</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="HomeKit, HomeKit Accessory Simulator, Home Kit, Home Kit Accessory Simulator, interface, window, reachable" />
+	<meta name="description" content="Learn the layout of the HomeKit Accessory Simulator." />
+	<link href="style.css" rel="stylesheet" media="all" type="text/css" />
+</head>
+<body>
+<div>
+	<a name="window" id="window"></a> 
+</div>
+<h1>
+	<img src="icon32x32.png" height="32" width="32" alt="Icon" /> The HomeKit Accessory Simulator Window 
+</h1>
+<p>
+	The HomeKit Accessory Simulator window is divided into two sections: 
+</p>
+<ul>
+	<li>The left side contains the accessory list. The list contains exactly one Bluetooth LE accessory. To this list, accessories (which include regular accessories, bridges, and bridged accessories) may be added or removed. Removal of the Bluetooth LE accessory will result in creation of a new Bluetooth LE accessory</li>
+	<li>The right side of the window contains the main view and gives detailed information for the selected item.</li>
+</ul>
+<p>
+	The accessory list displays the accessory name. There is also a circle that indicates several pieces of information: 
+</p>
+<ul>
+	<li>For non-bridged accessories, the indicator is a hollow blue circle to indicate the accessory's transport is off. A filled blue circle indicates the accessory's transport is on.</li>
+	<li>When the accessory is identifying, the blue circle will blink for as long as the accessory is identifying.</li>
+</ul>
+<p>
+	For IP camera and video doorbell accessories, the circle additionally indicates: 
+</p>
+<ul>
+	<li>The circle is green to indicate that the video preview is active for the accessory.</li>
+	<li>The circle is red to indicate that the video is streaming to a controller.</li>
+</ul>
+<p>
+	The bottom of the accessory list contains a "+" button on the left and a "-" button on the right. The "+" creates accessories and bridged accessories; and the "-" button deletes them. Any IP accessory can become a bridge accessory by adding bridged accessories to it.
+</p>
+<p>
+	When selecting an accessory other than a bridged accessory, the top area of the main view displays the Setup Code, Category, configuration number, the number of paired devices, etc. This information does not exist for bridged accessories, as they are paired via their bridge. 
+</p>
+<p>
+	When selecting any item, the top area of the main view shows characteristics included in the accessory's Accessory Information Service. This top area's upper-right corner can be clicked to collapse or expand the area. 
+</p>
+<p>
+	The bottom of the main view contains additional services for the accessory. 
+</p>
+</body>
+</html>

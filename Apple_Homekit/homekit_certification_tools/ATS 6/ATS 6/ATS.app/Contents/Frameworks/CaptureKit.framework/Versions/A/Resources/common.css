@@ -1,0 +1,35 @@
+html, body {
+    margin: 0;
+}
+
+body {
+    font-size: 11px;
+    line-height: 1.5em;
+    overflow: auto;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    color: black;
+}
+
+tt {
+    font-family: 'Menlo', 'Monaco';
+}
+
+table {
+    table-layout: fixed;
+}
+
+td {
+    overflow: hidden;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+
+.red {
+    color: #FC2125; /* systemRedColor in Light Mode */
+}
+
+.gray {
+    color: #7B7B81; /* systemGrayColor in Light Mode */
+}

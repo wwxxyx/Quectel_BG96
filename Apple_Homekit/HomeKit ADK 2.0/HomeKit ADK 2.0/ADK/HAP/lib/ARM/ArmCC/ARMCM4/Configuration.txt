@@ -1,0 +1,16 @@
+Description:       Keil MDK for ARM Cortex-M4
+Architecture:      ARMv7E-M
+Multilib name:     thumb/v7e-m
+Compiler URL:      https://www.keil.com/demo/eval/arm.htm
+Compiler version:  5.25
+Compile flags:     --apcs=interwork
+                   --c99
+                   --cpu Cortex-M4
+                   --diag_suppress=111
+                   --li
+                   --no_string_literal_pools
+                   --split_sections
+                   -O3
+                   -c
+Data cache:        processor must not have data cache
+Byte ordering:     little endian

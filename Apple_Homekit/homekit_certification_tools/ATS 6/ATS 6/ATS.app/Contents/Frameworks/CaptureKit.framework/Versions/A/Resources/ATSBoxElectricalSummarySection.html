@@ -1,0 +1,93 @@
+<div style="width: 255px; float: right;">
+    <table>
+        <tr>
+            <th colspan="2" class="title">Pin Voltages</th>
+        </tr>
+        <tr>
+            <td class="label">FW (pins 11/12)</td>
+            <td id="FW_PIN_VOLTAGE"></td>
+        </tr>
+        <tr id="USB_VBUS_ROW">
+            <td class="label">USB Vbus (pin 8)</td>
+            <td id="USB_VBUS_VOLTAGE"></td>
+        </tr>
+        <tr id="USB_DPLUS_ROW">
+            <td class="label">USB D+ (pin 4)</td>
+            <td id="USB_DPLUS_VOLTAGE"></td>
+        </tr>
+        <tr id="USB_DMINUS_ROW">
+            <td class="label">USB D- (pin 6)</td>
+            <td id="USB_DMINUS_VOLTAGE"></td>
+        </tr>
+        <tr id="USB_BRICK_DETECT_ROW">
+            <td class="label">Brick Detect</td>
+            <td id="USB_BRICK_DETECT"></td>
+        </tr>
+        <tr>
+            <td class="label">Tx-to-iPod (pin 18)</td>
+            <td id="TX_TO_IPOD_VOLTAGE"></td>
+        </tr>
+        <tr>
+            <td class="label">Reserved (pin 14)</td>
+            <td id="RESERVED_PIN_14_VOLTAGE"></td>
+        </tr>
+        <tr>
+            <td class="label">Reserved (pin 17)</td>
+            <td id="RESERVED_PIN_17_VOLTAGE"></td>
+        </tr>
+    </table>
+</div>
+
+<table>
+    <!-- Accessory detect -->
+    
+    <tr>
+        <th colspan="2" class="title">Accessory detect (pin 20)</th>
+    </tr>
+    <tr>
+        <td class="label">State</td>
+        <td id="ACC_DETECT_STATE"></td>
+    </tr>
+    <tr>
+        <td class="label">Ground count</td>
+        <td id="ACC_DETECT_GROUND_COUNT"></td>
+    </tr>
+    <tr>
+        <td class="label">Float count</td>
+        <td id="ACC_DETECT_FLOAT_COUNT"></td>
+    </tr>
+    
+    <tr>
+        <td colspan="2">&nbsp;</td> <!-- spacer -->
+    </tr>
+    
+    <!-- ID resistor -->
+    
+    <tr>
+        <th colspan="2" class="title">ID resistor (pin 10)</th>
+    </tr>
+    <tr>
+        <td class="label">State</td>
+        <td id="ID_RESISTOR_STATE"></td>
+    </tr>
+    <tr id="ID_RESISTOR_BIN_ROW">
+        <td class="label">Bin</td>
+        <td id="ID_RESISTOR_BIN"></td>
+    </tr>
+    
+    <tr>
+        <td colspan="2">&nbsp;</td> <!-- spacer -->
+    </tr>
+    
+    <!-- Accessory Power -->
+    
+    <tr>
+        <th colspan="2" class="title">Accessory Power (pin 13)</th>
+    </tr>
+    <tr>
+        <td class="label">Current</td>
+        <td><span id="ACC_POWER_CURRENT"></span><span class="fieldNote">(1 sec average)</span></td>
+    </tr>
+</table>
+
+<div style="clear: both;"></div>

@@ -1,0 +1,20 @@
+Description:       Xtensa for QCA4010
+Architecture:      QCA4010
+Compiler URL:      https://developer.qualcomm.com/hardware/qca4010/tools
+Compiler version:  xt-xcc version 10.0.3
+Compile flags:     -OPT:Olimit=10000
+                   -Os
+                   -Wall
+                   -Werror
+                   -Wno-padded
+                   -fdata-sections
+                   -ffreestanding
+                   -ffunction-sections
+                   -fno-strict-aliasing
+                   -fno-strict-overflow
+                   -g0
+                   -mlongcalls
+                   -nostdlib
+                   -std=c99
+Data cache:        processor may have data cache
+Byte ordering:     little endian

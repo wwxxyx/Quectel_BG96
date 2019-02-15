@@ -1,0 +1,1340 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf100
+{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red9\green80\blue208;\red0\green0\blue0;
+\red56\green110\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c0\c41176\c85098;\csgenericrgb\c0\c0\c0;
+\csgenericrgb\c21961\c43137\c100000;}
+\margl1440\margr1440\vieww21860\viewh19460\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs32 \cf0 \expnd0\expndtw0\kerning0
+What's new in HomeKit Certification Assistant (HCA) 2.12.2:
+\f1\b0\fs24 \cf2 \
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Note:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+If you have a previous version of HCA installed on your Mac and have upgraded from macOS 10.13, please run the \'93Uninstall_TKCaptureAssistant.sh\'94 script included in this zip file before installing the latest version of this tool.\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Test Cases:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Fixed an issue with TCH083 incorrectly comparing firmware revision values\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Known Issues:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 HCA Save function will fail after completing certification. Please wait until prompted during the submission process to save.\
+\'95 HomeKit Companion: The HomeKit Companion session can disconnect when performing the second NFC write attempt during TCF042 on macOS. When the pop-up appears, select "Cancel" and attempt the operation again.\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.12.2 requires macOS Mojave 10.14 or later (latest release recommended), which is available for download from the App Store.\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0Please report all issues to {\field{\*\fldinst{HYPERLINK "https://bugreport.apple.com"}}{\fldrslt bugreport.apple.com}} by selecting the HomeKit Accessory Development product, and choosing the Certification Tools problem area.\
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 Features that were new as of HomeKit Certification Assistant (HCA) 2.12.1:
+\f1\b0 \cf2 \
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Note:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+If you have a previous version of HCA installed on your Mac and have upgraded from macOS 10.13, please run the \'93Uninstall_TKCaptureAssistant.sh\'94 script included in this zip file before installing the latest version of this tool.\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Test Cases:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added support for firmware update test TCH083.\cf0 \kerning1\expnd0\expndtw0 \
+\'95 \cf2 \expnd0\expndtw0\kerning0
+Added support for reliability test TCS018. Note: this test case may occasionally encounter an issue in macOS. A retry will automatically be attempted and the issue will not be counted against the accessory. This test is currently disabled for certification.\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Known Issues:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 HCA Save function will fail after completing certification. Please wait until prompted during the submission process to save.\
+\'95 HomeKit Companion: The HomeKit Companion session can disconnect when performing the second NFC write attempt during TCF042 on macOS. When the pop-up appears, select "Cancel" and attempt the operation again.\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.12.1 requires macOS Mojave 10.14 or later (latest release recommended), which is available for download from the App Store.\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0Please report all issues to {\field{\*\fldinst{HYPERLINK "https://bugreport.apple.com"}}{\fldrslt bugreport.apple.com}} by selecting the HomeKit Accessory Development product, and choosing the Certification Tools problem area.\
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 Features that were new as of HomeKit Certification Assistant (HCA) 2.12:
+\f1\b0 \cf2 \
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Note:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+If you have a previous version of HCA installed on your Mac and have upgraded from macOS 10.13, please run the \'93Uninstall_TKCaptureAssistant.sh\'94 script included in this zip file before installing the latest version of this tool.\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 General:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added support for new Reliability test domain. Please note: this test domain is not supported with BLE accessories using Compatibility Mode.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA will now display the Complete Local Name for BLE accessories.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+After removing pairings, HCA will now wait for connections to close.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA will now prompt users upon quitting the application with unsaved test progress.\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Test Cases:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added support for reliability test TCS003. Only errors will be posted to the trace window while performing this test case and it is disabled for certification.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added support for functional tests TCF046, TCF047.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added support for software token authentication tests TCSTA008, TCSTA009, TCSTA010.\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Known Issues:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 HCA Save function will fail after completing certification. Please wait until prompted during the submission process to save.\
+\'95 HomeKit Companion: The HomeKit Companion session can disconnect when performing the second NFC write attempt during TCF042 on macOS. When the pop-up appears, select "Cancel" and attempt the operation again.\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.12 requires macOS Mojave 10.14 or later (latest release recommended), which is available for download from the App Store.\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0Please report all issues to {\field{\*\fldinst{HYPERLINK "https://bugreport.apple.com"}}{\fldrslt bugreport.apple.com}} by selecting the HomeKit Accessory Development product, and choosing the Certification Tools problem area.\
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 Features that were new as of HomeKit Certification Assistant (HCA) 2.11.2:
+\f1\b0 \cf2 \
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Note:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+If the tool fails to obtain authorization to capture network traffic, please run the script 'Uninstall_TKCaptureAssistant.sh' bundled in the HCA zip file. If any additional errors occur, please contact your MFi representative.\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 General:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added support for macOS Mojave 10.14.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added Content-Length header to all HTTP message headers.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Fixed an issue preventing secondary controllers from establishing security sessions with  accessories that have device IDs consisting of lowercase letters.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+TCSTA004 now tests accessories that use static setup codes.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Fixed memory leaks.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Excluded characteristics that are difficult to toggle from test cases TCI014 and TCB052.\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Known Issues:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 HCA Save function will fail after completing certification. Please wait until prompted during the submission process to save.\
+\'95 Test cases validating BLE advertisements may not receive all accessory notifications.\
+\'95 HomeKit Companion: The HomeKit Companion session can disconnect when performing the second NFC write attempt during TCF042 on macOS 10.13. When the pop-up appears, select "Cancel" and attempt the operation again.\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.11.2 requires macOS Mojave 10.14 or later (latest release recommended), which is available for download from the App Store.\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0Please report all issues to {\field{\*\fldinst{HYPERLINK "https://bugreport.apple.com"}}{\fldrslt bugreport.apple.com}} by selecting the HomeKit Accessory Development product, and choosing the Certification Tools problem area.\
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 Features that were new as of HomeKit Certification Assistant (HCA) 2.11.1:\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0 \cf2 \
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 General:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Fixed an issue in which pairing attempts may fail when an accessory uses a device ID consisting of lowercase letters.\cf0 \kerning1\expnd0\expndtw0 \
+\'95 \cf2 \expnd0\expndtw0\kerning0
+Fixed an issue in which pairing attempts may fail at arbitrary intervals.\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Known Issues:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 HCA Save function will fail after completing certification. Please wait until prompted during the submission process to save.\
+\'95 Test cases validating BLE advertisements may not receive all accessory notifications.\
+\'95 HomeKit Companion: The HomeKit Companion session can disconnect when performing the second NFC write attempt during TCF042 on macOS 10.13. When the pop-up appears, select "Cancel" and attempt the operation again.\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.11.1 requires macOS High Sierra 10.13.3 or later (latest release recommended), which is available for download from the App Store.\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0Please report all issues to {\field{\*\fldinst{HYPERLINK "https://bugreport.apple.com"}}{\fldrslt bugreport.apple.com}} by selecting the HomeKit Accessory Development product, and choosing the Certification Tools problem area.\expnd0\expndtw0\kerning0
+\
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+
+\f0\b\fs32 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 Features that were new as of HomeKit Certification Assistant (HCA) 2.11:
+\f1\b0 \cf2 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf2 \
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 General:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added ability to display bit 9 in the trace's WAC Discovery view.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Fixed the evaluation of units on the Water Level characteristic.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Fixed response validation for the Pairing Features characteristic on BLE accessories.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Fixed an issue to correctly display the list of pairings for the List Pairings Completed message in the Events View.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+TCF039 now begins pair-setup before asking user to pair using the selected setup payload retrieval method.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Removed IP Camera setup endpoints from general read/write tests.\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Test Cases:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added support for TCSTA002, TCSTA004, TCSTA005.\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Known Issues:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 HCA Save function will fail after completing certification. Please wait until prompted during the submission process to save.\
+\'95 Test cases validating BLE advertisements may not receive all accessory notifications.\
+\'95 HomeKit Companion: The HomeKit Companion session can disconnect when performing the second NFC write attempt during TCF042 on macOS 10.13. When the pop-up appears, select "Cancel" and attempt the operation again.\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.11 requires macOS High Sierra 10.13.3 or later (latest release recommended), which is available for download from the App Store.\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0Please report all issues to {\field{\*\fldinst{HYPERLINK "https://bugreport.apple.com"}}{\fldrslt bugreport.apple.com}} by selecting the HomeKit Accessory Development product, and choosing the Certification Tools problem area.\expnd0\expndtw0\kerning0
+\
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+
+\f0\b\fs32 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 Features that were new as of HomeKit Certification Assistant (HCA) 2.10:\
+\pard\pardeftab720\partightenfactor0
+
+\fs32 \cf0 \
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\fs24 \cf0 General:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Modified test case TCF033 to require accessories to send only 'kTLVError_Authentication' error response.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 Added ability to display parsed TLVs instead of raw TLV bytes, when viewing a trace.\
+\'95 Modified test case TCI014 to monitor Events from all controllers, regardless of the order in which they arrive.\
+\'95 Modified test case TCH044 to omit MinValue and MaxValue from Apple-Defined Characteristic metadata, when applicable.\
+\'95 Modified procedure of selecting \'93Compatibility Mode\'94, which is now done through a configuration screen after pairing with the accessory.\
+\'95 Modified test cases TCF001 and TCF012 to no longer read Pairing Features within a security session.\
+\'95 Added ability to permit null values for custom characteristics with type data.\
+\'95 Added ability to omit Setup Hash, except for accessories that use enhanced setup payloads.\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 \expnd0\expndtw0\kerning0
+Test Cases:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 Added support for TCH016, TCF034 (BLE)\
+\'95 Added additional test steps to TCF034\cf2 \expnd0\expndtw0\kerning0
+\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Known Issues:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 HCA Save function will fail after completing certification. Please wait until prompted during the submission process to save.\
+\'95 Test cases validating BLE advertisements may not receive all accessory notifications.\
+\'95 HomeKit Companion: The HomeKit Companion session can disconnect when performing the second NFC write attempt during TCF042 on macOS 10.13. When the pop-up appears, select "Cancel" and attempt the operation again.\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.10 requires macOS High Sierra 10.13.3 or later (latest release recommended), which is available for download from the App Store.\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0R\expnd0\expndtw0\kerning0
+eport all issues to\'a0{\field{\*\fldinst{HYPERLINK "http://bugreport.apple.com/"}}{\fldrslt \cf3 \ul \ulc3 bugreport.apple.com}}\'a0and include \'93MFi HCA\'94 in the title of the bug report\
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+
+\f0\b\fs32 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 Features that were new as of HomeKit Certification Assistant (HCA) 2.9:
+\fs32 \
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\fs24 \cf0 General:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added support for TCH062 (BLE), TCF012 (BLE), TCF001 (BLE), and TCI014.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 Added software token-based authentication HAP operations during TCF001 for accessories that support it.\
+\'95 Added ability to provide additional authorization data for test cases that perform paired write or timed write.\
+\'95 Added ability to override out-of-range values for TCI037 and TCB050.\
+\'95 Added additional validation of setup payload for TCF039.\
+\'95 Added ability to display characteristic metadata on user prompts for write requests.\
+\'95 Resolved issue in HCA to correctly send pasted values during write test cases.\
+\'95 Extended timeout for test steps that perform HAP discovery.\
+\'95 Extended timeout for test steps that wait for BLE advertisements.\
+\'95 Fixed an issue where an error was falsely raised against accessories that use a TLV with type 0xFF as a separator.\
+\'95 Fixed an issue where an error was falsely raised against stateless programmable switch characteristics during discovery.\cf2 \expnd0\expndtw0\kerning0
+\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Known Issues:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 Encrypted broadcast notifications will not be decrypted after HCA changes the advertising identifier during TCB052.\
+\'95 Test cases validating BLE advertisements may not receive all accessory notifications.\
+\'95 HCA Save function will fail after completing certification. Please wait until prompted during the submission process to save.\
+\'95 HomeKit Companion: The HomeKit Companion session can disconnect when performing the second NFC write attempt during TCF042 when the pop-up appears, select "Cancel" and attempt the operation again.\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.9 requires macOS High Sierra 10.13.3 or later (latest release recommended), which is available for download from the App Store.\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0R\expnd0\expndtw0\kerning0
+eport all issues to\'a0{\field{\*\fldinst{HYPERLINK "http://bugreport.apple.com/"}}{\fldrslt \cf3 \ul \ulc3 bugreport.apple.com}}\'a0and include \'93MFi HCA\'94 in the title of the bug report\
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+
+\f0\b\fs32 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 Features that were new as of HomeKit Certification Assistant (HCA) 2.8.3:
+\fs32 \
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\fs24 \cf0 General:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Fixed an issue with HCA incorrectly reporting HAP specification R11 category identifiers in BLE advertisements as invalid\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Known Issues:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA Save function will fail after completing certification. Please wait until prompted during the submission process to save.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA does not support Additional Authorization data for some characteristic writes.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Accessories supplying an invalid format for custom characteristics may fail Write test cases.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HomeKit Companion: The HomeKit Companion session can become disconnected when performing the second NFC write attempt during TCF042 on macOS 10.13. When the popup appears, select "Cancel" and attempt the operation again.\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+If characteristic metadata overrides the minimum and maximum characteristic value constraints to match the data type bounds, test cases TCI037 and TCB050 will fail.\cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.8.3 requires macOS High Sierra 10.13 or later (latest release recommended), which is available for download from the Mac App Store\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0R\expnd0\expndtw0\kerning0
+eport all issues to\'a0{\field{\*\fldinst{HYPERLINK "http://bugreport.apple.com/"}}{\fldrslt \cf3 \ul \ulc3 bugreport.apple.com}}\'a0and include \'93MFi HCA\'94 in the title of the bug report\
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+
+\f0\b\fs32 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 Features that were new as of HomeKit Certification Assistant (HCA) 2.8.2:
+\fs32 \
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\fs24 \cf0 General:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added Irrigation System, Faucet, and Valve services, introduced in HAP specification R11\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Modified application preferences to more clearly define support for previous HAP specification\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Test Case Validation:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Test case TCB036 now initiates only a single concurrent HAP procedure\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Known Issues:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA Save function will fail after completing certification. Please wait until prompted during the submission process to save\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA does not support Additional Authorization data for some characteristic writes\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Accessories supplying an invalid format for custom characteristics may fail Write test cases\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HomeKit Companion: The HomeKit Companion session can become disconnected when performing the second NFC write attempt during TCF042 on macOS 10.13. When the popup appears, select "Cancel" and attempt the operation again\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+If characteristic metadata overrides the minimum and maximum characteristic value constraints to match the data type bounds, test cases TCI037 and TCB050 will fail\cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.8.2 requires macOS High Sierra 10.13 or later (latest release recommended), which is available for download from the Mac App Store\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0R\expnd0\expndtw0\kerning0
+eport all issues to\'a0{\field{\*\fldinst{HYPERLINK "http://bugreport.apple.com/"}}{\fldrslt \cf3 \ul \ulc3 bugreport.apple.com}}\'a0and include \'93MFi HCA\'94 in the title of the bug report\
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+
+\f0\b\fs32 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 Features that were new as of HomeKit Certification Assistant (HCA) 2.8.1:\
+\pard\pardeftab720\partightenfactor0
+
+\fs32 \cf0 \
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\fs24 \cf0 General:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added Irrigation System, Faucet, and Valve services introduced in HAP R11 Preview Specification\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Known Issues:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA Save function will fail after completing certification. Please wait until prompted during the submission process to save\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA does not support Additional Authorization data for some characteristic writes\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Accessories supplying an invalid format for custom characteristics may fail Write test cases\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HomeKit Companion: The HomeKit Companion session can become disconnected when performing the second NFC write attempt during TCF042 on macOS 10.13. When the popup appears, select "Cancel" and attempt the operation again\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+If characteristic metadata overrides the minimum and maximum characteristic value constraints to match the data type bounds, test cases TCI037 and TCB050 will fail\cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.8.1 requires macOS High Sierra 10.13 or later (latest release recommended), which is available for download from the Mac App Store\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0R\expnd0\expndtw0\kerning0
+eport all issues to\'a0{\field{\*\fldinst{HYPERLINK "http://bugreport.apple.com/"}}{\fldrslt \cf3 \ul \ulc3 bugreport.apple.com}}\'a0and include \'93MFi HCA\'94 in the title of the bug report\
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+
+\f0\b\fs32 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 Features that were new as of HomeKit Certification Assistant (HCA) 2.8:
+\fs32 \
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\fs24 \cf0 General:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Fixed an incorrectly identified error on bridged accessories without Protocol Information Service\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Fixed an intermittent crash with TCB052\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Extended the Timed Write Time To Live (TTL) of TCITW012 from 15 seconds to 5 minutes\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Fixed a crash caused by an accessory on the network with a malformed Device ID in its Bonjour TXT record\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+For accessory setup, the \'93Setup Code\'94 is now called \'93Setup Payload\'94 where full setup payloads are supported in addition to setup code\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Test Case Support:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added test cases TCH013, TCH058, TCB027, TCH044, TCI026, TCH071, TCI044\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Test Case Validation:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Test case TCH044 will perform validation that more closely adheres to the HAP specification\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Known Issues:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA Save function will fail after completing certification. Please wait until prompted during the submission process to save\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA does not support Additional Authorization data for some characteristic writes\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Accessories supplying an invalid format for custom characteristics may fail Write test cases\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HomeKit Companion: The HomeKit Companion session can become disconnected when performing the second NFC write attempt during TCF042 on macOS 10.13. When the popup appears, select "Cancel" and attempt the operation again\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+If characteristic metadata overrides the minimum and maximum characteristic value constraints to match the data type bounds, test cases TCI037 and TCB050 will fail\cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.8 requires macOS High Sierra 10.13 or later (latest release recommended), which is available for download from the Mac App Store\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0R\expnd0\expndtw0\kerning0
+eport all issues to\'a0{\field{\*\fldinst{HYPERLINK "http://bugreport.apple.com/"}}{\fldrslt \cf3 \ul \ulc3 bugreport.apple.com}}\'a0and include \'93MFi HCA\'94 in the title of the bug report\
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+
+\f0\b\fs32 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 Features that were new as of HomeKit Certification Assistant (HCA) 2.7.1:
+\fs32 \
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\fs24 \cf0 General:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+IP Timed Write test cases now expect error code -70410\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+TCI034 now expects error code -70404\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Renamed TCF038 to TCF039 to align with HomeKit Self-Certification Test Cases R6.0\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Renamed TCF041 to TCF42 to align with HomeKit Self-Certification Test Cases R6.0\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA document clean up now prevents duplicate test case entries from appearing in submission\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Preference to complete certification with a previous version of the HomeKit Accessory Protocol specification now expects the Protocol Version according to the version of the specification the accessory is complying with\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Known Issues:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA Save function will fail after completing certification. Please wait until prompted during the submission process to save\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA does not support Additional Authorization data for some characteristic writes\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Accessories supplying an invalid format for custom characteristics may fail Write test cases\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HomeKit Companion: The HomeKit Companion session can become disconnected when performing the second NFC write attempt during TCF042 on macOS 10.13. When the popup appears, select "Cancel" and attempt the operation again\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+If characteristic metadata overrides the minimum and maximum characteristic value constraints to match the data type bounds, test cases TCI037 and TCB050 will fail\cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.7.1 requires macOS Sierra 10.12.4 or later (latest release recommended), which is available for download from the Mac App Store\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0R\expnd0\expndtw0\kerning0
+eport all issues to\'a0{\field{\*\fldinst{HYPERLINK "http://bugreport.apple.com/"}}{\fldrslt \cf3 \ul \ulc3 bugreport.apple.com}}\'a0and include \'93MFi HCA\'94 in the title of the bug report
+\f0\b\fs32 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 Features that were new as of HomeKit Certification Assistant (HCA) 2.7:\
+\pard\pardeftab720\partightenfactor0
+
+\fs32 \cf0 \
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\fs24 \cf0 HomeKit Companion app for HCA & HAT:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Introducing the HomeKit Companion app, an iOS application to be used together with HCA and HAT to allow NFC, QR code, and Legacy Setup Code pairing. Find the HomeKit Companion app in the Certification Tools folder in the Document Center on the MFi Portal.\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 General:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added support for characteristics and services introduced in HAP Spec R10 \
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA now validates the Enhanced Setup Payload\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA will now filter Bonjour error messages for accessories not being tested\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+BLE accessories must now disconnect 30 seconds after the last HAP transaction, rather than 30 seconds after the last Pair-Verify. Refer to HAP Spec R10 section 7.2, point 5 for more information. If your accessory is eligible to complete certification/recertification against a previous version of the HomeKit Accessory Protocol Specification, before running HCA, go to the Preferences menu to enable support for this.\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Test Cases:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added support for HAP Spec R10 test cases (TCITW001, TCITW002, TCITW003, TCITW004, TCITW005, TCITW006, TCITW007, TCITW008, TCITW009, TCITW010, TCITW011, TCITW012, TCITW013, TCITW014, TCB050, TCB052, TCF039, TCF042, TCH070, TCNFC025)\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added support for test cases TCB026 and TCB036, TCB041 \
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+TCI045 now validates that a security session is required for the new \'93/prepare\'94 HTTP path\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA will now filter Bonjour error messages for accessories not being tested\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Known Issues:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA Save function will fail after completing certification. Please wait until prompted during the submission process to save\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA does not support Additional Authorization data for some characteristic writes\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Accessories supplying an invalid format for custom characteristics may fail Write test cases\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HomeKit Companion: The HomeKit Companion session can become disconnected when attempting TCF042 on macOS 10.13. When the popup appears, select "Cancel" and attempt the operation again.\cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.7 requires macOS Sierra 10.12.4 or later (latest release recommended), which is available for download from the Mac App Store\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0R\expnd0\expndtw0\kerning0
+eport all issues to\'a0{\field{\*\fldinst{HYPERLINK "http://bugreport.apple.com/"}}{\fldrslt \cf3 \ul \ulc3 bugreport.apple.com}}\'a0and include \'93MFi HCA\'94 in the title of the bug report
+\f0\b\fs32 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 Features that were new as of HomeKit Certification Assistant (HCA) 2.6.1:\
+\pard\pardeftab720\partightenfactor0
+
+\fs32 \cf0 \
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\fs24 \cf0 General:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Fixed crash caused by internal logging mechanisms\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Removed redundant rule 'BTLEAccessoryContainsServiceInstanceID'\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Known Issues:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA Save function will fail after completing certification. Please wait until prompted on exit to save\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Does not support Additional Authorization data for characteristic writes\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+If the accessory is experiencing instabilities with test cases performing disconnects, please revisit section 4.12 of HAP Spec R9 to make sure the accessory is disconnecting properly\cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.6.1 requires macOS Sierra 10.12.4 or later (latest release recommended), which is available for download from the Mac App Store\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0R\expnd0\expndtw0\kerning0
+eport all issues to\'a0{\field{\*\fldinst{HYPERLINK "http://bugreport.apple.com/"}}{\fldrslt \cf3 \ul \ulc3 bugreport.apple.com}}\'a0and include \'93MFi HCA\'94 in the title of the bug report\
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+
+\f0\b\fs32 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 Features that were new as of HomeKit Certification Assistant (HCA) 2.6:\
+\pard\pardeftab720\partightenfactor0
+
+\fs32 \cf0 \
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\fs24 \cf0 General:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+\'93Units\'94 and \'93format\'94 properties are now validated when included in characteristic payload\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+TCS005 will now test all characteristics and properly display test step progress\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+\'93Remove Pairing\'94 event is now correctly labeled\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added UI support for skipped test steps in TCB008\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Fixed memory leak related to network traffic observation\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+TCF033 correctly adds admin controller and accepts updated error codes in HAP Specification R9\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 New Test Case Support:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added BLE test cases TCB007, TCB036, and TCB050\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Known Issues:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA Save function will fail upon application exit. This does not affect previously saved traces\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Does not support Additional Authorization data for characteristic writes\cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.6 requires macOS Sierra 10.12.4 or later (latest release recommended), which is available for download from the Mac App Store\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0R\expnd0\expndtw0\kerning0
+eport all issues to\'a0{\field{\*\fldinst{HYPERLINK "http://bugreport.apple.com/"}}{\fldrslt \cf3 \ul \ulc3 bugreport.apple.com}}\'a0and include \'93MFi HCA\'94 in the title of the bug report\
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 Features that were new as of HomeKit Certification Assistant (HCA) 2.5:\
+\pard\pardeftab720\partightenfactor0
+
+\fs32 \cf0 \
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\fs24 \cf0 General:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added characteristics and services introduced in HAP R9\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Fixed application crash related to HTTP Disconnects during TCI005\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Bluetooth:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Improved Bluetooth reliability\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Rearranged trace views to be grouped by \'93IP\'94 and \'93BLE\'94 in the trace window sidebar\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added parsing for HAP over BLE PDUs in the \'93HAP Transactions\'94 traffic view\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added parsing for HAP over BLE procedures in the \'93HAP Procedures\'94 traffic view\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 New Test Case Support:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added IP test case TCI045\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added BLE test cases TCB008, TCB009, and TCB010\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Added test cases TCH050 and TCH023\cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.5 requires macOS Sierra 10.12.4 or later (latest release recommended), which is available for download from the Mac App Store\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0R\expnd0\expndtw0\kerning0
+eport all issues to\'a0{\field{\*\fldinst{HYPERLINK "http://bugreport.apple.com/"}}{\fldrslt \cf3 \ul \ulc3 bugreport.apple.com}}\'a0and include \'93MFi HCA\'94 in the title of the bug report\
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 Features that were new as of HomeKit Certification Assistant (HCA) 2.4:\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+\cf0 \
+General:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Provides additional HAP R8 protocol validation; test cases TCI002, TCI005, TCI006, TCI007, TCI039 are now expecting HTTP Disconnects during operation\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+\'93Failed cleanup\'94 error no longer prevents trace submission\cf0 \
+\kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Fixed issues for accessories that encounter the \'93Operation timed out\'94 error\cf0 \
+\kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Fixed out-of-sync HTTP messages\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Increased upload time allowed for trace submission\cf0 \kerning1\expnd0\expndtw0 \
+\'95 \cf2 \expnd0\expndtw0\kerning0
+Resolved crashes for accessories that support WAC\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+HCA trace may now be viewed while tests are in progress\cf0 \
+\kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Users can now view HCA traces only using HCA\
+\cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Pass/fail test results and status icons removed from trace view\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Test Case Modifications:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+Stress tests are available in Test Mode only\cf0 \
+\kerning1\expnd0\expndtw0 \'95 \cf2 \expnd0\expndtw0\kerning0
+TCF012 no longer incorrectly marks accessories as sending invalid error messages\cf0 \kerning1\expnd0\expndtw0 \
+\'95 \cf2 \expnd0\expndtw0\kerning0
+Improved clarity in error messages for all test cases\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 New Test Case Support:\
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+
+\f1\b0 \cf0 \kerning1\expnd0\expndtw0 \'95 
+\f0\b \cf2 \expnd0\expndtw0\kerning0
+Functional Tests:
+\f1\b0  TCF001, TCF016, TCF033\cf0 \
+\kerning1\expnd0\expndtw0 \'95 
+\f0\b \cf2 \expnd0\expndtw0\kerning0
+HAP Tests:
+\f1\b0  TCH001, TCH004, TCH011, TCH019, TCH031, TCH038\cf0 \kerning1\expnd0\expndtw0 \
+\'95 
+\f0\b \cf2 \expnd0\expndtw0\kerning0
+IP Tests: 
+\f1\b0 TCI039\
+\cf0 \kerning1\expnd0\expndtw0 \'95 
+\f0\b \cf2 \expnd0\expndtw0\kerning0
+Stress and Reliability Tests:
+\f1\b0  TCS001, TCS002, TCS005\cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.4 requires macOS Sierra 10.12.4 or later (latest release recommended), which is available for download from the Mac App Store\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0R\expnd0\expndtw0\kerning0
+eport all issues to\'a0{\field{\*\fldinst{HYPERLINK "http://bugreport.apple.com/"}}{\fldrslt \cf3 \ul \ulc3 bugreport.apple.com}}\'a0and include \'93MFi HCA\'94 in the title of the bug report\
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Known issues:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0\cf2 \expnd0\expndtw0\kerning0
+Closing HCA while multiple windows are open may cause a crash\cf4 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 Features that were new as of HomeKit Certification Assistant (HCA) 2.2:\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+\cf0 Features:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 \expnd0\expndtw0\kerning0
+Fixed bug that incorrectly flagged\'a0TCF034 as a failure\
+\kerning1\expnd0\expndtw0 \'95 \expnd0\expndtw0\kerning0
+Fixed TCI004 to not attempt to remove additional controllers whose pairings were correctly rejected by the accessory\
+\kerning1\expnd0\expndtw0 \'95 \expnd0\expndtw0\kerning0
+Updated\'a0test results UI to display individual test steps and highlight steps which may have errors\
+\kerning1\expnd0\expndtw0 \'95 \expnd0\expndtw0\kerning0
+All\'a0accumulated HAT errors are now displayed in test results UI\
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li872\fi-873\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.2 requires macOS Sierra 10.12.2 or later (latest release recommended), which is available for download from the Mac App Store\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0R\expnd0\expndtw0\kerning0
+eport all issues to\'a0{\field{\*\fldinst{HYPERLINK "http://bugreport.apple.com/"}}{\fldrslt \cf3 \ul \ulc3 bugreport.apple.com}}\'a0and include \'93MFi HCA\'94 in the title of the bug report\
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Known issues:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0\cf4 \expnd0\expndtw0\kerning0
+Disabled TCI039, TCB040, TCB041, TCB048, and TCF012 (BLE-only). Run these test cases with HAT according to the HomeKit Self-Certification Test Cases document (available in the MFi Portal Document\'a0Center).
+\f0\b\fs32 \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 Features that were new as of HomeKit Certification Assistant (HCA) 2.1:\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+\cf0 \
+Features:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 \expnd0\expndtw0\kerning0
+Added support for macOS Sierra 10.12.2\
+\kerning1\expnd0\expndtw0 \'95 \expnd0\expndtw0\kerning0
+Fixed a bug that incorrectly flagged TCI006 and TCI007 as failures\
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li872\fi-873\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.1 requires macOS Sierra 10.12.2 or later (latest release recommended), which is available for download from the Mac App Store\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0R\expnd0\expndtw0\kerning0
+eport all issues to\'a0{\field{\*\fldinst{HYPERLINK "http://bugreport.apple.com/"}}{\fldrslt \cf3 \ul \ulc3 bugreport.apple.com}}\'a0and include \'93MFi HCA\'94 in the title of the bug report\
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Known issues:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0Disabled TCF034, TCI039, TCB040, TCB041, TCB048, and TCF012 (BLE-only). Run these test cases with HAT according to the HomeKit Self-Certification Test Cases document (available in the MFi Portal Document\'a0Center).\expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 Features that were new as of HomeKit Certification Assistant (HCA) 2.0:\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0 \cf0 \
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Features:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95 \expnd0\expndtw0\kerning0
+Support for submitting completed test results to Apple using Certification Mode\
+\kerning1\expnd0\expndtw0 \'95 \expnd0\expndtw0\kerning0
+Bug fixes\
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li872\fi-873\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 2.0 requires macOS Sierra 10.12 or later (latest release recommended), which is available for download from the Mac App Store\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0R\expnd0\expndtw0\kerning0
+eport all issues to\'a0{\field{\*\fldinst{HYPERLINK "http://bugreport.apple.com/"}}{\fldrslt \cf3 \ul \ulc3 bugreport.apple.com}}\'a0and include \'93MFi HCA\'94 in the title of the bug report
+\f0\b\fs32 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0\fs24 \cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 Features that were new as of HomeKit Certification Assistant (HCA) 1.0:\
+\pard\tx0\pardeftab720\fi542\partightenfactor0
+
+\f1\b0 \cf0 \
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Features:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95\'a0\expnd0\expndtw0\kerning0
+Support to automatically run a selection of self-certification test cases. Refer to the HomeKit Self-Certification Test Cases for HCA test case coverage.\kerning1\expnd0\expndtw0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li872\fi-873\pardirnatural\partightenfactor0
+\cf0 		\'95 \expnd0\expndtw0\kerning0
+Added two new test cases for the IP transport: TCF033 and TCF034\
+\kerning1\expnd0\expndtw0 		\'95 \expnd0\expndtw0\kerning0
+iOS 10 compatible engine\
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0HCA 1.0 requires macOS Sierra 10.12 or later (latest release recommended), which is available for download from the Mac App Store\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0R\expnd0\expndtw0\kerning0
+eport all issues to\'a0{\field{\*\fldinst{HYPERLINK "http://bugreport.apple.com/"}}{\fldrslt \cf3 \ul \ulc3 bugreport.apple.com}}\'a0and include \'93MFi HCA\'94 in the title of the bug report\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 Features that were new as of HomeKit Certification Assistant (HCA) (Beta 2):
+\f1\b0 \
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Features:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95\'a0\expnd0\expndtw0\kerning0
+Test Mode: automated subset of BLE transport\'a0Self-Cert Test Cases\kerning1\expnd0\expndtw0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li872\fi-873\pardirnatural\partightenfactor0
+\cf0 		\'95 \expnd0\expndtw0\kerning0
+Test Mode: Added user interactive test cases for Lightbulb, Fan and Outlet services in IP Transport\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Limitations:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95\'a0Accessories whose pairing codes change when reset are not supported\expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0\expnd0\expndtw0\kerning0
+HCA requires OS X version 10.11.4 or later (latest release recommended,\'a0available at\'a0{\field{\*\fldinst{HYPERLINK "https://developer.apple.com/osx/download/"}}{\fldrslt \ul \ulc5 https://developer.apple.com/osx/download/}})\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0R\expnd0\expndtw0\kerning0
+eport all issues to\'a0{\field{\*\fldinst{HYPERLINK "http://bugreport.apple.com/"}}{\fldrslt \cf3 \ul \ulc3 bugreport.apple.com}}\'a0and include \'93MFi HCA\'94 in the title of the bug report\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\b \cf0 Features that were new as of HomeKit Certification Assistant (HCA) (Beta 1):\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+\cf0 Features:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95\'a0\expnd0\expndtw0\kerning0
+Test Mode: automated subset of IP transport\'a0Self-Cert Test Cases\
+\
+\pard\tx0\pardeftab720\fi302\partightenfactor0
+
+\f0\b \cf0 Limitations:
+\f1\b0 \
+\pard\tx0\tx648\tx701\tx720\pardeftab720\li888\fi-177\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \'95\'a0Accessories whose pairing codes change when reset are not supported\expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 System Requirements:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0\expnd0\expndtw0\kerning0
+HCA requires OS X version 10.11.4 or later (latest release recommended,\'a0available at\'a0{\field{\*\fldinst{HYPERLINK "https://developer.apple.com/osx/download/"}}{\fldrslt \ul \ulc5 https://developer.apple.com/osx/download/}})\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\tx0\pardeftab720\fi301\partightenfactor0
+
+\f0\b \cf0 Bug reporting:
+\f1\b0 \
+\pard\tx220\tx720\tx728\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li878\fi-880\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 			\'95\'a0R\expnd0\expndtw0\kerning0
+eport all issues to\'a0{\field{\*\fldinst{HYPERLINK "http://bugreport.apple.com/"}}{\fldrslt \cf3 \ul \ulc3 bugreport.apple.com}}\'a0and include \'93MFi HCA\'94 in the title of the bug report}

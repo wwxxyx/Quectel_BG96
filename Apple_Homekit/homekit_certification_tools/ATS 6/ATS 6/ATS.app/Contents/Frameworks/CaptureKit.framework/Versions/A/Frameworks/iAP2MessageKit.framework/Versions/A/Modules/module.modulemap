@@ -1,0 +1,6 @@
+framework module iAP2MessageKit {
+  umbrella header "iAP2MessageKit.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Characteristics</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="HomeKit, HomeKit Accessory Simulator, Home Kit, Home Kit Accessory Simulator, characteristic, characteristics" />
+	<meta name="description" content="How to add and remove characteristics to a service." />
+	<link href="style.css" rel="stylesheet" media="all" type="text/css" />
+</head>
+<body>
+<div>
+	<a name="characteristics" id="characteristics"></a> 
+</div>
+<h1>
+	<img src="icon32x32.png" height="32" width="32" alt="Icon" /> Characteristics 
+</h1>
+<p>
+	To add a characteristic to a service, select the accessory that contains the service from the list on the left side of the window. Once the item is selected, it's services are visible in the main view on the right side of the window. Each service has it's own "Add Characteristic" button. Select the "Add Characteristic" button of the service to add a characteristic to that service. 
+</p>
+<p>
+	This will bring up the options for the new characteristic. There is an option to create a custom characteristic type as well as to create one of the Apple defined characteristics. 
+</p>
+<p>
+	Depending upon the chosen characteristic, certain properties of the characteristic can be modified. If a characteristic with numeric format is selected, minimum value, maximum value, and step value can be specified. If the format is string, maximum string length can be specified. 
+</p>
+<p>
+	If a custom characteristic is chosen, a valid UUID must be entered. The following features for a custom characteristic can be configured: 
+</p>
+<ul>
+	<li>Format</li>
+	<li>Unit</li>
+	<li>Read, Write, and Notify permissions</li>
+	<li>On Bluetooth LE, an Unconnected Notify permission is also available (for notifying of an updated value without a currently active Bluetooth LE connection)</li>
+</ul>
+<p>
+	Characteristics can also be set to require Additional Authorization data. There is an option in the application Preferences to set specific data to validate against. If no data is entered in the application Preferences, the application will allow any data. 
+</p>
+<p>
+	The "Hidden" property for a characteristic can also be set by selecting "Hidden" checkbox in the characteristic menu. 
+</p>
+<p>
+	Once the characteristic details are completed, select the "Finish" button to add the characteristic. 
+</p>
+<p>
+	Characteristics may be removed by selecting the round "-" button to the right of the characteristic. 
+</p>
+</body>
+</html>

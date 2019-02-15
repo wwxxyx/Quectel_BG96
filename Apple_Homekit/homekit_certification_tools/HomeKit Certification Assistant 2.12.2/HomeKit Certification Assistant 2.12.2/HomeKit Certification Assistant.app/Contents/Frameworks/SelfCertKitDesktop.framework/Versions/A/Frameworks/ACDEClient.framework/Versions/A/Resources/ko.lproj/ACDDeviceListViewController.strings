@@ -1,0 +1,21 @@
+
+/* Class = "NSButtonCell"; title = "Unable to receive messages at any of your devices?"; ObjectID = "8rM-fL-JoM"; */
+"8rM-fL-JoM.title" = "메시지를 받을 수 있는 기기가 없습니까?";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "Sxi-lQ-Opj"; */
+"Sxi-lQ-Opj.title" = "취소";
+
+/* Class = "NSTextFieldCell"; title = "To manage your trusted devices visit appleid.apple.com from a Mac or PC."; ObjectID = "b7X-aa-2IA"; */
+"b7X-aa-2IA.title" = "To manage your trusted devices visit appleid.apple.com from a Mac or PC.";
+
+/* Class = "NSButtonCell"; title = "Continue"; ObjectID = "bKD-Fn-btQ"; */
+"bKD-Fn-btQ.title" = "계속";
+
+/* Class = "NSTextFieldCell"; title = "The device you select below will be sent a temporary code that you can use to verify your identity."; ObjectID = "iec-VL-l55"; */
+"iec-VL-l55.title" = "신원을 확인하는 데 사용할 수 있는 임시 코드를 아래의 선택한 기기로 보냅니다.";
+
+/* Class = "NSTextFieldCell"; title = "Two-step verification is enabled for this Apple ID."; ObjectID = "tES-Rb-6CW"; */
+"tES-Rb-6CW.title" = "이 Apple ID에 대한 2단계 확인이 활성화되었습니다.";
+
+/* Class = "NSTextFieldCell"; title = "Send Code to:"; ObjectID = "xW1-iZ-fcl"; */
+"xW1-iZ-fcl.title" = "다음으로 코드 보내기:";

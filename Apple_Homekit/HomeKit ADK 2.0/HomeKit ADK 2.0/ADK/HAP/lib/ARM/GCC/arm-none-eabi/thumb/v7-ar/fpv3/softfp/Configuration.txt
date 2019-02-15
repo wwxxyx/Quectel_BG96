@@ -1,0 +1,29 @@
+Description:       GCC for ARM Cortex-R4
+Architecture:      ARMv7-R with FPv3-SP extensions
+Multilib name:     thumb/v7-ar/fpv3/softfp
+Compiler URL:      https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads
+Compiler version:  7-2018-q2-update
+Compile flags:     --specs=nano.specs
+                   -Os
+                   -Wall
+                   -Werror
+                   -Wextra
+                   -Wno-padded
+                   -fconserve-stack
+                   -fdata-sections
+                   -ffreestanding
+                   -ffunction-sections
+                   -fno-delete-null-pointer-checks
+                   -fno-stack-protector
+                   -fno-strict-aliasing
+                   -fno-strict-overflow
+                   -g0
+                   -march=armv7-r
+                   -mfloat-abi=softfp
+                   -mfpu=vfpv3-d16
+                   -mthumb
+                   -pedantic
+                   -pedantic-errors
+                   -std=c99
+Data cache:        processor must not have data cache
+Byte ordering:     little endian

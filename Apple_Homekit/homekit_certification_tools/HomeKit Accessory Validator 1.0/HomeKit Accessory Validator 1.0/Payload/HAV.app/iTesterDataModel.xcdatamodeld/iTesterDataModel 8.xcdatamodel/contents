@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14094.4" systemVersion="17D44" minimumToolsVersion="Xcode 7.0" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="API" representedClassName="API" syncable="YES">
+        <attribute name="apiClass" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="display" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expectedAllowedValues" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expectedType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nonInternalAllowed" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="usage" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="APICategory" inverseName="apis" inverseEntity="APICategory" syncable="YES"/>
+        <relationship name="parameters" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="APIParameter" inverseName="api" inverseEntity="APIParameter" syncable="YES"/>
+    </entity>
+    <entity name="APICategory" representedClassName="APICategory" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="apis" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="API" inverseName="category" inverseEntity="API" syncable="YES"/>
+        <relationship name="technology" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Technology" inverseName="apicategories" inverseEntity="Technology" syncable="YES"/>
+    </entity>
+    <entity name="APIParameter" representedClassName="APIParameter" syncable="YES">
+        <attribute name="defaultValue" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="display" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expectedAllowedValues" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="keyboardType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="kpiName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="optional" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="api" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="API" inverseName="parameters" inverseEntity="API" syncable="YES"/>
+    </entity>
+    <entity name="APIParameterEnum" representedClassName="APIParameterEnum" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="enumvalues" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="APIParameterEnumValue" inverseName="associatedEnum" inverseEntity="APIParameterEnumValue" syncable="YES"/>
+    </entity>
+    <entity name="APIParameterEnumValue" representedClassName="APIParameterEnumValue" syncable="YES">
+        <attribute name="display" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="associatedEnum" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="APIParameterEnum" inverseName="enumvalues" inverseEntity="APIParameterEnum" syncable="YES"/>
+    </entity>
+    <entity name="Call" representedClassName="Call" syncable="YES">
+        <attribute name="controlErrorCode" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="count" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="emergencyCallbackMode" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="emergencyStatus" optional="YES" attributeType="Integer 32" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isAddCallAllowed" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isAmbiguousCallList" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isAmbiguousMultiParty" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isCallForwardingEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isEndAndAnswerAllowed" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isHoldAllowed" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isMergeable" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isSwappable" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="maxMultiPartyCallCount" optional="YES" attributeType="Integer 32" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="maxSupportedCallCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="modemErrorCode" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="otaSPStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumberRegistrationNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumberRegistrationRequestResult" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="phoneNumberRegistrationSignature" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="phoneNumberRegistrationStateRegistered" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="phoneNumberRegistrationToken" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ussdErrorCode" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="ussdErrorString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ussdResponseRequested" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="ussdString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ussdStringIsOutgoing" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="voicePrivacyStatus" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="telephony" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Telephony" inverseName="call" inverseEntity="Telephony" syncable="YES"/>
+    </entity>
+    <entity name="Cell" representedClassName="Cell" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="arfcn" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="bandClass" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="bandInfo" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="bsic" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="bsid" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="bsLat" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="bsLong" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="changeMask" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="channelNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="cid" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="daylightSaving" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="derivedMCC" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="ecio" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="ecioFiltered" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="ecn0" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lac" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="ltmOffset" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lx" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="mcc" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="mnc" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="ngbrPn" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="nid" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pci" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pid" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pnOffset" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="psc" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="rat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="refEcio" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="refPn" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="rscp" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="rsrp" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="rsrq" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="rssi" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="rxAGC" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="rxLev" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="scn" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sectorid" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="sectorLat" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sectorLong" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sid" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="snr" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="tac" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="timingAdvance" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uarfcn" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="zoneid" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="telephony" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Telephony" inverseName="cell" inverseEntity="Telephony" syncable="YES"/>
+    </entity>
+    <entity name="Data" representedClassName="Data" syncable="YES">
+        <attribute name="contextCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="hideIndicator" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isCDMAIntlRoamingEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isDataDisallowed" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isDataEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isFastDormancyEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isIntlDataAccessEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isTetheringEditingSupported" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="maxAllowedDataRate" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="packet" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Packet" inverseName="data" inverseEntity="Packet" syncable="YES"/>
+        <relationship name="telephony" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Telephony" inverseName="data" inverseEntity="Telephony" syncable="YES"/>
+    </entity>
+    <entity name="Event" representedClassName="Event" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crashPoint" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="importance" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="monitor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nonInternalAllowed" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="file" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="File" inverseName="event" inverseEntity="File" syncable="YES"/>
+        <relationship name="info" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Info" inverseName="event" inverseEntity="Info" syncable="YES"/>
+        <relationship name="radar" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Radar" inverseName="event" inverseEntity="Radar" syncable="YES"/>
+    </entity>
+    <entity name="File" representedClassName="File" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="event" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Event" inverseName="file" inverseEntity="Event" syncable="YES"/>
+    </entity>
+    <entity name="HomeKit" representedClassName="HomeKit" syncable="YES">
+        <attribute name="accessoryName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="characteristicName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="characteristicType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="homeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="possibleAPIIdentifiers" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="readWrite" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="serviceName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="test" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Test" inverseName="homekitConfig" inverseEntity="Test" syncable="YES"/>
+    </entity>
+    <entity name="Info" representedClassName="Info" syncable="YES">
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="event" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="info" inverseEntity="Event" syncable="YES"/>
+        <relationship name="location" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="info" inverseEntity="Location" syncable="YES"/>
+        <relationship name="telephony" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Telephony" inverseName="info" inverseEntity="Telephony" syncable="YES"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="altitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="course" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="horizontalAccuracy" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="speed" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="verticalAccuracy" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="info" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Info" inverseName="location" inverseEntity="Info" syncable="YES"/>
+    </entity>
+    <entity name="Logging" representedClassName="Logging" syncable="YES">
+        <attribute name="apiClass" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dumpAPIIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="loggingOffAPIIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="loggingOnAPIIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="loggingStatusOffAPIIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="loggingStatusOnAPIIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="logLocations" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Message" representedClassName="Message" syncable="YES">
+        <attribute name="contentType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="countryCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="deliveryReportsEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isMMSConfigured" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serviceCenter" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="recipient" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Recipient" inverseName="message" inverseEntity="Recipient" syncable="YES"/>
+        <relationship name="telephony" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Telephony" inverseName="message" inverseEntity="Telephony" syncable="YES"/>
+    </entity>
+    <entity name="Modem" representedClassName="Modem" syncable="YES">
+        <attribute name="batteryCapacity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fwVersion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imei" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isInResetState" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="meid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="min" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prlVersion" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="state2GActive" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stateCellDCH" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stateCellFACH" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stateCellURA" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stateDeepSleep" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stateIdle" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stateIdleCCCH" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stateInactive" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stateNull" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stateOOSCellSearch" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="statePLMNSearch" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="statePLMNSelection" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stateReselection" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stateSIB16" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stateSIBChange" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="transmitDCHStatus" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="transmitUTBFStatus" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="telephony" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Telephony" inverseName="modem" inverseEntity="Telephony" syncable="YES"/>
+    </entity>
+    <entity name="Packet" representedClassName="Packet" syncable="YES">
+        <attribute name="cellularDataPlanAccountURL" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="cellularDataPlanNewAccount" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dataActivateFailure" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dataActivateFailureString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dataActivationPreventionReason" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dataActivationWasForMMS" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dataConnectionServices" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dataFamilyInactive" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dataIndicator" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dataIndicatorOverride" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dataStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dataStatusIntlRoaming" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dnsAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="ipAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isDataAttached" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="data" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Data" inverseName="packet" inverseEntity="Data" syncable="YES"/>
+    </entity>
+    <entity name="Radar" representedClassName="Radar" syncable="YES">
+        <attribute name="attachmentsCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="classification" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="componentName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="componentVersion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fingerprint" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fixOrder" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lastModifiedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="originator" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pendingUploads" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priority" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="reproducible" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="resolution" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="substate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="event" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="radar" inverseEntity="Event" syncable="YES"/>
+    </entity>
+    <entity name="Recipient" representedClassName="Recipient" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="message" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Message" inverseName="recipient" inverseEntity="Message" syncable="YES"/>
+    </entity>
+    <entity name="Registration" representedClassName="Registration" syncable="YES">
+        <attribute name="activeWirelessTechnology" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="allowedRadioMode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="causeCode" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="gid1" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="gid2" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="iccid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imsi" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isEmergencyCallbackModeEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isInHomeCountry" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isOnlyHomeNetworkEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="mcc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mnc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="networkSelectionMenu" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="networkSelectionMode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="operatorName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pinAttemptsLeft" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pukAttemptsLeft" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="rat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ratSelection" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serviceProviderName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="simStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="simTrayStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="telephony" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Telephony" inverseName="registration" inverseEntity="Telephony" syncable="YES"/>
+    </entity>
+    <entity name="Technology" representedClassName="Technology" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="apicategories" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="APICategory" inverseName="technology" inverseEntity="APICategory" syncable="YES"/>
+        <relationship name="technologyEvents" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TechnologyEvent" inverseName="technology" inverseEntity="TechnologyEvent" syncable="YES"/>
+    </entity>
+    <entity name="TechnologyEvent" representedClassName="TechnologyEvent" syncable="YES">
+        <attribute name="audioResource" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nonInternalAllowed" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="warrantsAlert" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="technology" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Technology" inverseName="technologyEvents" inverseEntity="Technology" syncable="YES"/>
+    </entity>
+    <entity name="Telephony" representedClassName="Telephony" syncable="YES">
+        <attribute name="cellularAbsoluteTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="cellularTimeZoneOffset" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="signalStrength" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="signalStrengthGraded" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="signalStrengthRaw" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="call" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Call" inverseName="telephony" inverseEntity="Call" syncable="YES"/>
+        <relationship name="cell" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Cell" inverseName="telephony" inverseEntity="Cell" syncable="YES"/>
+        <relationship name="data" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Data" inverseName="telephony" inverseEntity="Data" syncable="YES"/>
+        <relationship name="info" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Info" inverseName="telephony" inverseEntity="Info" syncable="YES"/>
+        <relationship name="message" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Message" inverseName="telephony" inverseEntity="Message" syncable="YES"/>
+        <relationship name="modem" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Modem" inverseName="telephony" inverseEntity="Modem" syncable="YES"/>
+        <relationship name="registration" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Registration" inverseName="telephony" inverseEntity="Registration" syncable="YES"/>
+        <relationship name="temperature" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Temperature" inverseName="telephony" inverseEntity="Temperature" syncable="YES"/>
+        <relationship name="voicemail" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Voicemail" inverseName="telephony" inverseEntity="Voicemail" syncable="YES"/>
+    </entity>
+    <entity name="Temperature" representedClassName="Temperature" syncable="YES">
+        <attribute name="filtered" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="raw" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sensor" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="telephony" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Telephony" inverseName="temperature" inverseEntity="Telephony" syncable="YES"/>
+    </entity>
+    <entity name="Test" representedClassName="Test" syncable="YES">
+        <attribute name="apiClass" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="apiIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="apiName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="complexTypes" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="currentTestCounter" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="display" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expected" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="inReport" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="issue" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="result" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="technology" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="verificationDisabled" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="header" maxCount="1" deletionRule="Cascade" destinationEntity="TestHeader" inverseName="test" inverseEntity="TestHeader" syncable="YES"/>
+        <relationship name="homekitConfig" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HomeKit" inverseName="test" inverseEntity="HomeKit" syncable="YES"/>
+        <relationship name="results" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="TestResult" inverseName="test" inverseEntity="TestResult" syncable="YES"/>
+        <relationship name="testAPIParameters" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="TestAPIParameter" inverseName="test" inverseEntity="TestAPIParameter" syncable="YES"/>
+    </entity>
+    <entity name="TestAPIParameter" representedClassName="TestAPIParameter" syncable="YES">
+        <attribute name="allowedValues" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customInputName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="test" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Test" inverseName="testAPIParameters" inverseEntity="Test" syncable="YES"/>
+    </entity>
+    <entity name="TestHeader" representedClassName="TestHeader" syncable="YES">
+        <attribute name="autoLogging" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="disabled" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dumpLogFrequency" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dumpLogOnFail" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="failCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="handleFailureAs" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isExpanded" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="iterations" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="mmsResultsSent" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parentid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="readOnly" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="remainingIterations" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="rootIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="runIf" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stopDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stopOnFail" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="stopOnFailCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="timeZone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="version" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="test" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Test" inverseName="header" inverseEntity="Test" syncable="YES"/>
+    </entity>
+    <entity name="TestResult" representedClassName="TestResult" syncable="YES">
+        <attribute name="actual" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="currentIterationStartDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="currentIterationStopDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="errorAPI" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="errorCode" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="errorDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="errorDomain" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expected" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="logIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="logs" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="result" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="test" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Test" inverseName="results" inverseEntity="Test" syncable="YES"/>
+    </entity>
+    <entity name="Voicemail" representedClassName="Voicemail" syncable="YES">
+        <attribute name="count" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isAvailable" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isMWI" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isNetworkOriginated" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="telephony" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Telephony" inverseName="voicemail" inverseEntity="Telephony" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="API" positionX="27" positionY="189" width="128" height="208"/>
+        <element name="APICategory" positionX="169" positionY="-36" width="128" height="90"/>
+        <element name="APIParameter" positionX="169" positionY="144" width="128" height="210"/>
+        <element name="APIParameterEnum" positionX="45" positionY="207" width="128" height="75"/>
+        <element name="APIParameterEnumValue" positionX="502" positionY="264" width="128" height="103"/>
+        <element name="Call" positionX="63" positionY="225" width="128" height="465"/>
+        <element name="Cell" positionX="81" positionY="234" width="128" height="765"/>
+        <element name="Data" positionX="36" positionY="180" width="128" height="210"/>
+        <element name="Event" positionX="45" positionY="189" width="128" height="210"/>
+        <element name="File" positionX="54" positionY="198" width="128" height="120"/>
+        <element name="HomeKit" positionX="-0" positionY="-33" width="128" height="165"/>
+        <element name="Info" positionX="45" positionY="189" width="128" height="105"/>
+        <element name="Location" positionX="36" positionY="180" width="128" height="180"/>
+        <element name="Logging" positionX="45" positionY="189" width="128" height="150"/>
+        <element name="Message" positionX="54" positionY="198" width="128" height="195"/>
+        <element name="Modem" positionX="63" positionY="207" width="128" height="420"/>
+        <element name="Packet" positionX="63" positionY="207" width="128" height="330"/>
+        <element name="Radar" positionX="81" positionY="225" width="128" height="315"/>
+        <element name="Recipient" positionX="72" positionY="216" width="128" height="90"/>
+        <element name="Registration" positionX="72" positionY="216" width="128" height="405"/>
+        <element name="Technology" positionX="-279" positionY="171" width="128" height="120"/>
+        <element name="TechnologyEvent" positionX="-144" positionY="144" width="128" height="135"/>
+        <element name="Telephony" positionX="241" positionY="285" width="128" height="255"/>
+        <element name="Temperature" positionX="241" positionY="246" width="128" height="105"/>
+        <element name="Test" positionX="-747" positionY="45" width="128" height="315"/>
+        <element name="TestAPIParameter" positionX="-504" positionY="153" width="128" height="120"/>
+        <element name="TestHeader" positionX="313" positionY="-18" width="128" height="450"/>
+        <element name="TestResult" positionX="-252" positionY="342" width="128" height="225"/>
+        <element name="Voicemail" positionX="448" positionY="180" width="128" height="135"/>
+    </elements>
+</model>

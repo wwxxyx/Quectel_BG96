@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>com.apple.music</key>
+	<string>Music</string>
+	<key>com.apple.videos</key>
+	<string>TV or Videos</string>
+	<key>com.apple.tv</key>
+	<string>TV or Videos</string>
+	<key>com.apple.podcasts</key>
+	<string>Podcasts</string>
+	<key>com.apple.ibooks</key>
+	<string>iBooks</string>
+	<key>com.apple.itunesu</key>
+	<string>iTunes U</string>
+</dict>
+</plist>

@@ -1,0 +1,12 @@
+
+/* Class = "NSButtonCell"; title = "Continue"; ObjectID = "2Sv-v6-97t"; */
+"2Sv-v6-97t.title" = "Continuer";
+
+/* Class = "NSButtonCell"; title = "Go Back"; ObjectID = "4CB-Pk-vq9"; */
+"4CB-Pk-vq9.title" = "Revenir";
+
+/* Class = "NSTextFieldCell"; title = "Enter verification code sent to Janet's iPhone"; ObjectID = "Evw-zT-xo7"; */
+"Evw-zT-xo7.title" = "Entrez le code de validation";
+
+/* Class = "NSButtonCell"; title = "Send a new code"; ObjectID = "D1G-Pj-C24"; */
+"D1G-Pj-C24.title" = "Envoyer un nouveau code";

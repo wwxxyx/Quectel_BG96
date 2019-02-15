@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Pairing with an Accessory</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="HomeKit, HomeKit Accessory Simulator, Home Kit, Home Kit Accessory Simulator, pairing, connecting, pair, connect, setup code" />
+	<meta name="description" content="Learn how to connect to your simulated accessory." />
+	<link href="style.css" rel="stylesheet" media="all" type="text/css" />
+</head>
+<body>
+<div>
+	<a name="pairing" id="pairing"></a> 
+</div>
+<h1>
+	<img src="icon32x32.png" height="32" width="32" alt="Icon" /> Pairing with an Accessory 
+</h1>
+<p>
+	Once an accessory has been created, and is turned on, it can be discovered by the iOS device via the HomeKit API. Once the accessory or bridge has been selected, a prompt will appear on the iOS device to enter the Setup Code either via the camera or manually. 
+</p>
+<p>
+	On non-bridged accessories, there is an on/off switch in the upper-right corner of the accessory view to indicate the transport state. An "On" state indicates that the accessory is broadcasting and available over either its Bluetooth LE or IP transport. A spinner is shown rather than the on/off switch to indicate that the transport is in the process of either turning on or turning off. 
+</p>
+<p>
+	Note that for bridged accessories, the pairing process happens with the bridge and not with the bridged accessory itself. 
+</p>
+<p>
+	To view the QR or Setup Code, select the accessory from the accessory list on the left side of the window. The QR / Setup Code is displayed in the top area of the main view. Double clicking on the QR Code view will open the QR code helper tool window. Alternatively, you can open the QR code window from the Window menu or by using the keyboard shortcut: ⌘2. You can switch between the Setup and QR codes by clicking on the Setup Code label.
+</p>
+<p>
+	An accessory only needs to be paired to a device once. After the initial pairing process, the device will reconnect to the accessory when it is reachable and will not require a Setup Code again. 
+</p>
+<p>
+	The number of devices paired with the accessory is shown below the Setup Code and accessory Category. Pairing with an accessory can only happen if the transport is on, and if the accessory is unpaired. To remove all of the accessory pairings, select the "Reset" button to the right of the number of pairings.
+</p>
+<p>
+	You can show, hide and configure the accessory's main view by clicking on the up arrow and settings buttons in the upper-right corner of the view.
+</p>
+</body>
+</html>

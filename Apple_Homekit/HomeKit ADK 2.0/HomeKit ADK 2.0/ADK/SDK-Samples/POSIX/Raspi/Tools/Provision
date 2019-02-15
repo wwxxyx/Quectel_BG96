@@ -1,0 +1,510 @@
+#!/usr/bin/env bash
+#
+# Package: HomeKit-ADK
+# Version: 2.0 (16A62)
+#
+# Disclaimer: IMPORTANT: This Apple software is supplied to you, by Apple Inc. ("Apple"), in your
+# capacity as a current, and in good standing, Licensee in the MFi Licensing Program. Use of this
+# Apple software is governed by and subject to the terms and conditions of your MFi License,
+# including, but not limited to, the restrictions specified in the provision entitled "Public
+# Software", and is further subject to your agreement to the following additional terms, and your
+# agreement that the use, installation, modification or redistribution of this Apple software
+# constitutes acceptance of these additional terms. If you do not agree with these additional terms,
+# you may not use, install, modify or redistribute this Apple software.
+#
+# Subject to all of these terms and in consideration of your agreement to abide by them, Apple grants
+# you, for as long as you are a current and in good-standing MFi Licensee, a personal, non-exclusive
+# license, under Apple's copyrights in this Apple software (the "Apple Software"), to use,
+# reproduce, and modify the Apple Software in source form, and to use, reproduce, modify, and
+# redistribute the Apple Software, with or without modifications, in binary form, in each of the
+# foregoing cases to the extent necessary to develop and/or manufacture "Proposed Products" and
+# "Licensed Products" in accordance with the terms of your MFi License. While you may not
+# redistribute the Apple Software in source form, should you redistribute the Apple Software in binary
+# form, you must retain this notice and the following text and disclaimers in all such redistributions
+# of the Apple Software. Neither the name, trademarks, service marks, or logos of Apple Inc. may be
+# used to endorse or promote products derived from the Apple Software without specific prior written
+# permission from Apple. Except as expressly stated in this notice, no other rights or licenses,
+# express or implied, are granted by Apple herein, including but not limited to any patent rights that
+# may be infringed by your derivative works or by other works in which the Apple Software may be
+# incorporated. Apple may terminate this license to the Apple Software by removing it from the list
+# of Licensed Technology in the MFi License, or otherwise in accordance with the terms of such MFi License.
+#
+# Unless you explicitly state otherwise, if you provide any ideas, suggestions, recommendations, bug
+# fixes or enhancements to Apple in connection with this software ("Feedback"), you hereby grant to
+# Apple a non-exclusive, fully paid-up, perpetual, irrevocable, worldwide license to make, use,
+# reproduce, incorporate, modify, display, perform, sell, make or have made derivative works of,
+# distribute (directly or indirectly) and sublicense, such Feedback in connection with Apple products
+# and services. Providing this Feedback is voluntary, but if you do provide Feedback to Apple, you
+# acknowledge and agree that Apple may exercise the license granted above without the payment of
+# royalties or further consideration to Participant.
+#
+# The Apple Software is provided by Apple on an "AS IS" basis. APPLE MAKES NO WARRANTIES, EXPRESS OR
+# IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY
+# AND FITNESS FOR A PARTICULAR PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND OPERATION ALONE OR
+# IN COMBINATION WITH YOUR PRODUCTS.
+#
+# IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES
+# (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+# PROFITS; OR BUSINESS INTERRUPTION) ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION, MODIFICATION
+# AND/OR DISTRIBUTION OF THE APPLE SOFTWARE, HOWEVER CAUSED AND WHETHER UNDER THEORY OF CONTRACT, TORT
+# (INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
+# POSSIBILITY OF SUCH DAMAGE.
+#
+# Copyright (C) 2018 Apple Inc. All Rights Reserved.
+#
+
+set -eu -o pipefail
+
+if (( ! $# )); then
+    echo 'HomeKit Accessory Setup Provisioning Tool'
+    echo ''
+    echo 'USAGE'
+    echo '     Provision [OPTION]... [<Host>:]<Destination key-value store>'
+    echo ''
+    echo 'DESCRIPTION'
+    echo '     This tool generates and provisions accessory setup information for HomeKit.'
+    echo ''
+    echo '     EACH ACCESSORY NEEDS TO BE PROVISIONED WITH UNIQUE ACCESSORY SETUP'
+    echo '     INFORMATION BEFORE IT MAY BE USED.'
+    echo ''
+    echo '     Destination key-value store is the location of the key-value store, e.g.'
+    echo '     the directory .HomeKitStore. If Host is specified, a remote shell program'
+    echo '     is used as the transfer.'
+    echo ''
+    echo '     The --category, --display, --nfc and --wac options must match the accessory'
+    echo '     capabilities and configuration.'
+    echo ''
+    echo 'OPTIONS'
+    echo '     The following options are available:'
+    echo ''
+    echo '     --display'
+    echo '        Accessory is connected to a display that supports showing a setup code.'
+    echo ''
+    echo '     --nfc'
+    echo '        Accessory has a programmable NFC tag.'
+    echo ''
+    echo '     --wac'
+    echo '        Accessory supports Wi-Fi Accessory Configuration (WAC) for configuring'
+    echo '        Wi-Fi credentials.'
+    echo ''
+    echo '     --category <Category>'
+    echo '        The accessory category.'
+    echo ''
+    echo '        An accessory with support for multiple categories should advertise the'
+    echo '        primary category. An accessory for which a primary category cannot be'
+    echo '        determined or the primary category isn'"'"'t among the well defined'
+    echo '        categories falls in the `Other` category.'
+    echo ''
+    echo '        Well defined categories:'
+    echo '          1  Other.'
+    echo '          2  Bridges.'
+    echo '          3  Fans.'
+    echo '          4  Garage Door Openers.'
+    echo '          5  Lighting.'
+    echo '          6  Locks.'
+    echo '          7  Outlets.'
+    echo '          8  Switches.'
+    echo '          9  Thermostats.'
+    echo '         10  Sensors.'
+    echo '         11  Security Systems.'
+    echo '         12  Doors.'
+    echo '         13  Windows.'
+    echo '         14  Window Coverings.'
+    echo '         15  Programmable Switches.'
+    echo '         16  Range Extenders.'
+    echo '         17  IP Cameras.'
+    echo '         18  Video Doorbells.'
+    echo '         19  Air Purifiers.'
+    echo '         20  Heaters.'
+    echo '         21  Air Conditioners.'
+    echo '         22  Humidifiers.'
+    echo '         23  Dehumidifiers.'
+    echo '         28  Sprinklers.'
+    echo '         29  Faucets.'
+    echo '         30  Shower Systems.'
+    echo '         32  Remotes.'
+    echo ''
+    echo '     --setup-code <Setup Code>'
+    echo '        Provisions accessory setup information that allows pairing using the'
+    echo '        specified Setup Code (e.g. for development).'
+    echo '        Format is `XXX-XX-XXX` with X being a digit from 0-9.'
+    echo '        - Setup Codes that only consist of a repeating digit are not allowed.'
+    echo '        - `123-45-678` and `876-54-321` are not allowed.'
+    echo '        If this option is not present, a random Setup Code is provisioned.'
+    echo ''
+    echo '     --setup-id <Setup ID>'
+    echo '        Provisions accessory setup information using a specific Setup ID.'
+    echo '        Format is `XXXX` with X being a digit from 0-9 or a character from A-Z.'
+    echo '        - Lowercase characters are not allowed.'
+    echo '        If this option is not present, a random Setup ID is provisioned.'
+    echo ''
+    echo '     --mfi-token <Software Token UUID> <Software Token>'
+    echo '     --mfi-token preserve'
+    echo '        Provisions information required for Software Authentication.'
+    echo '        Format for <Software Token UUID> is `XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX`'
+    echo '        with X being a digit from 0-9 or a character from A-Z.'
+    echo '        Format for <Software Token> is base64.'
+    echo '        The <Software Token UUID> and initial <Software Token> are deployed'
+    echo '        to the key-value store.'
+    echo '        Alternatively, if the preserve option is specified, a previously'
+    echo '        provisioned Software Token will not be deleted.'
+    echo ''
+    echo '     -e'
+    echo '        Specify the remote shell to use.'
+    echo '        If this option is not present, ssh is used.'
+    echo ''
+    echo 'OUTPUT'
+    echo '     The destination key-value store is provisioned with information that is'
+    echo '     compatible with the provided HAP platform implementation. If that'
+    echo '     implementation is modified, this tool may need to be modified as well.'
+    echo '     It is left up to the accessory manufacturer to implement a production ready'
+    echo '     provisioning concept.'
+    echo ''
+    echo '     Upon completion, information to be printed on labels is printed to stdout.'
+    echo '     These labels must be affixed to the accessory and its packaging.'
+    echo '     If an accessory is connected to a display, random setup information is used'
+    echo '     for every pairing attempt, and no label information is generated.'
+    echo ''
+    echo '     If a QR code label is supported (no display or programmable NFC tag),'
+    echo '     it is printed to stdout using ANSI characters (requires qrencode).'
+    echo '     This QR code is to be used for development purposes only!'
+    echo '     Please refer to Works with Apple HomeKit Identity Guidelines for more'
+    echo '     details on identity guidelines for including QR codes on the accessory.'
+    exit
+fi
+
+################################################################################
+# Configuration.
+################################################################################
+accessorySetupGenerator="${accessorySetupGenerator:-${0%/*}/helpers/Mac}/AccessorySetupGenerator"
+sdkDomainsFile="${sdkDomainsFile:-${0%/*}/../PAL}/HAPPlatformKeyValueStore+SDKDomains.h"
+
+################################################################################
+# Parse command line.
+################################################################################
+supportsDisplay=0
+supportsProgrammableNFC=0
+supportsWAC=0
+category=0
+fixedSetupCode=""
+fixedSetupID=""
+preserveMFiToken=0
+mfiTokenUUID=""
+mfiToken=""
+remoteShell=""
+destination=""
+host=""
+keyValueStore=""
+while (( $# )); do
+    case "${1}" in
+        "--display")
+            shift
+            if (( $supportsDisplay )); then
+                echo "--display specified multiple times."
+                false
+            fi
+            supportsDisplay=1
+            ;;
+
+        "--nfc")
+            shift
+            if (( $supportsProgrammableNFC )); then
+                echo "--nfc specified multiple times."
+                false
+            fi
+            supportsProgrammableNFC=1
+            ;;
+
+        "--wac")
+            shift
+            if (( $supportsWAC )); then
+                echo "--wac specified multiple times."
+                false
+            fi
+            supportsWAC=1
+            ;;
+
+        "--category")
+            shift
+            if (( $category )); then
+                echo "--category specified multiple times."
+                false
+            fi
+            if (( $# < 1 )); then
+                echo "--category specified without accessory category identifier."
+                false
+            fi
+            categoryID="${1}"
+            shift
+            if [ ! "${categoryID}" -eq "${categoryID}" ]; then
+                echo "--category specified with malformed accessory category identifier."
+                false
+            fi
+            if (( ! $categoryID )) || (( $categoryID > 255 )); then
+                echo "--category specified with out-of-range accessory category identifier."
+                false
+            fi
+            category=${categoryID}
+            ;;
+
+        "--setup-code")
+            shift
+            if [ "${fixedSetupCode}" != "" ]; then
+                echo "--setup-code specified multiple times."
+                false
+            fi
+            if (( $# < 1 )); then
+                echo "--setup-code specified without Setup Code."
+                false
+            fi
+            fixedSetupCode="${1}"
+            shift
+            ;;
+
+        "--setup-id")
+            shift
+            if [ "${fixedSetupID}" != "" ]; then
+                echo "--setup-id specified multiple times."
+                false
+            fi
+            if (( $# < 1 )); then
+                echo "--setup-id specified without Setup ID."
+                false
+            fi
+            fixedSetupID="${1}"
+            shift
+            ;;
+
+        "--mfi-token")
+            shift
+            if [ "${mfiTokenUUID}" != "" ] || [ "${mfiToken}" != "" ] || [ "${preserveMFiToken}" != "0" ]; then
+                echo "--mfi-token specified multiple times."
+                false
+            fi
+            if [ "${1:-}" == "preserve" ]; then
+                preserveMFiToken=1
+                shift
+                continue
+            fi
+            if (( $# < 2 )); then
+                echo "--mfi-token specified without Software Token UUID or Software Token."
+                false
+            fi
+            mfiTokenUUIDString="${1}"
+            mfiTokenBase64String="${2}"
+            shift 2
+            mfiTokenUUIDRegex=""
+            mfiTokenUUIDRegex="${mfiTokenUUIDRegex}([0-9A-F]{2})([0-9A-F]{2})([0-9A-F]{2})([0-9A-F]{2})-"
+            mfiTokenUUIDRegex="${mfiTokenUUIDRegex}([0-9A-F]{2})([0-9A-F]{2})-([0-9A-F]{2})([0-9A-F]{2})-"
+            mfiTokenUUIDRegex="${mfiTokenUUIDRegex}([0-9A-F]{2})([0-9A-F]{2})-([0-9A-F]{2})([0-9A-F]{2})"
+            mfiTokenUUIDRegex="${mfiTokenUUIDRegex}([0-9A-F]{2})([0-9A-F]{2})([0-9A-F]{2})([0-9A-F]{2})"
+            if [[ ! "${mfiTokenUUIDString}" =~ ${mfiTokenUUIDRegex} ]]; then
+                echo "--mfi-token specified with malformed Software Token UUID."
+                false
+            fi
+            # Reversed mfiTokenUUID network byte order.
+            mfiTokenUUID=""
+            mfiTokenUUID="${mfiTokenUUID}${BASH_REMATCH[16]}${BASH_REMATCH[15]}${BASH_REMATCH[14]}${BASH_REMATCH[13]}"
+            mfiTokenUUID="${mfiTokenUUID}${BASH_REMATCH[12]}${BASH_REMATCH[11]}${BASH_REMATCH[10]}${BASH_REMATCH[ 9]}"
+            mfiTokenUUID="${mfiTokenUUID}${BASH_REMATCH[ 8]}${BASH_REMATCH[ 7]}${BASH_REMATCH[ 6]}${BASH_REMATCH[ 5]}"
+            mfiTokenUUID="${mfiTokenUUID}${BASH_REMATCH[ 4]}${BASH_REMATCH[ 3]}${BASH_REMATCH[ 2]}${BASH_REMATCH[ 1]}"
+            if ! mfiToken="$(base64 --decode <<< "${mfiTokenBase64String}" | xxd -ps -u | tr -d '\n')"; then
+                echo "--mfi-token specified with malformed Software Token."
+                false
+            fi
+            ;;
+
+        "-e")
+            shift
+            if [ "${remoteShell}" != "" ]; then
+                echo "-e specified multiple times."
+                false
+            fi
+            if (( $# < 1 )); then
+                echo "-e specified without remote shell."
+                false
+            fi
+            remoteShell="${1}"
+            shift
+            ;;
+
+        *)
+            if [ "${destination}" != "" ]; then
+                echo "Too many arguments specified."
+                false
+            fi
+            destination="${1}"
+            shift
+            host="${destination%:*}"
+            keyValueStore="${destination##*:}"
+            ;;
+
+    esac
+done
+if (( ! category )); then
+    echo "--category not specified."
+    false
+fi
+if [ "${keyValueStore}" == "" ]; then
+    echo "Destination key-value store not specified."
+    false
+fi
+if [ "${destination}" == "${keyValueStore}" ] && [ "${remoteShell}" != "" ]; then
+    echo "-e specified without Host."
+    false
+fi
+if [ "${destination}" != "${keyValueStore}" ]; then
+    remoteShell="${remoteShell:-ssh}"
+fi
+
+################################################################################
+# Generate accessory setup information.
+################################################################################
+flags=""
+flags="${flags}"' --ip'
+if (( supportsWAC )); then
+    flags="${flags}"' --wac'
+fi
+flags="${flags}"' --category '"${category}"
+if [ "${fixedSetupCode}" != "" ]; then
+    flags="${flags}"' --setup-code '"${fixedSetupCode}"
+fi
+if [ "${fixedSetupID}" != "" ]; then
+    flags="${flags}"' --setup-id '"${fixedSetupID}"
+fi
+accessorySetup=$("${accessorySetupGenerator}" ${flags})
+accessorySetup=(${accessorySetup})
+
+accessorySetupVersion="${accessorySetup[0]}"
+if [ "${accessorySetupVersion}" != "1" ]; then
+    echo "Incompatible with Accessory Setup Generator."
+    false
+fi
+
+setupCode="${accessorySetup[1]}"
+srpSalt="${accessorySetup[2]}"
+srpVerifier="${accessorySetup[3]}"
+setupID="${accessorySetup[4]}"
+setupPayload="${accessorySetup[5]}"
+
+################################################################################
+# Provision accessory setup information.
+################################################################################
+provisioningDomainID="$(grep "#define kSDKKeyValueStoreDomain_Provisioning " "${sdkDomainsFile}")"
+[[ "${provisioningDomainID}" =~ "(HAPPlatformKeyValueStoreDomain) "0x([0-9]+) ]]
+provisioningDomain="${BASH_REMATCH[1]}"
+
+setupInfoKeyID="$(grep "#define kSDKKeyValueStoreKey_Provisioning_SetupInfo " "${sdkDomainsFile}")"
+[[ "${setupInfoKeyID}" =~ "(HAPPlatformKeyValueStoreKey) "0x([0-9]+) ]]
+setupInfoKey="${BASH_REMATCH[1]}"
+
+setupIDKeyID="$(grep "#define kSDKKeyValueStoreKey_Provisioning_SetupID " "${sdkDomainsFile}")"
+[[ "${setupIDKeyID}" =~ "(HAPPlatformKeyValueStoreKey) "0x([0-9]+) ]]
+setupIDKey="${BASH_REMATCH[1]}"
+
+setupCodeKeyID="$(grep "#define kSDKKeyValueStoreKey_Provisioning_SetupCode " "${sdkDomainsFile}")"
+[[ "${setupCodeKeyID}" =~ "(HAPPlatformKeyValueStoreKey) "0x([0-9]+) ]]
+setupCodeKey="${BASH_REMATCH[1]}"
+
+mfiTokenUUIDKeyID="$(grep "#define kSDKKeyValueStoreKey_Provisioning_MFiTokenUUID " "${sdkDomainsFile}")"
+[[ "${mfiTokenUUIDKeyID}" =~ "(HAPPlatformKeyValueStoreKey) "0x([0-9]+) ]]
+mfiTokenUUIDKey="${BASH_REMATCH[1]}"
+
+mfiTokenKeyID="$(grep "#define kSDKKeyValueStoreKey_Provisioning_MFiToken " "${sdkDomainsFile}")"
+[[ "${mfiTokenKeyID}" =~ "(HAPPlatformKeyValueStoreKey) "0x([0-9]+) ]]
+mfiTokenKey="${BASH_REMATCH[1]}"
+
+setupInfoFile="${keyValueStore}/${provisioningDomain}.${setupInfoKey}"
+setupIDFile="${keyValueStore}/${provisioningDomain}.${setupIDKey}"
+setupCodeFile="${keyValueStore}/${provisioningDomain}.${setupCodeKey}"
+mfiTokenUUIDFile="${keyValueStore}/${provisioningDomain}.${mfiTokenUUIDKey}"
+mfiTokenFile="${keyValueStore}/${provisioningDomain}.${mfiTokenKey}"
+
+command=""
+command="${command}"'rm -rf '"${setupInfoFile}"' '"${setupIDFile}"' '"${setupCodeFile}"' && '
+if (( ! $preserveMFiToken )); then
+    command="${command}"'rm -rf '"${mfiTokenUUIDFile}"' '"${mfiTokenFile}"' && '
+fi
+command="${command}"'mkdir -p '"${keyValueStore}"' && '
+if (( ! $supportsDisplay )); then
+    command="${command}"'echo -n "'"${srpSalt}${srpVerifier}"'" | '
+    command="${command}"'perl -ne '"'"'s/([0-9a-f]{2})/print chr hex $1/gie'"'"' > '"${setupInfoFile}"' && '
+    if (( $supportsProgrammableNFC )); then
+        command="${command}"'echo -en "'"${setupCode}"'\0" > '"${setupCodeFile}"' && '
+    fi
+fi
+command="${command}"'echo -en "'"${setupID}"'\0" > '"${setupIDFile}"' && '
+if [ "${mfiTokenUUID}" != "" ] && [ "${mfiToken}" != "" ]; then
+    command="${command}"'echo -n "'"${mfiTokenUUID}"'" | '
+    command="${command}"'perl -ne '"'"'s/([0-9a-f]{2})/print chr hex $1/gie'"'"' > '"${mfiTokenUUIDFile}"' && '
+    command="${command}"'echo -n "'"${mfiToken}"'" | '
+    command="${command}"'perl -ne '"'"'s/([0-9a-f]{2})/print chr hex $1/gie'"'"' > '"${mfiTokenFile}"' && '
+fi
+command="${command}"'true'
+
+if [ "${destination}" != "${keyValueStore}" ]; then
+    if ! ${remoteShell} "${host}" "${command}"; then
+        echo "Failed to provision ${destination}."
+        false
+    fi
+else
+    if ! eval "${command}"; then
+        echo "Failed to provision ${destination}."
+        false
+    fi
+fi
+
+################################################################################
+# Display information to print on label.
+################################################################################
+if (( ! $supportsDisplay )); then
+    echo "================================================================================"
+    echo "                             Setup Code: ${setupCode}"
+    echo "                          Setup Payload: ${setupPayload}"
+    echo "================================================================================"
+    if (( ! $supportsProgrammableNFC )); then
+        if which qrencode > /dev/null; then
+            qrencode -t ANSI256 "${setupPayload}"
+        else
+            echo "qrencode not installed (brew install qrencode). Not generating QR code."
+        fi
+        echo "================================================================================"
+    else
+        if which qrencode > /dev/null; then
+            nfcLabel=""
+            nfcLabel="${nfcLabel}"'                                                         \n'
+            nfcLabel="${nfcLabel}"'                                                         \n'
+            nfcLabel="${nfcLabel}"'                                                         \n'
+            nfcLabel="${nfcLabel}"'                                                         \n'
+            nfcLabel="${nfcLabel}"'         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX         \n'
+            nfcLabel="${nfcLabel}"'        XXX                                   XXX        \n'
+            nfcLabel="${nfcLabel}"'        XX                                     XX        \n'
+            nfcLabel="${nfcLabel}"'        XX                                     XX        \n'
+            nfcLabel="${nfcLabel}"'        XX                      XX             XX        \n'
+            nfcLabel="${nfcLabel}"'        XX                 XX    XX            XX        \n'
+            nfcLabel="${nfcLabel}"'        XX             XX   XX    XX           XX        \n'
+            nfcLabel="${nfcLabel}"'        XX         XX   XX   XX    XX          XX        \n'
+            nfcLabel="${nfcLabel}"'        XX          XX   XX   XX   XX          XX        \n'
+            nfcLabel="${nfcLabel}"'        XX           XX   XX   XX   XX         XX        \n'
+            nfcLabel="${nfcLabel}"'        XX           XX   XX   XX   XX         XX        \n'
+            nfcLabel="${nfcLabel}"'        XX           XX   XX   XX   XX         XX        \n'
+            nfcLabel="${nfcLabel}"'        XX          XX   XX   XX   XX          XX        \n'
+            nfcLabel="${nfcLabel}"'        XX         XX   XX   XX    XX          XX        \n'
+            nfcLabel="${nfcLabel}"'        XX             XX   XX    XX           XX        \n'
+            nfcLabel="${nfcLabel}"'        XX                 XX    XX            XX        \n'
+            nfcLabel="${nfcLabel}"'        XX                      XX             XX        \n'
+            nfcLabel="${nfcLabel}"'        XX                                     XX        \n'
+            nfcLabel="${nfcLabel}"'        XX                                     XX        \n'
+            nfcLabel="${nfcLabel}"'        XXX                                   XXX        \n'
+            nfcLabel="${nfcLabel}"'         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX         \n'
+            nfcLabel="${nfcLabel}"'                                                         \n'
+            nfcLabel="${nfcLabel}"'                                                         \n'
+            nfcLabel="${nfcLabel}"'                                                         \n'
+            nfcLabel="${nfcLabel}"'                                                         \n'
+            nfcLabel="${nfcLabel// /\\x1B[48;5;231m \\x1B[0m}"
+            nfcLabel="${nfcLabel//X/\\x1B[48;5;16m \\x1B[0m}"
+            echo -e -n "${nfcLabel}"
+            echo "================================================================================"
+        fi
+    fi
+fi

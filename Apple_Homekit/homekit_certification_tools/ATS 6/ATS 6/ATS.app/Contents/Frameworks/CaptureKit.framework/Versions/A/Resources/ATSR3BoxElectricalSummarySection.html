@@ -1,0 +1,85 @@
+<div style="width: 390px; float: right;">
+    <table>
+        <tr>
+            <th colspan="2" class="title">USB Power Brick Detection</th>
+        </tr>
+        <tr id="USB_VBUS_ROW">
+            <td class="label">USB Vbus</td>
+            <td id="USB_VBUS_VOLTAGE"></td>
+        </tr>
+        <tr id="USB_DPLUS_SHUNT_GROUND_ROW">
+            <td class="label">USB D+<span class="fieldNote">(220kΩ shunt to ground)</span></td>
+            <td id="USB_DPLUS_SHUNT_GROUND_VOLTAGE"></td>
+        </tr>
+        <tr id="USB_DPLUS_SHUNT_VCC_ROW">
+            <td class="label">USB D+<span class="fieldNote">(220kΩ shunt to vcc)</span></td>
+            <td id="USB_DPLUS_SHUNT_VCC_VOLTAGE"></td>
+        </tr>
+        <tr id="USB_DMINUS_SHUNT_GROUND_ROW">
+            <td class="label">USB D-<span class="fieldNote">(220kΩ shunt to ground)</span></td>
+            <td id="USB_DMINUS_SHUNT_GROUND_VOLTAGE"></td>
+        </tr>
+        <tr id="USB_DMINUS_SHUNT_VCC_ROW">
+            <td class="label">USB D-<span class="fieldNote">(220kΩ shunt to vcc)</span></td>
+            <td id="USB_DMINUS_SHUNT_VCC_VOLTAGE"></td>
+        </tr>
+        <tr id="USB_BRICK_DETECT_ROW">
+            <td class="label">Brick Detect:</td>
+            <td id="USB_BRICK_DETECT"></td>
+        </tr>
+        
+        <tr> <td colspan="2">&nbsp;</td> </tr> <!-- spacer -->
+        
+        <tr>
+            <th colspan="2" class="title">Lightning Module</th>
+        </tr>
+        <tr id="LIGHTNING_MODULE_FUNCTIONAL_VARIANT_ROW">
+            <td class="label">Functional Variant</td>
+            <td id="LIGHTNING_MODULE_FUNCTIONAL_VARIANT"></td>
+        </tr>
+
+    </table>
+</div>
+
+<table>
+    
+    <!-- Power from device to accessory -->
+    
+    <tr>
+        <th colspan="2" class="title">Power to Accessory</th>
+    </tr>
+    <tr>
+        <td class="label">Voltage</td>
+        <td id="ACC_POWER_VOLTAGE"></td>
+    </tr>
+    <tr>
+        <td class="label">Current</td>
+        <td id="ACC_POWER_CURRENT"></td>
+    </tr>
+    <tr>
+        <td class="label">Power</td>
+        <td id="ACC_POWER_POWER"></td>
+    </tr>
+    
+    <tr> <td colspan="2">&nbsp;</td> </tr> <!-- spacer -->
+    
+    <!-- Power from accessory to device -->
+    
+    <tr>
+        <th colspan="2" class="title">Power to Apple device</th>
+    </tr>
+    <tr>
+        <td class="label">Voltage</td>
+        <td id="DEVICE_POWER_VOLTAGE"></td>
+    </tr>
+    <tr>
+        <td class="label">Current</td>
+        <td id="DEVICE_POWER_CURRENT"></td>
+    </tr>
+    <tr>
+        <td class="label">Power</td>
+        <td id="DEVICE_POWER_POWER"></td>
+    </tr>
+</table>
+
+<div style="clear: both;"></div>

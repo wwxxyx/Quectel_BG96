@@ -1,0 +1,30 @@
+
+/* Class = "NSTextFieldCell"; title = "Apple ID"; ObjectID = "1kE-wT-UDL"; */
+"1kE-wT-UDL.title" = "Apple ID";
+
+/* Class = "NSTextFieldCell"; title = "Password"; ObjectID = "3FK-DG-auY"; */
+"3FK-DG-auY.title" = "密碼";
+
+/* Class = "NSTextFieldCell"; title = "An Apple ID is your username for everything you do with Apple: Shop the iTunes Store, enable iCloud on your devices, and more."; ObjectID = "FvG-w6-lcW"; */
+"FvG-w6-lcW.title" = "Apple ID 是您的使用者名稱，用於所有 Apple 服務，例如：在 iTunes Store 購物、在裝置上啟用 iCloud 等等。";
+
+/* Class = "NSButtonCell"; title = "Remember my password in the keychain"; ObjectID = "GJC-AT-CBW"; */
+"GJC-AT-CBW.title" = "在鑰匙圈中記住我的密碼";
+
+/* Class = "NSButtonCell"; title = "Forgot your password?"; ObjectID = "T7a-UG-ZdG"; */
+"T7a-UG-ZdG.title" = "忘記密碼？";
+
+/* Class = "NSButtonCell"; title = "Forgot your Apple ID?"; ObjectID = "UxP-Wj-gT4"; */
+"UxP-Wj-gT4.title" = "忘記 Apple ID？";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "edu-6M-L88"; */
+"edu-6M-L88.title" = "取消";
+
+/* Class = "NSButtonCell"; title = "Sign In"; ObjectID = "iWU-8z-MAR"; */
+"iWU-8z-MAR.title" = "登入";
+
+/* Class = "NSButtonCell"; title = "Create Apple ID"; ObjectID = "p3G-Hd-wDn"; */
+"p3G-Hd-wDn.title" = "建立 Apple ID";
+
+/* Class = "NSTextFieldCell"; title = "Sign in with your Apple ID to download from iBooks."; ObjectID = "y06-7n-RZt"; */
+"y06-7n-RZt.title" = "用您的 Apple ID 登入";

@@ -1,0 +1,21 @@
+
+/* Class = "NSButtonCell"; title = "Unable to receive messages at any of your devices?"; ObjectID = "8rM-fL-JoM"; */
+"8rM-fL-JoM.title" = "Δεν είναι δυνατή η λήψη μηνυμάτων σε οποιαδήποτε από τις συσκευές σας;";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "Sxi-lQ-Opj"; */
+"Sxi-lQ-Opj.title" = "Ακύρωση";
+
+/* Class = "NSTextFieldCell"; title = "To manage your trusted devices visit appleid.apple.com from a Mac or PC."; ObjectID = "b7X-aa-2IA"; */
+"b7X-aa-2IA.title" = "To manage your trusted devices visit appleid.apple.com from a Mac or PC.";
+
+/* Class = "NSButtonCell"; title = "Continue"; ObjectID = "bKD-Fn-btQ"; */
+"bKD-Fn-btQ.title" = "Συνέχεια";
+
+/* Class = "NSTextFieldCell"; title = "The device you select below will be sent a temporary code that you can use to verify your identity."; ObjectID = "iec-VL-l55"; */
+"iec-VL-l55.title" = "Στη συσκευή που θα επιλέξετε παρακάτω θα αποσταλεί ένας προσωρινός κωδικός, τον οποίον μπορείτε να χρησιμοποιήσετε για να επαληθεύσετε την ταυτότητά σας.";
+
+/* Class = "NSTextFieldCell"; title = "Two-step verification is enabled for this Apple ID."; ObjectID = "tES-Rb-6CW"; */
+"tES-Rb-6CW.title" = "Η επαλήθευση δύο βημάτων είναι ενεργοποιημένη για αυτό το Apple ID.";
+
+/* Class = "NSTextFieldCell"; title = "Send Code to:"; ObjectID = "xW1-iZ-fcl"; */
+"xW1-iZ-fcl.title" = "Αποστολή κωδικού σε:";

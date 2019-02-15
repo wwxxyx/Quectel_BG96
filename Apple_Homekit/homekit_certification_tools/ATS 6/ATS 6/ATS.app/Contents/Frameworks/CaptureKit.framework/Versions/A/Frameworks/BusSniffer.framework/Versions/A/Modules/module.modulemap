@@ -1,0 +1,6 @@
+framework module BusSniffer {
+  umbrella header "BusSniffer.h"
+
+  export *
+  module * { export * }
+}

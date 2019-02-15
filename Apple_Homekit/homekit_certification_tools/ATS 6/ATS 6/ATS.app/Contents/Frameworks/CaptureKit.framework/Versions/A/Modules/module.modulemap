@@ -1,0 +1,11 @@
+framework module CaptureKit {
+  umbrella header "CaptureKit.h"
+
+  export *
+  module * { export * }
+}
+
+module CaptureKit.Swift {
+    header "CaptureKit-Swift.h"
+    requires objc
+}

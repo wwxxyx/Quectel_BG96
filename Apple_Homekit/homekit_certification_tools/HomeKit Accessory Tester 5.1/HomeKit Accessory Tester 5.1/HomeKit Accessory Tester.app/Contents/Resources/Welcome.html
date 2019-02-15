@@ -1,0 +1,1543 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <style type="text/css" media="all">
+            /*<![CDATA[*/
+            body {
+                font-family: Helvetica;
+                font-size: 10pt;
+            }
+        .latestRelease {
+            font-size: 12pt;
+            font-weight: bold;
+        }
+        .olderRelease {
+            font-size: 10pt;
+            font-weight: bold;
+        }
+        .sectionHeader {
+            font-size: 10pt;
+            font-weight: bold;
+        }
+        .releaseSections {
+            padding-left: 30px;
+        }
+        ul {
+            margin-top: 0px;
+        }
+        li {
+            font-size: 9pt;
+        }
+        .important {
+            color: #ee0000;
+        }
+        .specHeader {
+            color: #dd4433;
+            font-weight: bold;
+        }
+        .specItem {
+            font-weight: bold;
+            font-style: italic;
+        }
+        .specText {
+            font-style: italic;
+        }
+        /*]]>*/
+            </style>
+        
+        <title></title>
+    </head>
+    <body>
+        <div class="latestRelease">
+            What's new in HAT 5.1
+        </div>
+        <div class="releaseSections">
+            <div class="sectionHeader">Note:</div>
+            <ul>
+                <li>If the tool fails to obtain authorization to capture network traffic, please run the script 'Uninstall_TKCaptureAssistant.sh' bundled in the HAT zip file. If any additional errors occur, please contact your MFi representative.</li>
+            </ul>
+            <div class="sectionHeader">General:</div>
+            <ul>
+                <li>Added support for Apple TV Remotes accessory category.</li>
+                <li>Added support for HomeKit Data Stream.</li>
+                <li>Resolved issue that intermittently prevented HAT from seeing the first frame from an IP camera stream.</li>
+                <li>Resolved issue that caused the accessory discovery progress bar to never complete.</li>
+                <li>HAT will now display the Complete Local Name for BLE accessories.</li>
+            </ul>
+            <div class="sectionHeader">Known Issues:</div>
+            <ul>
+                <li>Controllers assigned to shared keystores are not visible after relaunching HAT; please recreate the controllers and assign them back to the shared keystore when necessary.</li>
+                <li>iCloud Relay: Test with one iCloud Relay controller; using multiple controllers is not supported.</li>
+                <li>Switching between BLE controllers while connected is not supported. Manually disconnect from the active controller using the disconnect button before using a different controller.</li>
+                <li>TCB011 is not supported; HAT does not support Pair-Resume to the same accessory from multiple BLE controllers.</li>
+                <li>BLE characteristic values are not updated when an Encrypted Broadcast Notification is received.</li>
+                <li>If an IP accessory is not visible in HAT after performing WAC, restart the controller's Bonjour discovery.</li>
+                <li>In some cases, HAT may hang when attempting to quit the application after using iCloud Relay; please save before force-quitting the application.</li>
+                <li>Event color highlighting may be incorrect when an EVENT is sent to the controller after an HTTP request and before the response.</li>
+            </ul>
+            <div class="sectionHeader">Requirements:</div>
+            <ul>
+                <li>HAT 5.1 requires macOS Mojave 10.14 or later (latest release recommended), which is available for download from the App Store.</li>
+            </ul>
+            <div class="sectionHeader">Bug Reporting:</div>
+            <ul>
+                <li>Please report all issues to <a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a> by selecting the HomeKit Accessory Development product, and choosing the Certification Tools problem area.</li>
+            </ul>
+        </div>
+        <div class="olderRelease">
+            What was new in HAT 5.0.2
+        </div>
+        <div class="releaseSections">
+            <div class="sectionHeader">Note:</div>
+            <ul>
+                <li>If the tool fails to obtain authorization to capture network traffic, please run the script 'Uninstall_TKCaptureAssistant.sh' bundled in the HAT zip file. If any additional errors occur, please contact your MFi representative.</li>
+            </ul>
+            <div class="sectionHeader">General:</div>
+            <ul>
+                <li>Added support for macOS Mojave 10.14.</li>
+                <li>Added support for up to 1,000 bridged accessories.</li>
+                <li>WAC2 configuration messages now use MIME type application/x-tlv8.</li>
+                <li>WAC2 configured message is now sent outside of a security session.</li>
+                <li>Added Content-Length header to all HTTP message headers.</li>
+                <li>Fixed an issue preventing the “Start Pairing” button from updating properly in the UI.</li>
+                <li>Fixed an issue that caused HAT to restore manually deleted key store entries.</li>
+            </ul>
+            <div class="sectionHeader">Known Issues:</div>
+            <ul>
+                <li>Controllers assigned to shared keystores are not visible after relaunching HAT; please recreate the controllers and assign them back to the shared keystore when necessary.</li>
+                <li>iCloud Relay: Test with one iCloud Relay controller; using multiple controllers is not supported.</li>
+                <li>Switching between BLE controllers while connected is not supported. Manually disconnect from the active controller using the disconnect button before using a different controller.</li>
+                <li>TCB011 is not supported; HAT does not support Pair-Resume to the same accessory from multiple BLE controllers.</li>
+                <li>BLE characteristic values are not updated when an Encrypted Broadcast Notification is received.</li>
+                <li>If an IP accessory is not visible in HAT after performing WAC, restart the controller's Bonjour discovery.</li>
+                <li>In some cases, HAT may hang when attempting to quit the application after using iCloud Relay; please save before force-quitting the application.</li>
+                <li>Event color highlighting may be incorrect when an EVENT is sent to the controller after an HTTP request and before the response.</li>
+            </ul>
+            <div class="sectionHeader">Requirements:</div>
+            <ul>
+                <li>HAT 5.0.2 requires macOS Mojave 10.14 or later (latest release recommended), which is available for download from the App Store.</li>
+            </ul>
+            <div class="sectionHeader">Bug Reporting:</div>
+            <ul>
+                <li>Please report all issues to <a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a> by selecting the HomeKit Accessory Development product, and choosing the Certification Tools problem area.</li>
+            </ul>
+        </div>
+        <div class="olderRelease">
+            What was new in HAT 5.0.1
+        </div>
+        <div class="releaseSections">
+            <div class="sectionHeader">General:</div>
+            <ul>
+                <li>Fixed an issue in which pairing attempts may fail when an accessory uses a device ID consisting of lowercase letters.</li>
+                <li>Fixed an issue in which pairing attempts may fail at arbitrary intervals.</li>
+            </ul>
+            <div class="sectionHeader">Known Issues:</div>
+            <ul>
+                <li>After clicking “Stop Pairing” from the “Open Pairing” dialog, the pairing button may not reset back to “Start Pairing”. Please click the “Stop Pairing” button again from the pairing pane to reset the pairing state.</li>
+                <li>Controllers assigned to shared keystores are not visible after relaunching HAT; please recreate the controllers and assign them back to the shared keystore when necessary.</li>
+                <li>iCloud Relay: Test with one iCloud Relay controller; using multiple controllers is not supported.</li>
+                <li>Switching between BLE controllers while connected is not supported. Manually disconnect from the active controller using the disconnect button before using a different controller.</li>
+                <li>TCB011 is not supported; HAT does not support Pair-Resume to the same accessory from multiple BLE controllers.</li>
+                <li>BLE characteristic values are not updated when an Encrypted Broadcast Notification is received.</li>
+                <li>If an IP accessory is not visible in HAT after performing WAC, restart the controller's Bonjour discovery.</li>
+                <li>In some cases, HAT may hang when attempting to quit the application after using iCloud Relay; please save before force-quitting the application.</li>
+                <li>Event color highlighting may be incorrect when an EVENT is sent to the controller after an HTTP request and before the response.</li>
+            </ul>
+            <div class="sectionHeader">Requirements:</div>
+            <ul>
+                <li>HAT 5.0.1 requires macOS High Sierra 10.13.3 or later (latest release recommended), which is available for download from the App Store.</li>
+            </ul>
+            <div class="sectionHeader">Bug Reporting:</div>
+            <ul>
+                <li>Please report all issues to <a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a> by selecting the HomeKit Accessory Development product, and choosing the Certification Tools problem area.</li>
+            </ul>
+        </div>
+        <div class="olderRelease">
+            What was new in HAT 5.0
+        </div>
+        <div class="releaseSections">
+            <div class="sectionHeader">General:</div>
+            <ul>
+                <li>Modified the storage process for accessory pairing information. Accessory pairings created with previous versions of HAT are incompatible with HAT 5.0. Please recreate accessory pairings with HAT 5.0.</li>
+                <li>Added a BLE GATT traffic view.</li>
+                <li>Added support for both IPv4 and IPv6 connections for camera negotiation.</li>
+                <li>Resolved issue with decrypting the auth-tag on BLE broadcast events.</li>
+                <li>Resolved issue that would intermittently cause IP camera negotiation to hang.</li>
+                <li>Resolved issue with HAT's UI not updating characteristic values after receiving Event Notifications.</li>
+                <li>Added ability to display bit 9 in the trace's WAC Discovery view.</li>
+                <li>Fixed the evaluation of units on the Water Level characteristic.</li>
+                <li>Fixed response validation for the Pairing Features characteristic on BLE accessories.</li>
+                <li>Fixed parsing of all WAC Information Element frames.</li>
+                <li>Modified HAT to not respond to a failed IP Camera negotiation.</li>
+                <li>Added ability to include the audio codec type to the StreamConfig.plist</li>
+                <li>Added procedure to complete pair-verify before performing software token authentication procedures when accessory is in a disconnected state.</li>
+                <li>Accessory names now repopulate the keystore when subsequently pairing to controllers.</li>
+                <li>Fixed an issue to correctly display the list of pairings for the List Pairings Completed message in the Events View.</li>
+            </ul>
+            <div class="sectionHeader">Known Issues:</div>
+            <ul>
+                <li>After clicking “Stop Pairing” from the “Open Pairing” dialog, the pairing button may not reset back to “Start Pairing”. Please click the “Stop Pairing” button again from the pairing pane to reset the pairing state.</li>
+                <li>Controllers assigned to shared keystores are not visible after relaunching HAT; please recreate the controllers and assign them back to the shared keystore when necessary.</li>
+                <li>iCloud Relay: Test with one iCloud Relay controller; using multiple controllers is not supported.</li>
+                <li>Switching between BLE controllers while connected is not supported. Manually disconnect from the active controller using the disconnect button before using a different controller.</li>
+                <li>TCB011 is not supported; HAT does not support Pair-Resume to the same accessory from multiple BLE controllers.</li>
+                <li>BLE characteristic values are not updated when an Encrypted Broadcast Notification is received.</li>
+                <li>If an IP accessory is not visible in HAT after performing WAC, restart the controller's Bonjour discovery.</li>
+                <li>In some cases, HAT may hang when attempting to quit the application after using iCloud Relay; please save before force-quitting the application.</li>
+                <li>Event color highlighting may be incorrect when an EVENT is sent to the controller after an HTTP request and before the response.</li>
+            </ul>
+            <div class="sectionHeader">Requirements:</div>
+            <ul>
+                <li>HAT 5.0 requires macOS High Sierra 10.13.3 or later (latest release recommended), which is available for download from the App Store.</li>
+            </ul>
+            <div class="sectionHeader">Bug Reporting:</div>
+            <ul>
+                <li>Please report all issues to <a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a> by selecting the HomeKit Accessory Development product, and choosing the Certification Tools problem area.</li>
+            </ul>
+        </div>
+        <div class="olderRelease">
+            What was new in HAT 4.8
+        </div>
+        <div class="releaseSections">
+            <div class="sectionHeader">General:</div>
+            <ul>
+                <li>Added ability for HAT to request macOS to join a WAC2 Access Point.</li>
+                <li>Added ability to send WAC2 configuration and confirmation requests to the accessory.</li>
+                <li>Added ability to display parsed TLVs instead of raw TLV bytes, when viewing a trace.</li>
+                <li>Added ability to permit null values for custom characteristics with type data.</li>
+                <li>Added ability to omit Setup Hash, except for accessories that use enhanced setup payloads.</li>
+            </ul>
+            <div class="sectionHeader">Known Issues:</div>
+            <ul>
+                <li>List Pairings list is not visible in the Events view. See List Pairing response in HAP Procedures view for BLE, and in HTTP view for IP..</li>
+                <li>Accessory names may not be visible in the controller key store after removing and re-pairing accessory.</li>
+                <li>After manually setting BLE Advertisement Identifier, Encrypted Broadcast Notifications will not be decrypted.</li>
+                <li>IP camera: If multiple network interfaces are enabled, IP camera negotiation may fail. Disable any additional network interfaces.</li>
+                <li>IP camera: IPV6 is not supported within HAT at this time.</li>
+                <li>iCloud Relay: Test with one iCloud Relay controller; using multiple controllers is not supported.</li>
+                <li>Switching between BLE controllers while connected is not supported. Manually disconnect from the active controller using the disconnect button before using a different controller.</li>
+                <li>TCB011 is not supported; HAT does not support Pair-Resume to the same accessory from multiple BLE controllers.</li>
+                <li>Characteristic value may not be updated when an Event Notification is received; switching views in the UI will display the correct value.</li>
+                <li>If an IP accessory is not visible in HAT after performing WAC, restart the controller's Bonjour discovery.</li>
+                <li>In some cases, HAT may hang when attempting to quit the application after using iCloud Relay; please save before force-quitting the application.</li>
+                <li>Event color highlighting may be incorrect when an EVENT is sent to the controller after an HTTP request and before the response.</li>
+                <li>IP camera negotiation can fail to initiate on some systems. Please retry renegotiating multiple times if experiencing an unresponsive negotiation.</li>
+            </ul>
+            <div class="sectionHeader">Requirements:</div>
+            <ul>
+                <li>HAT 4.8 requires macOS High Sierra 10.13.3 or later (latest release recommended), which is available for download from the App Store.</li>
+            </ul>
+            <div class="sectionHeader">Bug Reporting:</div>
+            <ul>
+                <li>Please report all issues to <a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the README.</li>
+            </ul>
+        </div>
+        <div class="olderRelease">
+            What was new in HAT 4.7
+        </div>
+        <div class="releaseSections">
+            <div class="sectionHeader">General:</div>
+            <ul>
+                <li>Added support for transient pair-setup to establish a security session without saving the pairing.</li>
+                <li>Added support for split pair-setup.</li>
+                <li>Removed "Unauthenticated Accessory Prompt" message; TCF001 verifies the accessory supports authentication.</li>
+                <li>Added support for HAP-Token-Request, HAP-Token-Update-Request, and HAP-Info-Request for software token-based authentication.</li>
+                <li>Resolved incorrect error message seen when using valid BLE formats of type 'data' or 'tlv8'.</li>
+            </ul>
+            <div class="sectionHeader">Known Issues:</div>
+            <ul>
+                <li>Accessory names may not be visible in the controller key store after removing and re-pairing accessory.</li>
+                <li>Encrypted broadcast notifications are not decrypted after manually setting BLE advertisement identifier.</li>
+                <li>IP camera: If multiple network interfaces are enabled, IP camera negotiation may fail. Disable any additional network interfaces.</li>
+                <li>IP camera: IPV6 is not supported within HAT at this time.</li>
+                <li>iCloud Relay: Test with one iCloud Relay controller; using multiple controllers is not supported.</li>
+                <li>Switching between BLE controllers while connected is not supported. Manually disconnect from the active controller using the disconnect button before using a different controller.</li>
+                <li>TCB011 is not supported; HAT does not support Pair-Resume to the same accessory from multiple BLE controllers.</li>
+                <li>Characteristic value may not be updated when an event notification is received; switching views in the UI will display the correct value.</li>
+                <li>Wi-Fi Accessory Configuration 2 and legacy Wi-Fi Accessory Configuration are not supported within HAT at this time.</li>
+                <li>If an IP accessory is not visible in HAT after performing legacy WAC, restart the controller's Bonjour discovery.</li>
+                <li>In some cases, HAT may hang when attempting to quit the application after using iCloud Relay; please save before force-quitting the application.</li>
+            </ul>
+            <div class="sectionHeader">Requirements:</div>
+            <ul>
+                <li>HAT 4.7 requires macOS High Sierra 10.13.3 or later (latest release recommended), which is available for download from the App Store.</li>
+            </ul>
+            <div class="sectionHeader">Bug Reporting:</div>
+            <ul>
+                <li>Please report all issues to <a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the README.</li>
+            </ul>
+        </div>
+        
+        <div class="olderRelease">
+            What was new in HAT 4.6.1
+        </div>
+        <div class="releaseSections">
+            <div class="sectionHeader">General:</div>
+            <ul>
+                <li>Fixed an issue with HAT incorrectly reporting HAP Specification R11 category identifiers in BLE advertisements as invalid</li>
+            </ul>
+            <div class="sectionHeader">Known Issues:</div>
+            <ul>
+                <li>IP camera: If multiple network interfaces are enabled, IP camera negotiation will fail. Disable any additional network interfaces.</li>
+                <li>iCloud Relay: Test with one iCloud Relay controller; using multiple controllers is not supported.</li>
+                <li>Switching between BLE controllers while connected is not supported. Manually disconnect from the active controller using the disconnect button before using a different controller.</li>
+                <li>TCB011 is not supported; HAT does not support Pair-Resume to the same accessory from multiple BLE controllers.</li>
+                <li>Characteristic value may not be updated when an Event Notification is received; switching views in the UI will display the correct value.</li>
+                <li>If an IP accessory is not visible in HAT after performing WAC, restart the controller's Bonjour discovery.</li>
+                <li>WAC from within HAT is not supported at this time.</li>
+                <li>In some cases, HAT may hang when attempting to quit the application after using iCloud Relay; please save before quitting HAT, and force-quit the application.</li>
+            </ul>
+            <div class="sectionHeader">Requirements:</div>
+            <ul>
+                <li>HAT 4.6.1 requires macOS High Sierra 10.13 (latest release recommended)</li>
+            </ul>
+            <div class="sectionHeader">Bug Reporting:</div>
+            <ul>
+                <li>Please report all issues to <a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the README.</li>
+            </ul>
+        </div>
+        <div class="olderRelease">
+            What was new in HAT 4.6
+        </div>
+        <div class="releaseSections">
+            <div class="sectionHeader">General:</div>
+            <ul>
+                <li>Added Irrigation System, Faucet, and Valve services introduced in HAP specification R11</li>
+                <li>Fixed an incorrectly identified error for missing Protocol Information Service on bridged accessories</li>
+                <li>Fixed an issue with advertisement information which now correctly displays and updates in the new Advertisement Information section</li>
+                <li>Fixed Event Notifications to correctly reflect updated values in the Events view</li>
+            </ul>
+            <div class="sectionHeader">iCloud:</div>
+            <ul>
+                <li>Added support for Timed Write procedures</li>
+                <li>Added displays for both encrypted and unencrypted iCloud traffic</li>
+                <li>Added support for dynamically setting the domain connection information</li>
+                <li>Added support for detecting accessory traffic sent to an invalid iCloud endpoint</li>
+                <li>Added ability to generate additional invalid iCloud certificates</li>
+            </ul>
+            <div class="sectionHeader">Known Issues:</div>
+            <ul>
+                <li>IP camera: If multiple network interfaces are enabled, IP camera negotiation will fail. Disable any additional network interfaces.</li>
+                <li>iCloud Relay: Test with one iCloud Relay controller; using multiple controllers is not supported.</li>
+                <li>Switching between BLE controllers while connected is not supported. Manually disconnect from the active controller using the disconnect button before using a different controller.</li>
+                <li>TCB011 is not supported; HAT does not support Pair-Resume to the same accessory from multiple BLE controllers.</li>
+                <li>Characteristic value may not be updated when an Event Notification is received; switching views in the UI will display the correct value.</li>
+                <li>If an IP accessory is not visible in HAT after performing WAC, restart the controller's Bonjour discovery.</li>
+                <li>WAC from within HAT is not supported at this time.</li>
+                <li>In some cases, HAT may hang when attempting to quit the application after using iCloud Relay; please save before quitting HAT, and force-quit the application.</li>
+            </ul>
+            <div class="sectionHeader">Requirements:</div>
+            <ul>
+                <li>HAT 4.6 requires macOS High Sierra 10.13 (latest release recommended)</li>
+            </ul>
+            <div class="sectionHeader">Bug Reporting:</div>
+            <ul>
+                <li>Please report all issues to <a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the README.</li>
+            </ul>
+        </div>
+        <div class="olderRelease">
+            What was new in HAT 4.5.2
+        </div>
+        <div class="releaseSections">
+            <div class="sectionHeader">General:</div>
+            <ul>
+                <li>Added Irrigation System, Faucet, and Valve services introduced in HAP R11 Preview Specification</li>
+            </ul>
+            <div class="sectionHeader">Known Issues:</div>
+            <ul>
+                <li>IP camera: If multiple network interfaces are available during configuration negotiation, disable one to ensure all traffic comes through on a single interface.</li>
+                <li>iCloud Relay: Test with one iCloud Relay controller; using multiple controllers is not supported.</li>
+                <li>iCloud Relay: TCC006 will not update the "Bag refresh interval" payload but will update the "Keep alive interval" payload in the JSON sent to the accessory.</li>
+                <li>Simultaneous BLE connections are not supported. Manually disconnect from the primary controller using the controller's disconnect button to allow subsequent controller connections.</li>
+            </ul>
+            <div class="sectionHeader">Requirements:</div>
+            <ul>
+                <li>HAT 4.5.2 requires macOS Sierra 10.12.4 (latest release recommended)</li>
+            </ul>
+            <div class="sectionHeader">Bug Reporting:</div>
+            <ul>
+                <li>Please report all issues to <a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the README.</li>
+            </ul>
+        </div>
+        <div class="olderRelease">
+            What was new in HAT 4.5.1
+        </div>
+        <div class="releaseSections">
+            <div class="sectionHeader">General:</div>
+            <ul>
+                <li>Added Heater Cooler and Humidifier Dehumidifier services introduced in HAP Spec R10</li>
+                <li>Fixed a crash caused by an accessory on the network with a malformed Device ID in its Bonjour TXT record</li>
+            </ul>
+            <div class="sectionHeader">Known Issues:</div>
+            <ul>
+                <li>IP camera: If multiple network interfaces are available during configuration negotiation, disable one to ensure all traffic comes through on a single interface.</li>
+                <li>iCloud Relay: Test with one iCloud Relay controller; using multiple controllers is not supported.</li>
+                <li>iCloud Relay: TCC006 will not update the "Bag refresh interval" payload but will update the "Keep alive interval" payload in the JSON sent to the accessory.</li>
+                <li>Simultaneous BLE connections are not supported. Manually disconnect from the primary controller using the controller's disconnect button to allow subsequent controller connections.</li>
+            </ul>
+            <div class="sectionHeader">Requirements:</div>
+            <ul>
+                <li>HAT 4.5.1 requires macOS Sierra 10.12.4 (latest release recommended)</li>
+            </ul>
+            <div class="sectionHeader">Bug Reporting:</div>
+            <ul>
+                <li>Please report all issues to <a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the README.</li>
+            </ul>
+        </div>
+        <div class="olderRelease">
+            What was new in HAT 4.5
+        </div>
+        <div class="releaseSections">
+            <div class="sectionHeader">HomeKit Companion app for HCA and HAT:</div>
+            <ul>
+                <li>Introducing the HomeKit Companion app, an iOS application to be used together with HCA and HAT to allow NFC, QR code, and Legacy Setup Code pairing. Find the HomeKit Companion app in the Certification Tools folder in the Document Center on the MFi Portal.</li>
+            </ul>
+            <div class="sectionHeader">General:</div>
+            <ul>
+                <li>Added support for iOS 11 IP Timed Write operations</li>
+                <li>Added support for iOS 11 Broadcast Event Notifications</li>
+                <li>Added characteristics and services introduced in HAP Spec R10</li>
+                <li>Characteristic read and write buttons are no longer intermittently disabled</li>
+                <li>New Key Store view with relevant Broadcast Event Notifications information now available</li>
+                <li>Operations performed with disconnected controllers will now re-establish a security session before executing the </li>
+                <li>“Use Bad Auth Tag for Pair Resume” functionality now correctly uses an invalid auth tag</li>
+                <li>When restarting the accessory server browser, previously discovered accessory servers now appear</li>
+                <li>When reading a characteristic multiple times from a bridged or power-cycled accessory, HAT will return the proper value instead of "Nil Parameter"</li>
+                <li>Advertisement data validation now supports BLE broadcast notifications</li>
+                <li>When opening a saved trace, timestamps now display the correct time from when the application was first launched</li>
+                <li>The rule BTLECharacteristicProperties now only validates Apple-defined HAP characteristics</li>
+                <li>Discovering an accessory server twice now correctly displays a progress bar</li>
+                <li>BLE accessories must now disconnect 30 seconds after the last HAP transaction, rather than 30 seconds after the last Pair-Verify. Refer to HAP Spec R10 section 7.2, point 5 for more information. If your accessory is eligible to complete certification/recertification against a previous version of the HomeKit Accessory Protocol Specification, before running HCA, go to the Preferences menu to enable support for this.</li>
+            </ul>
+            <div class="sectionHeader">Bluetooth:</div>
+            <ul>
+                <li>Improved Bluetooth reliability related to accessory service modification</li>
+                <li>Improved UI refresh rate by filtering unrelated messages</li>
+            </ul>
+            <div class="sectionHeader">Known Issues:</div>
+            <ul>
+                <li>IP camera: If multiple network interfaces are available during configuration negotiation, disable one to ensure all traffic comes through on a single interface.</li>
+                <li>iCloud Relay: Test with one iCloud Relay controller; using multiple controllers is not supported.</li>
+                <li>iCloud Relay: TCC006 will not update the "Bag refresh interval" payload but will update the "Keep alive interval" payload in the JSON sent to the accessory.</li>
+                <li>Simultaneous BLE connections are not supported. Manually disconnect from the primary controller using the controller's disconnect button to allow subsequent controller connections.</li>
+                <li>HomeKit Companion: The HomeKit Companion session can become disconnected when attempting TCF041 on macOS 10.13. When the popup appears, select "Cancel" and attempt the operation again.</li>
+            </ul>
+        </div>
+        
+        <div class="olderRelease">
+            What was new in HAT 4.4 Beta
+        </div>
+        <div class="releaseSections">
+            <div class="sectionHeader">General:</div>
+            <ul>
+                <li>Added support for iOS 11 IP Timed Write operations</li>
+                <li>Added support for iOS 11 Broadcast Event Notifications</li>
+                <li>Added characteristics and services introduced in HAP R10</li>
+                <li>Characteristic read and write buttons are no longer intermittently disabled</li>
+                <li>New Key Store view with relevant Broadcast Event Notifications information now available</li>
+                <li>Operations performed with disconnected controllers will now reestablish a security session before executing the operation</li>
+                <li>“Use Bad Auth Tag for Pair Resume” functionality now correctly uses an invalid auth tag</li>
+                <li>When restarting the accessory server browser, previously discovered accessory servers now appear</li>
+                <li>When reading a characteristic multiple times from a bridged or power-cycled accessory, HAT will return the proper value instead of "Nil Parameter"</li>
+            </ul>
+            <div class="sectionHeader">Bluetooth:</div>
+            <ul>
+                <li>Improved Bluetooth reliability related to accessory service modification</li>
+                <li>Improved UI refresh rate by filtering unrelated messages</li>
+            </ul>
+            <div class="sectionHeader">Known Issues:</div>
+            <ul>
+                <li>IP camera: If multiple network interfaces are available during configuration negotiation, disable one to ensure all traffic comes through on a single interface</li>
+                <li>iCloud Relay: Test with one iCloud Relay controller; using multiple controllers is not supported</li>
+                <li>iCloud Relay: When performing TCC006, the "Bag refresh interval" payload will not update but the "Keep alive interval" payload will be updated in the JSON sent to the accessory</li>
+                <li>BLE: connection intermittently fails to reconnect after using “Bad Auth/No Auth” checkbox. Relaunch HAT to resume connections</li>
+                <li>When attempting to view key stores after removing pairings, HAT may crash. Relaunch HAT to continue</li>
+                <li>When attempting to perform an IP Timed Write from a disconnected state, HAT may fail to establish an HTTP connection. Reconnect to the accessory manually to re-establish the connection</li>
+            </ul>
+            <div class="sectionHeader">Requirements:</div>
+            <ul>
+                <li>HAT 4.4 requires macOS Sierra 10.12.4 (latest release recommended)</li>
+            </ul>
+            <div class="sectionHeader">Bug Reporting:</div>
+            <ul>
+                <li>Please report all issues to <a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the README.</li>
+            </ul>
+        </div>
+        
+        <div class="olderRelease">
+            What was new in HAT 4.3.1
+        </div>
+        <div class="releaseSections">
+            <div class="sectionHeader">General:</div>
+            <ul>
+                <li>Accessory server list is now retained when browsing is stopped</li>
+                <li>Fixed crash caused by internal logging mechanisms</li>
+                <li>Removed rule 'BTLEAccessoryContainsServiceInstanceID' as it was redundant</li>
+            </ul>
+            <div class="sectionHeader">Known Issues:</div>
+            <ul>
+                <li>IP camera: If multiple network interfaces are available during configuration negotiation, disable one to ensure all traffic comes through on a single interface</li>
+                <li>iCloud Relay: Test with one iCloud Relay controller; using multiple controllers is not supported</li>
+                <li>iCloud Relay: TCC006 will not update the "Bag refresh interval" payload but will update the "Keep alive interval" payload in the JSON sent to the accessory</li>
+                <li>BLE: connection intermittently fails to reconnect after using “Bad Auth/No Auth” checkbox. Relaunch HAT to resume connections</li>
+                <li>IP: HAT will return an error of “Nil parameter” when reading a characteristic multiple times from a bridged accessory that has been reset. Relaunch HAT to read bridge accessory again</li>
+            </ul>
+            <div class="sectionHeader">Requirements:</div>
+            <ul>
+                <li>HAT 4.3.1 requires macOS Sierra 10.12.4 (latest release recommended)</li>
+            </ul>
+            <div class="sectionHeader">Bug Reporting:</div>
+            <ul>
+                <li>Please report all issues to <a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the README.</li>
+            </ul>
+        </div>
+        
+        <div class="olderRelease">
+            What was new in HAT 4.3
+        </div>
+        <div class="releaseSections">
+            <div class="sectionHeader">General:</div>
+            <ul>
+                <li>Added characteristics and services introduced in HAP Specification R9</li>
+                <li>Added detailed “HAP Transactions” view to trace</li>
+                <li>Responses to “List Pairings” requests are now validated</li>
+                <li>Fixed out-of-sync HTTP messages</li>
+                <li>Resolved crashes for accessories that support WAC</li>
+                <li>Pass/fail test results and status icons removed from trace view</li>
+                <li>“Pair Verify” requests now appear in the filtered trace view</li>
+                <li>Stopping accessory server discovery now removes all discovered accessories from the accessories list</li>
+                <li>“Discover” button now always sends a “GET /accessories” request</li>
+                <li>Fixed memory leak related to network traffic observation</li>
+                <li>Reconfiguring a video stream now resizes the window </li>
+                <li>The “Version” characteristic value is now properly validated</li>
+                <li>The correct characteristic instance ID is now sent when requesting the Service Signature Request</li>
+            </ul>
+            <div class="sectionHeader">Perform the following tests in HomeKit Accessory Certification (HCA):</div>
+            <ul>
+                <li>TCB007: Sending HAP over BLE requests with an unsupported PDU  </li>
+                <li>TCB036: Sending HAP over BLE requests with a bad instance ID  </li>
+                <li>TCI045: Sending unencrypted HTTP request has replaced the “Security Session Enabled” button in HAT</li>
+            </ul>
+            <div class="sectionHeader">Known Issues:</div>
+            <ul>
+                <li>IP camera: If multiple network interfaces are available during configuration negotiation, disable one to ensure all traffic comes through on a single interface</li>
+                <li>iCloud Relay: Test with one iCloud Relay controller; using multiple controllers is not supported</li>
+                <li>iCloud Relay: TCC006 will not update the "Bag refresh interval" payload but will update the "Keep alive interval" payload in the JSON sent to the accessory</li>
+                <li>BLE: connection intermittently fails to reconnect after using “Bad Auth/No Auth” checkbox. Relaunch HAT to resume connections</li>
+                <li>IP: HAT will return an error of “Nil parameter” when reading a characteristic multiple times from a bridged accessory that has been reset. Relaunch HAT to read bridge accessory again</li>
+            </ul>
+            <div class="sectionHeader">Requirements:</div>
+            <ul>
+                <li>HAT 4.3 requires macOS Sierra 10.12.4 (latest release recommended)</li>
+            </ul>
+            <div class="sectionHeader">Bug Reporting:</div>
+            <ul>
+                <li>Please report all issues to <a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the README.</li>
+            </ul>
+        </div>
+        <div class="olderRelease">
+            What was new in HAT 4.2
+        </div>
+        <div class="releaseSections">
+            <div class="sectionHeader">General:</div>
+            <ul>
+                <li>Error response now received from the accessory before removal of controller key pairings from HAT key store</li>
+                <li>Re-enabled option to perform queued read or write commands on accessory characteristics</li>
+                <li>Added support for primary and hidden service attributes</li>
+            </ul>
+            <div class="sectionHeader">IP Camera Enhancements:</div>
+            <ul>
+                <li>Added 24fps and 320x180 resolutions to video tier list</li>
+            </ul>
+            <div class="sectionHeader">iCloud Enhancements:</div>
+            <ul>
+                <li>For iCloud Relay pairing, added dropdown to select IP address for router configuration</li>
+            </ul>
+            <div class="sectionHeader">Validation Changes:</div>
+            <ul>
+                <li>HAT validates the Protocol Version characteristic is set to “02.01.00”</li>
+            </ul>
+            <div class="sectionHeader">Known Issues:</div>
+            <ul>
+                <li>IP camera: If multiple network interfaces are available during configuration negotiation, disable one to ensure all traffic comes through on a single interface.</li>
+                <li>iCloud Relay: Test with one iCloud Relay controller; using multiple controllers is not supported.</li>
+                <li>Secure tunneling not supported</li>
+            </ul>
+            <div class="sectionHeader">Requirements:</div>
+            <ul>
+                <li>HAT 4.2 requires macOS Sierra 10.12.2 (latest release recommended)</li>
+            </ul>
+            <div class="sectionHeader">Bug Reporting:</div>
+            <ul>
+                <li>Please report all issues to <a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the README.</li>
+            </ul>
+        </div>
+        <div class="olderRelease">
+            What was new in HAT 4.1.1
+        </div>
+        <div class="releaseSections">
+            <div class="sectionHeader">General:</div>
+            <ul>
+                <li>Added support for new “Charging State” and “Protocol Version” characteristic values</li>
+                <li>Fixed parsing of Hidden Services</li>
+                <li>Added support for macOS Sierra 10.12.2</li>
+            </ul>
+            <div class="sectionHeader">IP Camera Enhancements:</div>
+            <ul>
+                <li>Raw IP camera traffic captured and saved with trace files</li>
+                <li>Added support for snapshot requests outside of Pair-Verify session</li>
+                <li>Added support for unencrypted camera stream requests by users</li>
+                <li>Added a warning to the trace if no first frame has been received from a camera within 10 seconds of starting a session</li>
+                <li>Camera stream properties (frame rate and resolution) now displayed in camera stream window</li>
+                <li>Added support to issue two simultaneous snapshot requests</li>
+                <li>Added support to close the video stream window without stopping the stream session</li>
+            </ul>
+            <div class="sectionHeader">Usability Enhancements:</div>
+            <ul>
+                <li>Window position saves between application launches</li>
+                <li>Fixed the accessory service outline view UI selection moving when unprompted</li>
+                <li>Accessory pairings save if application crash occurs</li>
+                <li>Added support to create controllers with keyboard shortcuts</li>
+                <li>Fixed the Status Flag not updating properly</li>
+                <li>Fixed application crashing when communicating with an accessory that implements Linked Services</li>
+            </ul>
+            <div class="sectionHeader">Validation Changes:</div>
+            <ul>
+                <li>Fixed incorrect “IP_AccessoryInformationServiceInstanceIDOneMustBePrimaryAccessory” validation occurring when validating the Accessory Information service</li>
+                <li>Fixed incorrect "PairVerifyPacketUnexpectedFields" validation when multiple error codes are valid</li>
+                <li>Added validation for accessory firmware, hardware, and software version strings</li>
+                <li>Added validation for an IP camera changing video stream parameters without video stream changes being requested</li>
+                <li>Fixed the “Write Unencrypted Data” feature sending encrypted data to the accessory</li>
+                <li>Fixed sending invalid authorization tag to an accessory</li>
+            </ul>
+            <div class="sectionHeader">Known Issues:</div>
+            <ul>
+                <li>IP camera: If multiple network interfaces are available during configuration negotiation, disable one to ensure all traffic comes through on a single interface.</li>
+                <li>iCloud Relay: Test with one iCloud Relay controller, using multiple controllers is not supported.</li>
+                <li>Secure tunneling not supported</li>
+            </ul>
+            <div class="sectionHeader">Requirements:</div>
+            <ul>
+                <li>HAT 4.1.1 requires macOS Sierra 10.12.2 (latest release recommended)</li>
+            </ul>
+            <div class="sectionHeader">Bug Reporting:</div>
+            <ul>
+                <li>Please report all issues to <a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the README.</li>
+            </ul>
+        </div>
+        
+        <div class="olderRelease">What was new in HAT 4.0.2</div>
+        <div class="releaseSections">
+            <div class="sectionHeader">Features:</div>
+            <ul>
+                <li>Bug fixes for BLE</li>
+            </ul>
+            <div class="sectionHeader">Known Issues:</div>
+            <ul>
+                <li>See HAT 4.0 release notes</li>
+            </ul>
+            <div class="sectionHeader">Requirements:</div>
+            <ul>
+                <li>HAT 4.0.2 requires macOS Sierra 10.12 (latest release recommended)</li>
+            </ul>
+            <div class="sectionHeader">Bug Reporting:</div>
+            <ul>
+                <li>Please report all issues to <a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the README.</li>
+            </ul>
+        </div>
+        <div class="olderRelease">What was new in HAT 4.0.1</div>
+        <div class="releaseSections">
+            <div class="sectionHeader">Features:</div>
+            <ul>
+                <li>Bug fixes</li>
+            </ul>
+            <div class="sectionHeader">Known Issues:</div>
+            <ul>
+                <li>See HAT 4.0 release notes</li>
+            </ul>
+            <div class="sectionHeader">Requirements:</div>
+            <ul>
+                <li>HAT 4.0.1 requires macOS Sierra 10.12 (latest release recommended)</li>
+            </ul>
+            <div class="sectionHeader">Bug Reporting:</div>
+            <ul>
+                <li>Please report all issues to <a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the README.</li>
+            </ul>
+        </div>
+        
+        <div class="olderRelease">
+            What was new in HAT 4.0
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>iOS 10 compatible engine</li>
+                    <li>IP camera stream negotiation and video streams</li>
+                    <li>IP camera profiles</li>
+                    <li>IP camera snapshot support</li>
+                    <li>IP camera multi-stream support</li>
+                    <li>IP camera configuration selection</li>
+                    <li>WAC support</li>
+                    <li>Improved BLE stability</li>
+                </ul>
+            </li>
+            <li>Known Issues
+                <ul>
+                    <li>IP camera: if multiple network interfaces are available during configuration negotiation, please disable one to ensure all traffic comes through on a single interface.</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li><div class="specHeader">HAT 4.0 requires macOS Sierra 10.12 (latest release recommended)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the README.</li>
+        </ul>
+        <div class="olderRelease">
+            What was new in HAT 4.0 Beta 1.0
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>iOS 10-compatible engine</li>
+                    <li>Support for systems with SIP enabled</li>
+                    <li>IP camera stream negotiation and video streams</li>
+                    <li>IP camera profiles</li>
+                    <li>IP camera snapshot support</li>
+                    <li>IP camera multi-stream support</li>
+                    <li>IP camera configuration selection</li>
+                    <li>WAC support</li>
+                </ul>
+            </li>
+            <li>Known Issues
+                <ul>
+                    <li>IP camera: audio streams may encounter issues</li>
+                    <li>IP camera: if multiple network interfaces are available during configuration negotiation please disable one to ensure all traffic comes through on a single interface</li>
+                    <li>iCloud Relay: pairing and activation may fail on some devices</li>
+                    <li>BLE: requesting discovery intermittently fails</li>
+                    <li>BLE: the "BLE Discovery" view in the trace window remains empty</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li><div class="specHeader">HAT 4.0 requires macOS v10.12 (latest release recommended)</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the User Manual.</li>
+        </ul>
+        <div class="olderRelease">
+            What was new in HAT 4.0 Preview 3
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Camera configuration selection</li>
+                    <li>WAC support</li>
+                </ul>
+            </li>
+            <li>Known Issues
+                <ul>
+                    <li>None observed</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li><div class="specHeader">HAT 4.0 requires macOS v10.12 or later (latest release recommended)</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the User Manual.</li>
+        </ul>
+        <div class="olderRelease">
+            What was new in HAT 4.0 Preview 2
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Support for systems with SPI enabled</li>
+                    <li>IP camera stream negotiation and video streams</li>
+                    <li>IP camera profiles</li>
+                    <li>IP camera snapshot support</li>
+                    <li>IP camera multi-stream support</li>
+                </ul>
+            </li>
+            <li>Known Issues
+                <ul>
+                    <li>WAC support not included</li>
+                    <li>IP camera audio streams may encounter issues</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li><div class="specHeader">HAT 4.0 requires macOS v10.12 or later (latest release recommended)</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the User Manual.</li>
+        </ul>
+        <div class="olderRelease">
+            What was new in HAT 4.0 Preview 1
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>IP camera negotiation and video streams</li>
+                    <li>IP camera profiles</li>
+                </ul>
+            </li>
+            <li>Known Issues
+                <ul>
+                    <li>IP camera snapshots not supported</li>
+                    <li>WAC support not included</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li><div class="specHeader">HAT 4.0 requires macOS v10.12 or later (latest release recommended)</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the User Manual.</li>
+        </ul>
+        <div class="olderRelease">
+            What was new in HAT 3.3.1
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>HomeKit Certification Assistant (HCA beta available on the portal) trace support</li>
+                    <li>Additional HomeKit Certification Assistant compatibility</li>
+                </ul>
+            </li>
+            <li>Known Issues
+                <ul>
+                    <li>UI selection jumping</li>
+                    <li>Blocked: TCB023 requires additional auth field to always be available in manual mode window even for characteristics that do not require additional auth. </li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li><div class="specHeader">HAT 3.0 requires OS X v10.11.4+ (latest release recommended)</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the User Manual.</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 3.3
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Accessory discovery filter</li>
+                    <li>Improved BLE Discovery</li>
+                    <li>Session ID mixup fixed</li>
+                    <li>BTLECharacteristicDescriptors rule fixed</li>
+                </ul>
+            </li>
+            <li>Known Issues
+                <ul>
+                    <li>BLE rediscovery inconsistency. (If you experience repeated problems with BLE discovery, consider resetting your NVRAM: https://support.apple.com/en-us/HT204063) </li>
+                    <li>UI selection jumping</li>
+                    <li>Blocked: TCB023 requires additional auth field to always be available in manual mode window even for characteristics that do not require additional auth. </li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li><div class="specHeader">HAT 3.0 requires OS X v10.11.4+ (latest release recommended)</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the User Manual.</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 3.2.1
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Customizable discovery timeout</li>
+                    <li>Fixed remove additional controller functionality</li>
+                    <li>Fixed Discovery cancelation</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li><div class="specHeader">HAT 3.0 requires OS X v10.11.4+ (latest release recommended)</li>
+                </ul>
+            </li>
+            <li>Known Issues
+                <ul>
+                    <li>BLE2.0 Discovery inconsistency</li>
+                    <li>BTLECharacteristicDescriptors Error for missing descriptors</li>
+                    <li>Drop-down selection UI jumping</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report. To ensure your issue is reproducible, please follow the bug template which can be found in the User Manual.</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 3.2
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Updated BLE and Tunnel Support</li>
+                    <li>Various stability and bug fixes</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li><div class="specHeader">HAT 3.0 requires OS X v10.11.4+ (latest release recommended)</li>
+                </ul>
+            </li>
+            <li>Known Issues
+                <ul>
+                    <li>BLE2.0 Discovery inconsistency</li>
+                    <li>Invalid range BLE2.0 write charactierstic error upon correct accessory rejection</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 3.1
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Various stability and bug fixes</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li><div class="specHeader">HAT 3.0 requires OS X v10.11.4+ (latest release recommended)</li>
+                </ul>
+            </li>
+            <li>Known Issues
+                <ul>
+                    <li>HAT server does not re-establish a connection upon accessory bag refresh</li>
+                    <li>BLE2.0 Status Flags do not update reliably in UI</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 3.0 GM
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>BLE 2.0 functionality</li>
+                    <li>OS X 10.11.4 Seed build support beta</li>
+                    <li>Various stability and bug fixes</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li><div class="specHeader">HAT 3.0 requires OS X v10.11.4+ (latest release recommended)</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 3.0 Beta 2
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>BLE 2.0 support</li>
+                    <li>OS X 10.11.4 Seed build support beta</li>
+                    <li>Various stability and bug fixes</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li><div class="specHeader">HAT 3.0 requires OS X v10.11.4+ (latest release recommended)</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 3.0 Beta 1
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>BLE 2.0 support</li>
+                    <li>Various stability and bug fixes</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li><div class="specHeader">HAT 3.0 requires OS X v10.11+ (latest release recommended)</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 2.0 Beta 6
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>User customizable timeout length</li>
+                    <li>Enhanced error UI visibility</li>
+                    <li>Various stability and bug fixes</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li><div class="specHeader">HAT 2.0 requires OS X v10.11+ (latest release recommended)</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 2.0 (Beta 5)
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Various stability and bug fixes</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li><div class="specHeader">HAT 2.0 requires OS X v10.11+ (latest release recommended)</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 2.0 (Beta 4)
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Added initial Pairing support for iCloud Relay. Contact your MFi Account Manager for details.</li>
+                    <li>BLE Discovery and reliability improvements</li>
+                    <li>Keychain management fixes</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li><div class="specHeader">HAT 2.0 requires OS X v10.11+ (latest release recommended)</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 2.0 (Beta 3)
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Added initial Activation support for iCloud Relay</li>
+                    <li>Error notification for IP and BTLE controller add/removal</li>
+                    <li>Changed Pairing Features Characteristic from tlv8 to uint8</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li><div class="specHeader">HAT 2.0 requires OS X v10.11+ (latest release recommended)</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 2.0 (Beta 2)
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Added support for parsing the BLE advertisement data format of accessories targeting iOS 9</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li><div class="specHeader">HAT 2.0 requires OS X v10.11+</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 2.0 (Beta 1)
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Added initial support for HomeKit Tunneling</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li><div class="specHeader">HAT 2.0 requires OS X v10.11+</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 1.3
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Updated Bonjour TXT record rules for state number (s#) to match the HAP specification. It is now required and must be set to 1.</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li>HAT requires OS X v10.10+</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 1.2
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Improved stability and usability of UI in Manual mode</li>
+                    <li>Fixed an issue when writing to Identify characteristic</li>
+                    <li>Updated error messages regarding state number</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li>HAT requires OS X v10.10+</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 1.1
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Updated Bonjour rules for IP accessories</li>
+                    <li>Added range checking validation for characteristic values</li>
+                    <li>Added the ability to write additional authorization data to characteristics that support this feature</li>
+                    <li>Enabled reading and writing TLV8 characteristics with UI elements that reflect the format of the characteristic's "value" component</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li>HAT requires OS X v10.10+</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 1.0
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Added the ability to parse characteristic values during BLE discovery</li>
+                    <li>Enhanced validation for "List Pairing" response TLV8s</li>
+                    <li>Improved pairing removal for additional controllers</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li>HAT requires OS X v10.10+</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 1.0 (Beta 10)
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Added a check for the primary accessory to the "Paired Identify" operation</li>
+                    <li>Moved "List Pairings" to the Pairing section of Manual Mode</li>
+                    <li>Refined BLE advertisement data logging</li>
+                    <li>Enhanced BLE error checking and trace views</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li>HAT requires OS X v10.10+</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 1.0 (Beta 9)
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Added support for "List Pairings" over BLE</li>
+                    <li>Display the Device Information Service for BLE Locks</li>
+                    <li>Added IP and BLE checks for the Accessory Category Identifier</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li>HAT requires OS X v10.10+</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 1.0 (Beta 8)
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Added support for calling "List Pairings" on the accessory</li>
+                    <li>Added support for sending TLV8 values</li>
+                    <li>Added the ability to send unencrypted data to BLE characteristics</li>
+                    <li>For BLE services, HAT now displays the unmodified UUID as well as the HAP UUID</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li>HAT 1.0 (Beta 8) requires OS X v10.10+</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 1.0 (Beta 7)
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Added BLE advertisement data to the "BLE Information" summary</li>
+                    <li>Updated the permissions requirements for BLE characteristic</li>
+                </ul>
+            </li>
+            <li><div class="specHeader">HomeKit Accessory Protocol Specification Updates</div>
+                <p><div class="specItem">HomeKit Accessory Protocol for IP Accessories, Characteristic Objects</div></p>
+                <ul><li><p><div class="specText">The 'value' key must only be present if and only if the characteristic supports the property "Paired Read".</div></p></li></ul>
+                
+                <p><div class="specItem">HomeKit Accessory Protocol for Bluetooth LE Accessories, Characteristic Properties</div></p>
+                <ul><li><p><div class="specText">Characteristics contained within a HAP Service must only be a combination of the following: "Read" and "Write". All other possible properties are not permitted.</div></p></li></ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li>HAT 1.0 (Beta 7) requires OS X v10.10+</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li>HAT is packaged with the HomeKit Accessory Simulator (Beta)</li>
+                </ul>
+            </li>
+            <li>Limitations
+                <ul>
+                    <li>If HAT goes out of sync after unencrypted data is sent, restart HAT</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 1.0 (Beta 6)
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Added support for characteristics created during an active session</li>
+                    <li>Updated HTTP response validation</li>
+                    <li>Writing to custom characteristics with type-specific fields is enabled</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li>HAT 1.0 (Beta 6) requires OS X v10.10+</li>
+                </ul>
+            </li>
+            <li>Additional Tools
+                <ul>
+                    <li><b>HAT is now packaged with the HomeKit Accessory Simulator (Beta)</b></li>
+                </ul>
+            </li>
+            <li>Limitations
+                <ul>
+                    <li>Does not support the "too many attempts" check in Pair Setup</li>
+                    <li>If HAT goes out of sync after unencrypted data is sent, restart HAT</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 1.0 (Beta 5)
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Support added for custom services and characteristics</li>
+                    <li>The "description" property is now supported for characteristics</li>
+                    <li>Status Flags and Feature Flags are now displayed in the accessory's "IP Information" view</li>
+                    <li>Hardware, Software, and Firmware Revision characteristics are now recognized as optional characteristics of the Accessory Information Service</li>
+                </ul>
+            </li>
+            <li>Requirements
+                <ul>
+                    <li><b>HAT 1.0 (Beta 5) now requires OS X v10.10+</b></li>
+                </ul>
+            </li>
+            <li>Limitations
+                <ul>
+                    <li>Does not support the "too many attempts" check in Pair Setup</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 1.0 (Beta 4)
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Updated HTTP protocol validation</li>
+                </ul>
+            </li>
+            <li>Limitations
+                <ul>
+                    <li>Does not support the "too many attempts" check in Pair Setup</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 1.0 (Beta 3.1)
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Support for BLE accessories with MFi authentication co-processors</li>
+                </ul>
+            </li>
+            <li>Limitations
+                
+                <ul>
+                    <li>Does not support the "too many attempts" check in Pair Setup</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 1.0 (Beta 3)
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>HTTP protocol validation</li>
+                    <li>BLE characteristic read/write validation</li>
+                    <li>Support for multiple controller pairings</li>
+                </ul>
+            </li>
+            <li>Limitations
+                <ul>
+                    <li>Does not support 4-character UUID BLE services</li>
+                    <li>Does not support the "too many attempts" check in Pair Setup</li>
+                    <li>Does not support MFi+PIN, please verify with the "PIN" only method</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 1.0 (Beta 2)
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>BLE support</li>
+                    <li>Error indicators in trace</li>
+                    <li>Add/Remove/List pairings</li>
+                </ul>
+            </li>
+            <li>Limitations
+                <ul>
+                    <li>Does not support 4-character UUID BLE services</li>
+                    <li>Does not support the "too many attempts" check in Pair Setup</li>
+                    <li>Does not support MFi+PIN, please verify with the "PIN" only method</li>
+                    <li>Does not perform protocol validation</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+        
+        <div class="olderRelease">
+            What was new in HAT 1.0 (Beta 1)
+        </div>
+        <ul>
+            <li>Manual Mode
+                <ul>
+                    <li>Multiple simulated iOS controllers</li>
+                    <li>Accessory Discovery</li>
+                    <li>Pairing + Encryptionless Mode</li>
+                    <li>Characteristic read/write</li>
+                    <li>Decrypted HTTP payloads in trace</li>
+                    <li>Low level network capture, exportable to pcap file</li>
+                </ul>
+            </li>
+            <li>Limitations
+                <ul>
+                    <li>Does not support BLE accessories</li>
+                    <li>Does not support add/remove/list pairings</li>
+                    <li>Does not support the "too many attempts" check in Pair Setup</li>
+                    <li>Does not support MFi+PIN, please verify with the "PIN" only method</li>
+                    <li>Does not perform protocol validation</li>
+                </ul>
+            </li>
+            <li>Please report all issues to <span class="important"><a href="https://bugreport.apple.com" target="_blank">bugreport.apple.com</a></span> and include "MFi HAT" in the title of the bug report</li>
+        </ul>
+    </body>
+</html>
+

@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1347.57">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><b>Acknowledgments:</b></p>
+<p class="p2"><br></p>
+<p class="p1">Portions of this Apple Software may utilize the following copyrighted material, the use of which is hereby acknowledged.</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="s1"><b>DeNA Co., Ltd. et al. ( H2O )</b></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>Copyright (c) 2014, 2015 DeNA Co., Ltd., Kazuho Oku, Tatsuhiko Kubo, Domingo Alvarez Duarte, Nick Desaulniers, Marc Hörsken, Masahiro Nagano, Jeff Marrison, Daisuke Maki, Laurentiu Nicola, Justin Zhu</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>Permission is hereby granted, free of charge, to any person obtaining a copy</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>of this software and associated documentation files (the "Software"), to deal</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>in the Software without restriction, including without limitation the rights</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>copies of the Software, and to permit persons to whom the Software is</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>furnished to do so, subject to the following conditions:</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>The above copyright notice and this permission notice shall be included in all</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>copies or substantial portions of the Software.</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE<span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>SOFTWARE.</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><b>Attractive Chaos ( Klib/khash.h )</b></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>Copyright (c) 2008, 2009, 2011 by Attractive Chaos &lt;attractor@live.co.uk&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>Permission is hereby granted, free of charge, to any person obtaining</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>a copy of this software and associated documentation files (the</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>"Software"), to deal in the Software without restriction, including</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>without limitation the rights to use, copy, modify, merge, publish,</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>distribute, sublicense, and/or sell copies of the Software, and to</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>permit persons to whom the Software is furnished to do so, subject to</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>the following conditions:</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>The above copyright notice and this permission notice shall be</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>included in all copies or substantial portions of the Software.</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>SOFTWARE.</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><b>Kazuho Oku et al. ( PicoHTTPParser )</b></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>Copyright (c) 2009-2014 Kazuho Oku, Tokuhiro Matsuno, Daisuke Murase,</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                         </span>Shigeo Mitsunari</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>The software is licensed under either the MIT License (below) or the Perl</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>license.</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>Permission is hereby granted, free of charge, to any person obtaining a copy</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>of this software and associated documentation files (the "Software"), to</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>deal in the Software without restriction, including without limitation the</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>rights to use, copy, modify, merge, publish, distribute, sublicense, and/or</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>sell copies of the Software, and to permit persons to whom the Software is</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>furnished to do so, subject to the following conditions:</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>The above copyright notice and this permission notice shall be included in</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>all copies or substantial portions of the Software.</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>IN THE SOFTWARE.</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><b>Kirill Simonov ( yaml )</b></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>Copyright (c) 2006 Kirill Simonov</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>Permission is hereby granted, free of charge, to any person obtaining a copy of</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>this software and associated documentation files (the "Software"), to deal in</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>the Software without restriction, including without limitation the rights to<span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>of the Software, and to permit persons to whom the Software is furnished to do</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>so, subject to the following conditions:</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>The above copyright notice and this permission notice shall be included in all</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>copies or substantial portions of the Software.</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER<span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>SOFTWARE.</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><b>The OpenSSL Project ( OpenSSL, LibreSSL )</b></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>LICENSE ISSUES</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>==============</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>The OpenSSL toolkit stays under a dual license, i.e. both the conditions of</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>the OpenSSL License and the original SSLeay license apply to the toolkit.</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>See below for the actual license texts. Actually both licenses are BSD-style</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>Open Source licenses. In case of any license issues related to OpenSSL</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>please contact openssl-core@openssl.org.</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>OpenSSL License</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>---------------</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>====================================================================</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>Copyright (c) 1998-2011 The OpenSSL Project.<span class="Apple-converted-space">  </span>All rights reserved.</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>Redistribution and use in source and binary forms, with or without</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>modification, are permitted provided that the following conditions</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>are met:</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>1. Redistributions of source code must retain the above copyright</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">     </span>notice, this list of conditions and the following disclaimer.</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>2. Redistributions in binary form must reproduce the above copyright</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">     </span>notice, this list of conditions and the following disclaimer in</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">     </span>the documentation and/or other materials provided with the</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">     </span>distribution.</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>3. All advertising materials mentioning features or use of this</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">     </span>software must display the following acknowledgment:</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">     </span>"This product includes software developed by the OpenSSL Project</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">     </span>for use in the OpenSSL Toolkit. (http://www.openssl.org/)"</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>4. The names "OpenSSL Toolkit" and "OpenSSL Project" must not be used to</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">     </span>endorse or promote products derived from this software without</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">     </span>prior written permission. For written permission, please contact</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">     </span>openssl-core@openssl.org.</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>5. Products derived from this software may not be called "OpenSSL"</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">     </span>nor may "OpenSSL" appear in their names without prior written</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">     </span>permission of the OpenSSL Project.</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>6. Redistributions of any form whatsoever must retain the following</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">     </span>acknowledgment:</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">     </span>"This product includes software developed by the OpenSSL Project</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">     </span>for use in the OpenSSL Toolkit (http://www.openssl.org/)"</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>THIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>PURPOSE ARE DISCLAIMED.<span class="Apple-converted-space">  </span>IN NO EVENT SHALL THE OpenSSL PROJECT OR</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>OF THE POSSIBILITY OF SUCH DAMAGE.</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>====================================================================</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>This product includes cryptographic software written by Eric Young</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>(eay@cryptsoft.com).<span class="Apple-converted-space">  </span>This product includes software written by Tim</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>Hudson (tjh@cryptsoft.com).</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>Original SSLeay License</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>-----------------------</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com)</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>All rights reserved.</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>This package is an SSL implementation written</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>by Eric Young (eay@cryptsoft.com).</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>The implementation was written so as to conform with Netscapes SSL.</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>This library is free for commercial and non-commercial use as long as</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>the following conditions are aheared to.<span class="Apple-converted-space">  </span>The following conditions</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>apply to all code found in this distribution, be it the RC4, RSA,</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>lhash, DES, etc., code; not just the SSL code.<span class="Apple-converted-space">  </span>The SSL documentation</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>included with this distribution is covered by the same copyright terms</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>except that the holder is Tim Hudson (tjh@cryptsoft.com).</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>Copyright remains Eric Young's, and as such any Copyright notices in</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>the code are not to be removed.</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>If this package is used in a product, Eric Young should be given attribution</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>as the author of the parts of the library used.</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>This can be in the form of a textual message at program startup or</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>in documentation (online or textual) provided with the package.</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>Redistribution and use in source and binary forms, with or without</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>modification, are permitted provided that the following conditions</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>are met:</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>1. Redistributions of source code must retain the copyright</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>notice, this list of conditions and the following disclaimer.</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>2. Redistributions in binary form must reproduce the above copyright</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>notice, this list of conditions and the following disclaimer in the</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>documentation and/or other materials provided with the distribution.</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>3. All advertising materials mentioning features or use of this software</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>must display the following acknowledgement:</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>"This product includes cryptographic software written by</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">     </span>Eric Young (eay@cryptsoft.com)"</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>The word 'cryptographic' can be left out if the rouines from the library</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>being used are not cryptographic related :-).</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>4. If you include any Windows specific code (or a derivative thereof) from</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>the apps directory (application code) you must include an acknowledgement:</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>"This product includes software written by Tim Hudson (tjh@cryptsoft.com)"</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>ARE DISCLAIMED.<span class="Apple-converted-space">  </span>IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>SUCH DAMAGE.</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>The licence and distribution terms for any publically available version or</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>derivative of this code cannot be changed.<span class="Apple-converted-space">  </span>i.e. this code cannot simply be</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>copied and put under another distribution licence</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space"> </span>[including the GNU Public Licence.]</span></p>
+<p class="p3"><span class="s1"><br>
+</span></p>
+<p class="p3"><span class="s1">06/09/2015</span></p>
+</body>
+</html>

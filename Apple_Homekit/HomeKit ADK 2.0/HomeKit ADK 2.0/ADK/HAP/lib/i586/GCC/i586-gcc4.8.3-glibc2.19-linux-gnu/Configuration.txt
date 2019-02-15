@@ -1,0 +1,22 @@
+Description:       GCC for Linux i586 gcc-4.8.3, glibc-2.19
+Architecture:      i586
+Compile flags:     -Os
+                   -Wall
+                   -Werror
+                   -Wextra
+                   -Wno-padded
+                   -fPIC
+                   -fconserve-stack
+                   -fdata-sections
+                   -ffreestanding
+                   -ffunction-sections
+                   -fno-delete-null-pointer-checks
+                   -fno-stack-protector
+                   -fno-strict-aliasing
+                   -fno-strict-overflow
+                   -g0
+                   -pedantic
+                   -pedantic-errors
+                   -std=c99
+Data cache:        processor may have data cache
+Byte ordering:     little endian

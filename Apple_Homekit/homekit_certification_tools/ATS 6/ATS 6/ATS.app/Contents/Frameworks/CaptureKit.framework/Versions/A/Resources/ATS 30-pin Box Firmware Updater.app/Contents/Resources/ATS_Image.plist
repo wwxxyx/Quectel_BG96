@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ATS_FW_Image_File_Path</key>
+	<string>BBSniff_fw.sim</string>
+	<key>ATS_FW_Image_Version_Major</key>
+	<integer>0</integer>
+	<key>ATS_FW_Image_Version_Minor</key>
+	<integer>5</integer>
+	<key>ATS_FW_Image_Version_Revision</key>
+	<integer>9</integer>
+	<key>RAM_Bootloader_Path</key>
+	<string>TMS470_RAM_Bootloader.sim</string>
+</dict>
+</plist>

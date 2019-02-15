@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CaptureConfigurationDefaultsWired</key>
+	<dict>
+		<key>connectorMask</key>
+		<integer>2</integer>
+		<key>protocolMask</key>
+		<integer>4</integer>
+		<key>transportMask</key>
+		<integer>2</integer>
+		<key>usingCaptureDevice</key>
+		<false/>
+		<key>usingBeagle</key>
+		<false/>
+		<key>appleDeviceActingAsUSBHost</key>
+		<true/>
+		<key>ethernetFilterEnabled</key>
+		<true/>
+	</dict>
+	<key>CaptureConfigurationDefaultsWireless</key>
+	<dict>
+		<key>protocolMask</key>
+		<integer>6</integer>
+		<key>transportMask</key>
+		<integer>0</integer>
+		<key>usingSavedBluetoothCaptureConfiguration</key>
+		<false/>
+		<key>ethernetFilterEnabled</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

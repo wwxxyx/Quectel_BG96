@@ -1,0 +1,11 @@
+framework module TrafficUIKit {
+  umbrella header "TrafficUIKit.h"
+
+  export *
+  module * { export * }
+}
+
+module TrafficUIKit.Swift {
+    header "TrafficUIKit-Swift.h"
+    requires objc
+}

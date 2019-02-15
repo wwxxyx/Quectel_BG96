@@ -1,0 +1,6 @@
+framework module MikeyBusKit {
+  umbrella header "MikeyBusKit.h"
+
+  export *
+  module * { export * }
+}

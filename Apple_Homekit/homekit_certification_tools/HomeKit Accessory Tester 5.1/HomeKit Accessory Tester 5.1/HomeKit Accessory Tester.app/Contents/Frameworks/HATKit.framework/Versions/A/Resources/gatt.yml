@@ -1,0 +1,236 @@
+# HEEvent classes are generated from this YAML!
+#
+# Top-level keys are event classes. If you change the class name after a release of HAT ships, the serialization format changes! Opening old traces may cause a crash.
+#
+# Under an event class are these keys:
+#   * parent: The superclass to inherit from. Defaults to HEEvent if not provided.
+#
+#   * name: The user-visible event type. This will be used for the report analyzer entry's section title.
+#
+#   * serialized_properties: properties that are serialized to the HAT trace. The value is a dictionary where the keys are property names and the values are dictionaries with the following keys:
+#     * type: Objective-C type for this property.
+#     * name: User-visible name for this property. Will be used in the report analyzer entry.
+#
+#   * computed_properties: properties that are NOT serialized to the trace. The value is a dictionary where the keys are property names and the values are one of two options:
+#     * [string]: if the value is a string, the type is assumed to be a simple, constant NSString.
+#     * [dictionary]: if the value is a dictionary, the keys are:
+#       * name: User-visible name for this property
+#       * type: Objective-C type for this property
+#       * computed: Objective-C code snippet that's used to compute this property
+#
+#   * report: This includes an array of things to include in the report analyzer entry (these will be appended to the parent class's report analyzer entry).
+#             Each array element is a dictionary where the key specifies the mode and the value specifies the associated property.
+#     * "value": For properties that are Objective-C objects that should be displayed with their `description` method.
+#     * "primitive_value": For properties that are numbers or BOOLs that should be converted to an NSNumber and then displayed.
+#     * "data": For properties that are NSData objects that should be displayed using a hex dump.
+#     * "array": For properties that are NSArray objects that contain strings and should be shown as an expandable sub-entry.
+
+BLEGATTEvent:
+  serialized_properties:
+    accessoryServer:
+      type: HATAccessoryServer *
+      name: Accessory Server
+
+BLEGATTServiceEvent:
+  parent: BLEGATTEvent
+  serialized_properties:
+    serviceUUID:
+      type: NSString *
+      name: Service UUID
+  computed_properties:
+    service:
+      name: Service
+      type: NSString *
+      computed: "[[HAPMetadata getSharedInstance] descriptionFromServiceType:self.serviceUUID]"
+  report:
+    - value: service
+    - value: serviceUUID
+
+BLEGATTCharacteristicEvent:
+  parent: BLEGATTServiceEvent
+  serialized_properties:
+    characteristicUUID:
+      type: NSString *
+      name: Characteristic UUID
+  computed_properties:
+    characteristic:
+      name: Characteristic
+      type: NSString *
+      computed: "[[HAPMetadata getSharedInstance] descriptionFromCharacteristicType:self.characteristicUUID]"
+  report:
+    - value: characteristic
+    - value: characteristicUUID
+
+BLEGATTReadRequestEvent:
+  parent: BLEGATTCharacteristicEvent
+  name: Read Request
+  computed_properties:
+    source: Controller
+    destination: Accessory
+
+BLEGATTReadResponseEvent:
+  parent: BLEGATTCharacteristicEvent
+  name: Read Response
+  serialized_properties:
+    value:
+      type: NSData *
+      name: Value
+  computed_properties:
+    source: Accessory
+    destination: Controller
+  report:
+    - data: value
+
+BLEGATTWriteRequestEvent:
+  parent: BLEGATTCharacteristicEvent
+  name: Write Request
+  serialized_properties:
+    value:
+      type: NSData *
+      name: Value
+  computed_properties:
+    source: Controller
+    destination: Accessory
+  report:
+    - data: value
+
+BLEGATTWriteResponseEvent:
+  parent: BLEGATTCharacteristicEvent
+  name: Write Response
+  computed_properties:
+    source: Accessory
+    destination: Controller
+
+BLEGATTNotificationStateRequestEvent:
+  parent: BLEGATTCharacteristicEvent
+  name: Notification State Request
+  serialized_properties:
+    enabled:
+      type: BOOL
+      name: Enabled
+  computed_properties:
+    source: Controller
+    destination: Accessory
+  report:
+    - primitive_value: enabled
+
+BLEGATTNotificationStateResponseEvent:
+  parent: BLEGATTCharacteristicEvent
+  name: Notification State Response
+  serialized_properties:
+    enabled:
+      type: BOOL
+      name: Enabled
+  computed_properties:
+    source: Accessory
+    destination: Controller
+  report:
+    - primitive_value: enabled
+
+BLEGATTNotificationEvent:
+  parent: BLEGATTCharacteristicEvent
+  name: Notification
+  serialized_properties:
+    value:
+      type: NSData *
+      name: Value
+  computed_properties:
+    source: Accessory
+    destination: Controller
+
+BLEGATTGetCharacteristicDescriptorsEvent:
+  parent: BLEGATTCharacteristicEvent
+  name: Get Characteristic Descriptors
+  computed_properties:
+    source: Controller
+    destination: Accessory
+
+BLEGATTGetCharacteristicDescriptorsCompletedEvent:
+  parent: BLEGATTCharacteristicEvent
+  name: Get Characteristic Descriptors Completed
+  serialized_properties:
+    descriptors:
+      type: NSArray *
+      name: Descriptor UUIDs
+  computed_properties:
+    source: Accessory
+    destination: Controller
+  report:
+    - array: descriptors
+
+BLEGATTGetDescriptorValueEvent:
+  parent: BLEGATTCharacteristicEvent
+  name: Get Descriptor Value
+  serialized_properties:
+    descriptor:
+      type: NSString *
+      name: Descriptor UUID
+  computed_properties:
+    source: Controller
+    destination: Accessory
+  report:
+    - value: descriptor
+
+BLEGATTGetDescriptorValueCompletedEvent:
+  parent: BLEGATTCharacteristicEvent
+  name: Get Descriptor Value Completed
+  serialized_properties:
+    descriptor:
+      type: NSString *
+      name: Descriptor UUID
+    value:
+      type: NSData *
+      name: Descriptor Value
+  computed_properties:
+    source: Accessory
+    destination: Controller
+  report:
+    - value: descriptor
+    - data: value
+
+BLEGATTStartDiscoveryEvent:
+  parent: BLEGATTEvent
+  name: Start Discovery
+  computed_properties:
+    source: Controller
+    destination: Accessory
+
+BLEGATTDiscoveryCompletedEvent:
+  parent: BLEGATTEvent
+  name: Discovery Completed
+  computed_properties:
+    source: Accessory
+    destination: Controller
+
+BLEGATTDidModifyServicesEvent:
+  parent: BLEGATTEvent
+  name: Services Changed
+  serialized_properties:
+    services:
+      type: NSArray *
+      name: Invalidated Service UUIDs
+  computed_properties:
+    source: Accessory
+    destination: Controller
+  report:
+    - array: services
+
+BLEGATTRequestCharacteristicsForServiceEvent:
+  parent: BLEGATTServiceEvent
+  name: Discover Characteristics for Service
+  computed_properties:
+    source: Controller
+    destination: Accessory
+
+BLEGATTRequestCharacteristicsForServiceCompletedEvent:
+  parent: BLEGATTServiceEvent
+  name: Discover Characteristics for Service Completed
+  serialized_properties:
+    characteristics:
+      type: NSArray *
+      name: Characteristic UUIDs
+  computed_properties:
+    source: Accessory
+    destination: Controller
+  report:
+    - array: characteristics

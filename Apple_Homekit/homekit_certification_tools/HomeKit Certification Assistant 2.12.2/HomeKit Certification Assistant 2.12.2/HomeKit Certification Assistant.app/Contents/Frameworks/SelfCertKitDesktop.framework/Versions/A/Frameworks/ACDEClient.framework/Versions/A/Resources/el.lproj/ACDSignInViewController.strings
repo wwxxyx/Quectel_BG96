@@ -1,0 +1,30 @@
+
+/* Class = "NSTextFieldCell"; title = "Apple ID"; ObjectID = "1kE-wT-UDL"; */
+"1kE-wT-UDL.title" = "Apple ID";
+
+/* Class = "NSTextFieldCell"; title = "Password"; ObjectID = "3FK-DG-auY"; */
+"3FK-DG-auY.title" = "Συνθηματικό";
+
+/* Class = "NSTextFieldCell"; title = "An Apple ID is your username for everything you do with Apple: Shop the iTunes Store, enable iCloud on your devices, and more."; ObjectID = "FvG-w6-lcW"; */
+"FvG-w6-lcW.title" = "Το Apple ID είναι το όνομα χρήστη για οτιδήποτε κάνετε με την Apple: Αγορές στο iTunes Store, ενεργοποίηση του iCloud στις συσκευές σας και πολλά άλλα.";
+
+/* Class = "NSButtonCell"; title = "Remember my password in the keychain"; ObjectID = "GJC-AT-CBW"; */
+"GJC-AT-CBW.title" = "Απομνημόνευση του συνθηματικού μου στην κλειδοθήκη";
+
+/* Class = "NSButtonCell"; title = "Forgot your password?"; ObjectID = "T7a-UG-ZdG"; */
+"T7a-UG-ZdG.title" = "Ξεχάσατε το συνθηματικό σας;";
+
+/* Class = "NSButtonCell"; title = "Forgot your Apple ID?"; ObjectID = "UxP-Wj-gT4"; */
+"UxP-Wj-gT4.title" = "Ξεχάσατε το Apple ID σας;";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "edu-6M-L88"; */
+"edu-6M-L88.title" = "Ακύρωση";
+
+/* Class = "NSButtonCell"; title = "Sign In"; ObjectID = "iWU-8z-MAR"; */
+"iWU-8z-MAR.title" = "Σύνδεση";
+
+/* Class = "NSButtonCell"; title = "Create Apple ID"; ObjectID = "p3G-Hd-wDn"; */
+"p3G-Hd-wDn.title" = "Δημιουργία Apple ID";
+
+/* Class = "NSTextFieldCell"; title = "Sign in with your Apple ID to download from iBooks."; ObjectID = "y06-7n-RZt"; */
+"y06-7n-RZt.title" = "Σύνδεση με το Apple ID σας";

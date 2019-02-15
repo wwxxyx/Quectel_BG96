@@ -1,0 +1,2 @@
+The ADK is delivered with a set of libraries in binary form that contain the HomeKit Accessory Protocol implementation.
+The binary that fits for your tool chain and chipset shall be located here.

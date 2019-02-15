@@ -1,0 +1,30 @@
+/* Overrides some coloring to work well with a Dark system Aqua */
+
+body {
+    color: white;
+}
+
+p.p1 { /* This is the class style found in the KeyValueDetailsViewSection */
+    color: white;
+}
+
+.sectionTitle { /* from summary_style.css */
+    color: white;
+    filter: brightness(55%); /* Kind of like the opaqueness that you get from secondaryLabelColor */
+}
+
+.sectionBody { /* from summary_style.css */
+    background-color: #363636; /* unemphasizedSelectedTextBackgroundColor */
+}
+
+td {
+    color: white;
+}
+
+.red {
+    color: #FC2B2D; /* systemRedColor in Dark Mode */
+}
+
+.gray {
+    color: #86868B; /* systemGrayColor in Dark Mode */
+}

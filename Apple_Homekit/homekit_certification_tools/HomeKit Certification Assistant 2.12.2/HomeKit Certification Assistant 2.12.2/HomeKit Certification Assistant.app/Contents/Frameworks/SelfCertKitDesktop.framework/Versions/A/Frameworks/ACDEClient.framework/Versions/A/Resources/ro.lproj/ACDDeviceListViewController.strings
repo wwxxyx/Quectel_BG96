@@ -1,0 +1,21 @@
+
+/* Class = "NSButtonCell"; title = "Unable to receive messages at any of your devices?"; ObjectID = "8rM-fL-JoM"; */
+"8rM-fL-JoM.title" = "Nu puteți primi mesaje pe niciunul dintre dispozitivele dvs.?";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "Sxi-lQ-Opj"; */
+"Sxi-lQ-Opj.title" = "Anulați";
+
+/* Class = "NSTextFieldCell"; title = "To manage your trusted devices visit appleid.apple.com from a Mac or PC."; ObjectID = "b7X-aa-2IA"; */
+"b7X-aa-2IA.title" = "To manage your trusted devices visit appleid.apple.com from a Mac or PC.";
+
+/* Class = "NSButtonCell"; title = "Continue"; ObjectID = "bKD-Fn-btQ"; */
+"bKD-Fn-btQ.title" = "Continuați";
+
+/* Class = "NSTextFieldCell"; title = "The device you select below will be sent a temporary code that you can use to verify your identity."; ObjectID = "iec-VL-l55"; */
+"iec-VL-l55.title" = "Dispozitivul pe care îl selectați mai jos va primi un cod temporar pe care îl puteți utiliza la confirmarea identității.";
+
+/* Class = "NSTextFieldCell"; title = "Two-step verification is enabled for this Apple ID."; ObjectID = "tES-Rb-6CW"; */
+"tES-Rb-6CW.title" = "Confirmarea în doi pași este activată pentru acest ID Apple";
+
+/* Class = "NSTextFieldCell"; title = "Send Code to:"; ObjectID = "xW1-iZ-fcl"; */
+"xW1-iZ-fcl.title" = "Trimiteți codul la:";

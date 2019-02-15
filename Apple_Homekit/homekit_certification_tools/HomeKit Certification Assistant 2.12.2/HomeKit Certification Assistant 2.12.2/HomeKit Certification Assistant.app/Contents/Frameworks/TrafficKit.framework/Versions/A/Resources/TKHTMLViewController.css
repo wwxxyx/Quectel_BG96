@@ -1,0 +1,92 @@
+html {
+	margin: 0;
+}
+
+body {
+    margin: 0;
+	font-family: 'Helvetica Neue';
+	font-size: 11px;
+	line-height: 1.5em;
+	overflow: auto;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+    padding: 14px;
+    padding-top: 0px;
+}
+
+table {
+	table-layout: fixed;
+}
+
+td {
+    word-wrap: break-word;
+    vertical-align: center;
+    font-size: 11px;
+}
+
+td.label {
+    font-weight: bold;
+    text-align: right;
+    font-size: 11px;
+}
+
+.labelNote {
+    font-size: 10px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    color: gray;
+}
+
+th.label {
+    font-weight: bold;
+    font-size: 11px;
+}
+
+tt {
+    font-family: 'Menlo', 'Monaco';
+}
+
+.sectionTitle {
+    margin: 0 auto;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    margin-top: 14px;
+    color: #515E6D;
+}
+
+.sectionBody {
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #C5C5C5;
+    background-color: #F7F7F7;
+    padding: 14px;
+}
+
+.sectionRightNote {
+    margin: 0 auto;
+    max-width: 725px;
+    font-size: 10px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    color: gray;
+    text-align: right;
+}
+
+.banner {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.bannerText {
+    font-size: 16px;
+    color: #515E6D;
+}
+
+.bannerSubtext {
+    font-size: 13px;
+    color: #515E6D;
+    margin-top: 7px;
+}

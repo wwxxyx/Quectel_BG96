@@ -1,0 +1,6 @@
+framework module MFIKit {
+  umbrella header "MFIKit.h"
+
+  export *
+  module * { export * }
+}

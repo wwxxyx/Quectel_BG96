@@ -1,0 +1,90 @@
+.pd_section_title
+{
+    margin-top: 2px;
+    padding-left: 11px;
+    padding-right: 25px;
+    padding-bottom: 1px;
+    /*	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ddd));*/
+    /*	background: -webkit-gradient(linear, left top, left bottom, from(#DDE2ED), to(#D9DEE9), color-stop(50%, #DDE2ED), color-stop(50%, #C3CAD9));*/
+    /*	background: -webkit-gradient(linear, left top, left bottom, from(#A1AECB), to(#7182A8), color-stop(50%, #A1AECB), color-stop(50%, #93A0BE));*/
+    /*	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff), color-stop(50%, #fff), color-stop(50%, #eee), color-stop(99%, #fff));*/
+    background: -webkit-gradient(linear, left top, left bottom, from(#DDE2ED), to(#D9DEE9), color-stop(50%, #C3CAD9));
+    border-top: 1px solid #888;
+    border-bottom: 1px solid #888;
+    color: #333;
+    text-shadow: 0px 1px 1px white;
+    font-weight: bold;
+}
+
+.pd_section_content
+{
+    padding-left: 0px;
+    text-overflow: ellipsis;
+}
+
+.pd_section_content td[align="right"]
+{
+    padding-right: 20px;
+}
+
+.pd_section
+{
+    padding-top: 4px;
+    padding-bottom: 6px;
+    padding-right: 20px;
+}
+
+ol.pd_section_list 
+{
+    padding: inherit;
+    margin: 0px;
+    color: gray;
+}
+
+.disclosed { display: none; }
+.level0 { padding-left: 13px; }
+.level10 { padding-left: 10px; }
+.level1 { padding-left: 35px; }
+.level2 { padding-left: 57px; }
+
+.desc { color: #777; }
+
+.details_header
+{
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee), color-stop(50%, #ccc));
+    color: #000;
+    text-align: center;
+    padding-left: 5px;
+    border-bottom: 1px solid #888;
+}
+
+.unselectable
+{
+    cursor: default;
+}
+
+p {
+    padding-bottom: 6px;
+}
+
+a {
+    color: #178ac9 !important;
+}
+
+a:link {
+    text-decoration: none !important;
+}
+
+a:hover {
+    text-decoration: underline !important;
+}
+
+a:active {
+    text-decoration: underline !important;
+}
+
+hr {
+    border: 0.5px solid #888;
+    margin-top: 5px;
+    margin-bottom: 6px;
+}

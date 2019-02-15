@@ -1,0 +1,21 @@
+Description:       GCC for TC32
+Architecture:      TC32
+Compile flags:     -Os
+                   -Wall
+                   -Werror
+                   -Wextra
+                   -Wno-padded
+                   -Wno-type-limits
+                   -fconserve-stack
+                   -fdata-sections
+                   -ffreestanding
+                   -ffunction-sections
+                   -fno-delete-null-pointer-checks
+                   -fno-stack-protector
+                   -fno-strict-aliasing
+                   -fno-strict-overflow
+                   -fpack-struct
+                   -g0
+                   -std=c99
+Data cache:        processor may have data cache
+Byte ordering:     little endian

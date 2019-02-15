@@ -1,0 +1,18 @@
+
+/* Class = "NSButtonCell"; title = "Unable to receive messages at any of your devices?"; ObjectID = "8rM-fL-JoM"; */
+"8rM-fL-JoM.title" = "任何裝置皆無法接收訊息？";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "Sxi-lQ-Opj"; */
+"Sxi-lQ-Opj.title" = "取消";
+
+/* Class = "NSButtonCell"; title = "Continue"; ObjectID = "bKD-Fn-btQ"; */
+"bKD-Fn-btQ.title" = "繼續";
+
+/* Class = "NSTextFieldCell"; title = "The device you select below will be sent a temporary code that you can use to verify your identity."; ObjectID = "iec-VL-l55"; */
+"iec-VL-l55.title" = "臨時驗證碼會傳送到您在下方選取的裝置，以便驗證您的身分。";
+
+/* Class = "NSTextFieldCell"; title = "Two-step verification is enabled for this Apple ID."; ObjectID = "tES-Rb-6CW"; */
+"tES-Rb-6CW.title" = "此 Apple ID 已啟用雙步驟驗證。";
+
+/* Class = "NSTextFieldCell"; title = "Send Code to:"; ObjectID = "xW1-iZ-fcl"; */
+"xW1-iZ-fcl.title" = "傳送驗證碼至：";

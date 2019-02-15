@@ -1,0 +1,30 @@
+
+/* Class = "NSTextFieldCell"; title = "Apple ID"; ObjectID = "1kE-wT-UDL"; */
+"1kE-wT-UDL.title" = "ID Apple";
+
+/* Class = "NSTextFieldCell"; title = "Password"; ObjectID = "3FK-DG-auY"; */
+"3FK-DG-auY.title" = "Mật khẩu";
+
+/* Class = "NSTextFieldCell"; title = "An Apple ID is your username for everything you do with Apple: Shop the iTunes Store, enable iCloud on your devices, and more."; ObjectID = "FvG-w6-lcW"; */
+"FvG-w6-lcW.title" = "ID Apple là tên người dùng cho tất cả những sản phẩm của Apple như: mua sắm trên iTunes Store, kích hoạt iCloud trên thiết bị, và nhiều hơn nữa.";
+
+/* Class = "NSButtonCell"; title = "Remember my password in the keychain"; ObjectID = "GJC-AT-CBW"; */
+"GJC-AT-CBW.title" = "Nhớ mật khẩu của tôi trong chuổi khóa";
+
+/* Class = "NSButtonCell"; title = "Forgot your password?"; ObjectID = "T7a-UG-ZdG"; */
+"T7a-UG-ZdG.title" = "Quên mật khẩu?";
+
+/* Class = "NSButtonCell"; title = "Forgot your Apple ID?"; ObjectID = "UxP-Wj-gT4"; */
+"UxP-Wj-gT4.title" = "Quên ID Apple?";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "edu-6M-L88"; */
+"edu-6M-L88.title" = "Hủy";
+
+/* Class = "NSButtonCell"; title = "Sign In"; ObjectID = "iWU-8z-MAR"; */
+"iWU-8z-MAR.title" = "Đăng Nhập";
+
+/* Class = "NSButtonCell"; title = "Create Apple ID"; ObjectID = "p3G-Hd-wDn"; */
+"p3G-Hd-wDn.title" = "Tạo ID Apple";
+
+/* Class = "NSTextFieldCell"; title = "Sign in with your Apple ID to download from iBooks."; ObjectID = "y06-7n-RZt"; */
+"y06-7n-RZt.title" = "Đăng nhập bằng ID Apple của bạn";

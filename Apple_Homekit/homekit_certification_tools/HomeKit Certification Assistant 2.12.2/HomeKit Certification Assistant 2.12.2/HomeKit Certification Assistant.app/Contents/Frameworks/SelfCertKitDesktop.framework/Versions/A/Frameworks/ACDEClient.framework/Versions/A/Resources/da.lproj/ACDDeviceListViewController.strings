@@ -1,0 +1,21 @@
+
+/* Class = "NSButtonCell"; title = "Unable to receive messages at any of your devices?"; ObjectID = "8rM-fL-JoM"; */
+"8rM-fL-JoM.title" = "Kan du ikke modtage meddelelser på nogen af dine enheder?";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "Sxi-lQ-Opj"; */
+"Sxi-lQ-Opj.title" = "Annuller";
+
+/* Class = "NSTextFieldCell"; title = "To manage your trusted devices visit appleid.apple.com from a Mac or PC."; ObjectID = "b7X-aa-2IA"; */
+"b7X-aa-2IA.title" = "To manage your trusted devices visit appleid.apple.com from a Mac or PC.";
+
+/* Class = "NSButtonCell"; title = "Continue"; ObjectID = "bKD-Fn-btQ"; */
+"bKD-Fn-btQ.title" = "Fortsæt";
+
+/* Class = "NSTextFieldCell"; title = "The device you select below will be sent a temporary code that you can use to verify your identity."; ObjectID = "iec-VL-l55"; */
+"iec-VL-l55.title" = "Der sendes en midlertidig kode til den valgte enhed nedenfor. Du kan bruge koden til at bekræfte din identitet.";
+
+/* Class = "NSTextFieldCell"; title = "Two-step verification is enabled for this Apple ID."; ObjectID = "tES-Rb-6CW"; */
+"tES-Rb-6CW.title" = "Totrinsbekræftelse er aktiveret for dette Apple‑id";
+
+/* Class = "NSTextFieldCell"; title = "Send Code to:"; ObjectID = "xW1-iZ-fcl"; */
+"xW1-iZ-fcl.title" = "Send kode til:";

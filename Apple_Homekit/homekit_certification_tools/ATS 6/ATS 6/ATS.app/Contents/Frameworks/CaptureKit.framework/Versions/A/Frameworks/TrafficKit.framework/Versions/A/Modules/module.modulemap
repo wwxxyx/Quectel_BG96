@@ -1,0 +1,6 @@
+framework module TrafficKit {
+  umbrella header "TrafficKit.h"
+
+  export *
+  module * { export * }
+}

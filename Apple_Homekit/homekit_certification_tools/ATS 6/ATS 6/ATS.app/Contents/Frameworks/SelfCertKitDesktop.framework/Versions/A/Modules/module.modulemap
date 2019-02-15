@@ -1,0 +1,6 @@
+framework module SelfCertKitDesktop {
+  umbrella header "SelfCertKitDesktop.h"
+
+  export *
+  module * { export * }
+}

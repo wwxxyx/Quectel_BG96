@@ -1,0 +1,121 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671
+{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fswiss\fcharset0 Helvetica-Oblique;
+\f3\fswiss\fcharset0 Helvetica-BoldOblique;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgenericrgb\c0\c0\c0;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid1\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww33400\viewh19080\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 System Requirements\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b0 \cf0 \
+ATS 6 requires macOS High Sierra 10.13 or later (latest release recommended), which is available for download from the App Store.\
+ \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b \cf0 Release Notes\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b0 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\i \cf0 \expnd0\expndtw0\kerning0
+What\'92s new in ATS 6\
+\pard\pardeftab720\partightenfactor0
+
+\f1\i0 \cf0 \
+Trace window:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\cf0  	- Added a toolbar button to toggle between displaying relative timestamps and delta timestamps\
+ 	- Updated the toolbar to include additional features and shortcuts: New Capture, Quick Capture, adding Separator, adding Comment, Jump to Error, and Jump to Comment\
+ 	- Added the ability to group multiple terms together in the Filter (using double quotation marks) for easier searching\
+ 	- Added menu options for importing TotalPhase CSV files\
+ 	- Enabled Dark Mode for macOS Mojave\
+ 	- Changed default timestamp column format to HH:mm:ss.SSS\
+ 	- Added a contextual menu to enable copying raw bytes\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+Capture Configuration:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\cf0  	- Added the ability to capture Bluetooth and Wi-Fi traffic simultaneously in a single trace\
+ 	- Added the ability to detect and install developer tools package (required for starting Wi-Fi captures) from within ATS; users are no longer required to install Xcode if running macOS High Sierra and Mojave\
+ 	- Redesigned the Capture Configuration window to easily start wired and wireless captures\
+ 	- Made the Capture Configuration selections persist through tab-switches, window, and app relaunches\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+Bluetooth:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\cf0  	- Added the ability to import and export the Bluetooth traces to BTSnoop file format\
+ 	- Added L2CAP traffic view to display the L2CAP frames during a Bluetooth capture with ComProbe BPA 100 and 600\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+Bug fixes:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\cf0  	- Fixed an issue where users were unable to start wireless captures with iPhone XS, iPhone XS Max, and iPhone XR\
+ 	- Fixed an issue where the exported PCAP files didn't retain timestamps\
+ 	- Fixed an issue where UTC dates weren't correctly interpreted for some NMEA sentences\
+ 	- Fixed an issue that caused the timestamp format change to not take effect in the timestamp toolbar text field and in pasteboard strings\
+ 	- Fixed an issue where some text rows were partially clipped in the Details sidebar\
+ 	- Fixed an issue where the .ats traces had a blank icon in the Finder window\
+ 	- Fixed an issue where changing traffic color did not immediately take effect in an open trace\
+ 	- Fixed a bug that caused a rule error to fire incorrectly in the iAP1 traffic view for PrepareUIDList command message\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+Known Issues:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\cf0  	- ComProbe BPA 100 is unable to capture Bluetooth traffic from accessories that use Secure Connection and claim compatibility with Apple devices running iOS 11 or later\
+\
+Note:\
+ 	- Wi-Fi captures with iPhone XS, iPhone XS Max, and iPhone XR is not supported on macOS Sierra\
+ 	- Updating the driver and firmware for ComProbe BPA 100 and 600:\
+ 	 	- Prior to updating the driver for ComProbe BPA 100 and 600, select the following setting in System Preferences > Security & Privacy > General > \'93Allow apps downloaded from: App Store and identified developers\'94 \
+ 	 	- During the driver installation, select \'93Allow\'94 (in System Preferences > Security & Privacy > General) next to \'93System software from developer \'93Frontline Test Equipment, inc.\'94 was blocked from loading.\'94\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+
+\f2\i \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\i0\b \cf0 Getting Started
+\f3\i \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\i0\b0 \cf2 Review the \'93ATS User Guide.pdf\'94 (available in the \'93ATS 6.zip\'94) for instructions on how to use ATS during the certification process.\
+\pard\pardeftab720\partightenfactor0
+
+\f3\i\b \cf0 \
+Filing Bugs\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b0 \cf0 \
+To ensure that we address your issue as effectively as possible:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf0 \kerning1\expnd0\expndtw0 	- \expnd0\expndtw0\kerning0
+Report all ATS issues to bugreport.apple.com.\
+	- Include \'93MFi ATS\'94 in the title of the bug report.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 	- \expnd0\expndtw0\kerning0
+In the configuration section, include the build numbers for ATS and macOS.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 	- \expnd0\expndtw0\kerning0
+In the configuration section, include the MFi Product Plan ID for your accessory.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 	- \expnd0\expndtw0\kerning0
+Describe your results and how they differ from what is expected.
+\f1\i0 \
+\pard\tx220\tx720\pardeftab720\li371\fi-372\partightenfactor0
+\ls1\ilvl0
+\f2\i \cf0 \kerning1\expnd0\expndtw0 	- \expnd0\expndtw0\kerning0
+In the \'93Additional notes\'94 section, explain the impact on your development (e.g., inconvenience, blocking certification, etc.).
+\f1\i0 \
+\pard\tx220\tx385\pardeftab720\li362\fi-363\partightenfactor0
+\ls1\ilvl0
+\f2\i \cf0 \kerning1\expnd0\expndtw0 	- \expnd0\expndtw0\kerning0
+In the \'93Additional notes\'94 section, include any additional configuration, spec language, workarounds, or other relevant information.
+\f1\i0 \
+\pard\tx220\tx720\pardeftab720\li380\fi-381\partightenfactor0
+\ls1\ilvl0
+\f2\i \cf0 \kerning1\expnd0\expndtw0 	- \expnd0\expndtw0\kerning0
+A 
+\f3\b log file or screenshot with annotations
+\f2\b0  is strongly recommended to help understand your issue in a timely manner.}

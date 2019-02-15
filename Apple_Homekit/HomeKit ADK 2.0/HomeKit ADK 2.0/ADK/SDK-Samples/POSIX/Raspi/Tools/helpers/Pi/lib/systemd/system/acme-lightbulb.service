@@ -1,0 +1,10 @@
+[Unit]
+Description=Acme LightbulbLED server on port 8080
+
+[Service]
+WorkingDirectory=/home/pi/acme-lightbulb/bin
+ExecStart=/home/pi/acme-lightbulb/bin/LightbulbLED
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

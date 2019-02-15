@@ -1,0 +1,33 @@
+
+/* Class = "NSTextFieldCell"; title = "Apple ID"; ObjectID = "1kE-wT-UDL"; */
+"1kE-wT-UDL.title" = "Apple ID";
+
+/* Class = "NSTextFieldCell"; title = "Password"; ObjectID = "3FK-DG-auY"; */
+"3FK-DG-auY.title" = "パスワード";
+
+/* Class = "NSTextFieldCell"; title = "This Apple ID has been disabled for security reasons. You can reset your password at iforgot.apple.com"; ObjectID = "Bcv-OX-7oj"; */
+"Bcv-OX-7oj.title" = "このApple IDは、セキュリティ上の理由で無効になっています。iforgot.apple.comから、パスワードを再設定できます。";
+
+/* Class = "NSTextFieldCell"; title = "An Apple ID is your username for everything you do with Apple: Shop the iTunes Store, enable iCloud on your devices, and more."; ObjectID = "FvG-w6-lcW"; */
+"FvG-w6-lcW.title" = "Apple ID は、iTunes Store でのお買い物、ご利用のデバイスで iCloud の設定など Apple のすべてのサービスで使用するユーザ名です。";
+
+/* Class = "NSButtonCell"; title = "Remember my password in the keychain"; ObjectID = "GJC-AT-CBW"; */
+"GJC-AT-CBW.title" = "パスワードをキーチェーンに保存";
+
+/* Class = "NSButtonCell"; title = "Forgot your password?"; ObjectID = "T7a-UG-ZdG"; */
+"T7a-UG-ZdG.title" = "パスワードをお忘れですか？";
+
+/* Class = "NSButtonCell"; title = "Forgot your Apple ID?"; ObjectID = "UxP-Wj-gT4"; */
+"UxP-Wj-gT4.title" = "Apple ID をお忘れですか？";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "edu-6M-L88"; */
+"edu-6M-L88.title" = "キャンセル";
+
+/* Class = "NSButtonCell"; title = "Sign In"; ObjectID = "iWU-8z-MAR"; */
+"iWU-8z-MAR.title" = "サインイン";
+
+/* Class = "NSButtonCell"; title = "Create Apple ID"; ObjectID = "p3G-Hd-wDn"; */
+"p3G-Hd-wDn.title" = "Apple ID の作成";
+
+/* Class = "NSTextFieldCell"; title = "Sign in with your Apple ID."; ObjectID = "y06-7n-RZt"; */
+"y06-7n-RZt.title" = "ご利用の Apple ID でサインインしてください。";

@@ -1,0 +1,10 @@
+Description:       IAR for ARM Cortex-M4
+Architecture:      ARMv7E-M
+Multilib name:     thumb/v7e-m
+Compiler URL:      https://www.iar.com/iar-embedded-workbench/
+Compiler version:  Embedded Workbench 8.1
+Compile flags:     --cpu Cortex-M4
+                   --fpu none 
+                   --no_path_in_file_macros
+Data cache:        processor may have data cache
+Byte ordering:     little endian

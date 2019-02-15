@@ -1,0 +1,12 @@
+
+/* Class = "NSButtonCell"; title = "Continue"; ObjectID = "2Sv-v6-97t"; */
+"2Sv-v6-97t.title" = "המשך/י";
+
+/* Class = "NSButtonCell"; title = "Go Back"; ObjectID = "4CB-Pk-vq9"; */
+"4CB-Pk-vq9.title" = "הקודם";
+
+/* Class = "NSTextFieldCell"; title = "Enter verification code sent to Janet's iPhone"; ObjectID = "Evw-zT-xo7"; */
+"Evw-zT-xo7.title" = "הזן/י קוד אימות";
+
+/* Class = "NSButtonCell"; title = "Send a new code"; ObjectID = "D1G-Pj-C24"; */
+"D1G-Pj-C24.title" = "שלח קוד חדש";

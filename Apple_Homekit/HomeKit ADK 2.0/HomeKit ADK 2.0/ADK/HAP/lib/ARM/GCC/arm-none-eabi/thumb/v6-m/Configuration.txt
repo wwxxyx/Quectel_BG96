@@ -1,0 +1,27 @@
+Description:       GCC for ARM Cortex-M0
+Architecture:      ARMv6-M
+Multilib name:     thumb/v6-m
+Compiler URL:      https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads
+Compiler version:  7-2018-q2-update
+Compile flags:     --specs=nano.specs
+                   -Os
+                   -Wall
+                   -Werror
+                   -Wextra
+                   -Wno-padded
+                   -fconserve-stack
+                   -fdata-sections
+                   -ffreestanding
+                   -ffunction-sections
+                   -fno-delete-null-pointer-checks
+                   -fno-stack-protector
+                   -fno-strict-aliasing
+                   -fno-strict-overflow
+                   -g0
+                   -march=armv6-m
+                   -mthumb
+                   -pedantic
+                   -pedantic-errors
+                   -std=c99
+Data cache:        processor must not have data cache
+Byte ordering:     little endian

@@ -1,0 +1,785 @@
+{
+  "0x10": {
+    "name": "Mikey RX",
+    "commandIDs": {
+      "0x00": {
+        "name": "HS_BIAS_SENSE_AND_CLAMP",
+        "bytes": 1,
+        "bitField": [
+          {
+            "byte": 0,
+            "start": 0,
+            "name": "HS_BIAS_SENSE_TRIP",
+            "length": 3,
+            "map": [
+              "12 uA",
+              "23 uA",
+              "41 uA",
+              "50 uA",
+              "60 uA",
+              "68 uA",
+              "86 uA",
+              "95 uA"
+            ]
+          },
+          {
+            "byte": 0,
+            "name": "HS_BIAS_RAMP",
+            "start": 3,
+            "length": 2,
+            "squelch": true,
+            "map": [
+              "Default",
+              "Fast",
+              "Slow",
+              "Slowest"
+            ]
+          },
+          {
+            "byte": 0,
+            "name": "HPDETECT_SENSE_EN",
+            "start": 5,
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Disabled",
+              "Enabled"
+            ]
+          },
+          {
+            "byte": 0,
+            "name": "AUTO_HS_BIAS_CLAMP",
+            "start": 6,
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Disabled",
+              "Enabled"
+            ]
+          },
+          {
+            "byte": 0,
+            "name": "HS_BIAS_SENSE_EN",
+            "start": 7,
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Disabled",
+              "Enabled"
+            ]
+          }
+        ]
+      },
+      "0x04": {
+        "name": "MISCELLANEOUS_DETECT_CONTROL",
+        "bytes": 1,
+        "bitField": [
+          {
+            "name": "ADC_DISABLE_S0_MUTE",
+            "byte": 0,
+            "start": 7,
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Default (enabled)",
+              "Disabled"
+            ]
+          }
+        ]
+      },
+      "0x08": {
+        "name": "HP_DETECT_CONTROL",
+        "bytes": 1,
+        "bitField": [
+          {
+            "name": "HPDETECT_DEBOUNCE",
+            "byte": 0,
+            "start": 0,
+            "length": 2,
+            "map": [
+              "Disabled",
+              "Digital Input",
+              "Reserved",
+              "Default (short detected)"
+            ]
+          },
+          {
+            "name": "HPDETECT_INV",
+            "byte": 0,
+            "start": 5,
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Default (not inverted)",
+              "Inverted"
+            ]
+          },
+          {
+            "name": "HPDETECT_CTRL",
+            "byte": 0,
+            "start": 6,
+            "length": 2,
+            "map": [
+              "No Debounce",
+              "200ms",
+              "Default (500ms)",
+              "1000ms"
+            ]
+          }
+        ]
+      },
+      "0x0C": {
+        "name": "MIC_DETECT_CONTROL_1",
+        "bytes": 1,
+        "bitField": [
+          {
+            "name": "PDN_MIC_LVL_DETECT",
+            "byte": 0,
+            "start": 0,
+            "length": 1,
+            "map": [
+              "Powered up",
+              "Default (powered down)"
+            ]
+          },
+          {
+            "name": "HS_BIAS_CTRL",
+            "byte": 0,
+            "start": 1,
+            "length": 2,
+            "map": [
+              "Hi-Z",
+              "Default (0.0V)",
+              "2.0V",
+              "2.7V"
+            ]
+          },
+          {
+            "name": "DETECT_MODE",
+            "byte": 0,
+            "start": 3,
+            "length": 2,
+            "squelch": true,
+            "map": [
+              "Default (inactive)",
+              "Short Detect Only",
+              "Reserved",
+              "Tone Detect"
+            ]
+          },
+          {
+            "name": "AUTO_VOLTAGE_TONE_MODE",
+            "byte": 0,
+            "start": 5,
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Default",
+              "Enabled"
+            ]
+          },
+          {
+            "name": "AUTO_BUTTON_REPEAT_MODE",
+            "byte": 0,
+            "start": 6,
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Disabled",
+              "Enabled"
+            ]
+          },
+          {
+            "name": "TX_ACK_INIT",
+            "byte": 0,
+            "start": 7,
+            "length": 1,
+            "map": [
+              "Default",
+              "Timer Running"
+            ]
+          }
+        ]
+      },
+      "0x10": {
+        "name": "MIC_DETECT_CONTROL_2",
+        "bytes": 1,
+        "bitField": [
+          {
+            "name": "HS_DETECT_LEVEL",
+            "byte": 0,
+            "start": 0,
+            "length": 6,
+            "squelch": true,
+            "map": [
+              "Default"
+            ]
+          }
+        ]
+      },
+      "0x14": {
+        "name": "MIC_DETECT_CONTROL_3",
+        "bytes": 1,
+        "bitField": [
+          {
+            "name": "TX_ACK_TO_TIME",
+            "byte": 0,
+            "start": 0,
+            "length": 5,
+            "map": [
+              "0ms",
+              "4ms"
+            ]
+          },
+          {
+            "name": "DEBOUNCE_TIME",
+            "byte": 0,
+            "start": 5,
+            "length": 3,
+            "map": [
+              "10ms",
+              "20ms",
+              "30ms",
+              "40ms",
+              "50ms",
+              "60ms",
+              "70ms",
+              "80ms"
+            ]
+          }
+        ]
+      },
+      "0xE0": {
+        "name": "DETECT_STATUS_1",
+        "bytes": 1,
+        "bitField": [
+          {
+            "name": "HEADSET_ID",
+            "byte": 0,
+            "start": 0,
+            "length": 5
+          },
+          {
+            "name": "HS_BIAS_CLAMP",
+            "byte": 0,
+            "start": 6,
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Disabled",
+              "Enabled"
+            ]
+          },
+          {
+            "name": "HPDETECT",
+            "start": 7,
+            "length": 1,
+            "map": [
+              "HP not plugged in",
+              "HP plugged in"
+            ]
+          }
+        ]
+      },
+      "0xE4": {
+        "name": "DETECT_STATUS_2",
+        "bytes": 1,
+        "bitField": [
+          {
+            "name": "SHORT_TRUE",
+            "byte": 0,
+            "start": 0,
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "False",
+              "True"
+            ]
+          },
+          {
+            "name": "MIC_TRUE",
+            "byte": 0,
+            "start": 1,
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "False",
+              "True"
+            ]
+          },
+          {
+            "name": "TX_ACK_TO_STATE",
+            "start": 2,
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Disabled",
+              "Enabled"
+            ]
+          },
+          {
+            "name": "HEADSET_ID",
+            "start": 4,
+            "length": 4,
+            "map": [
+              "Button release",
+              "Button 1",
+              "Button 2",
+              "Button 3",
+              "Button 4",
+              "Invalid frequency ID",
+              "Reserved",
+              "Calibration frequency"
+            ]
+          }
+        ]
+      },
+      "0xF0": {
+        "name": "DETECT_INTERRUPT_STATUS_1",
+        "bytes": 1,
+        "bitField": [
+          {
+            "byte": 0,
+            "start": 0,
+            "name": "S1_PRESS",
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Not Pressed",
+              "Pressed"
+            ]
+          },
+          {
+            "byte": 0,
+            "start": 1,
+            "name": "S2_PRESS",
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Not Pressed",
+              "Pressed"
+            ]
+          },
+          {
+            "byte": 0,
+            "start": 2,
+            "name": "S3_PRESS",
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Not Pressed",
+              "Pressed"
+            ]
+          },
+          {
+            "byte": 0,
+            "start": 3,
+            "name": "S4_PRESS",
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Not Pressed",
+              "Pressed"
+            ]
+          },
+          {
+            "byte": 0,
+            "name": "BUTTON_RELEASE",
+            "start": 4,
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Not Released",
+              "Released"
+            ]
+          },
+          {
+            "byte": 0,
+            "start": 5,
+            "name": "HPDETECT_UNPLUG",
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "no HP",
+              "event"
+            ]
+          },
+          {
+            "byte": 0,
+            "start": 6,
+            "name": "HPDETECT_PLUG",
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "no HP",
+              "event"
+            ]
+          },
+          {
+            "byte": 0,
+            "start": 7,
+            "name": "HS_BIAS_SENSE",
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "not detected",
+              "detected"
+            ]
+          }
+        ]
+      },
+      "0xF4": {
+        "name": "DETECT_INTERRUPT_STATUS_2",
+        "bytes": 1,
+        "bitField": [
+          {
+            "byte": 0,
+            "start": 0,
+            "name": "SHORT_DETECTED",
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Not Detected",
+              "Detected"
+            ]
+          },
+          {
+            "byte": 0,
+            "start": 1,
+            "name": "SHORT_RELEASE",
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Not Detected",
+              "Detected"
+            ]
+          },
+          {
+            "byte": 0,
+            "start": 2,
+            "name": "HS_BIAS_CLAMPED",
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Not engaged",
+              "Engaged"
+            ]
+          },
+          {
+            "byte": 0,
+            "start": 3,
+            "name": "TX_ACK_TONE",
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Not detected",
+              "Detected"
+            ]
+          },
+          {
+            "byte": 0,
+            "name": "TX_ACK_TO",
+            "start": 4,
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "No TO",
+              "Timeout"
+            ]
+          },
+          {
+            "byte": 0,
+            "start": 6,
+            "name": "DETECT_FALSE_TRUE",
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Not detected",
+              "Detected"
+            ]
+          },
+          {
+            "byte": 0,
+            "start": 7,
+            "name": "DETECT_TRUE_FALSE",
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Not detected",
+              "Detected"
+            ]
+          }
+        ]
+      },
+      "0xF8": {
+        "name": "DETECT_INTERRUPT_MASK_1",
+        "bytes": 1,
+        "bitField": [
+          {
+            "byte": 0,
+            "start": 5,
+            "name": "M_HPDETECT_UNPLUG",
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Unmasked",
+              "Masked"
+            ]
+          },
+          {
+            "byte": 0,
+            "start": 6,
+            "name": "M_HPDETECT_PLUG",
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Unmasked",
+              "Masked"
+            ]
+          },
+          {
+            "byte": 0,
+            "start": 7,
+            "name": "M_HS_BIAS_SENSE",
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "Unmasked",
+              "Masked"
+            ]
+          }
+        ]
+      },
+      "0xFC": {
+        "name": "DETECT_INTERRUPT_MASK_2",
+        "bytes": 1,
+        "bitField": [
+          {
+            "byte": 0,
+            "start": 0,
+            "name": "M_SHORT_DETECTED",
+            "length": 1,
+            "map": [
+              "Unmasked",
+              "Masked"
+            ]
+          },
+          {
+            "byte": 0,
+            "start": 1,
+            "name": "M_SHORT_RELEASE",
+            "length": 1,
+            "map": [
+              "Unmasked",
+              "Masked"
+            ]
+          },
+          {
+            "byte": 0,
+            "start": 2,
+            "name": "M_HS_BIAS_CLAMPED",
+            "length": 1,
+            "map": [
+              "Unmasked",
+              "Masked"
+            ]
+          },
+          {
+            "byte": 0,
+            "start": 3,
+            "name": "M_TX_ACK_TONE",
+            "length": 1,
+            "map": [
+              "Unmasked",
+              "Masked"
+            ]
+          },
+          {
+            "byte": 0,
+            "start": 4,
+            "name": "M_TX_ACK_TO",
+            "length": 1,
+            "map": [
+              "Unmasked",
+              "Masked"
+            ]
+          },
+          {
+            "byte": 0,
+            "start": 5,
+            "name": "M_HEADSET_BUTTON",
+            "length": 1,
+            "map": [
+              "Unmasked",
+              "Masked"
+            ]
+          },
+          {
+            "byte": 0,
+            "start": 6,
+            "name": "M_DETECT_FALSE_TRUE",
+            "length": 1,
+            "map": [
+              "Unmasked",
+              "Masked"
+            ]
+          },
+          {
+            "byte": 0,
+            "start": 7,
+            "name": "M_DETECT_TRUE_FALSE",
+            "length": 1,
+            "map": [
+              "Unmasked",
+              "Masked"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "0x00": {
+    "name": "Chip"
+  },
+  "0x01": {
+    "name": "MICx"
+  },
+  "0x02": {
+    "name": "MICx"
+  },
+  "0x03": {
+    "name": "MICx"
+  },
+  "0x04": {
+    "name": "MICx"
+  },
+  "0x05": {
+    "name": "MICx"
+  },
+  "0x06": {
+    "name": "Stereo Headphone"
+  },
+  "0x07": {
+    "name": "Digital Mixer"
+  },
+  "0x08": {
+    "name": "Stereo Parametric Equalizer"
+  },
+  "0x09": {
+    "name": "I2C Master",
+    "commandIDs": {
+      "0x00": {
+        "name": "IICCfg",
+        "bytes": 1,
+        "bitField": [
+          {
+            "byte": 0,
+            "start": 0,
+            "name": "IIC_MODE",
+            "length": 1,
+            "squelch": true,
+            "map": [
+              "100 kHz mode (default)",
+              "400 kHz mode"
+            ]
+          },
+          {
+            "byte": 0,
+            "name": "IIC_PDN",
+            "start": 1,
+            "length": 1,
+            "map": [
+              "I2C port is powered up",
+              "I2C port is powered down (default)"
+            ]
+          }
+        ]
+      },
+      "0x70": {
+        "name": "IICAccess",
+        "bytes": 2,
+        "bitField": [
+          {
+            "byte": 0,
+            "name": "CHIP_ADDRESS",
+            "start": 0,
+            "length": 7
+          },
+          {
+            "byte": 1,
+            "name": "LENGTH",
+            "start": 0,
+            "length": 8 
+          }
+        ]
+      },
+      "0xF0": {
+        "name": "IICStatus",
+        "bytes": 1,
+        "bitField": [
+          {
+            "byte": 0,
+            "name": "IIC_BUSY",
+            "start": 0,
+            "length": 1,
+            "map": [
+              "I2C buffer is available",
+              "I2c buffer is not available"
+            ]
+          },
+          {
+            "byte": 0,
+            "name": "IIC_NACK",
+            "start": 1,
+            "length": 1,
+            "map": [
+              "I2C NACK not detected",
+              "I2C NACK detected"
+            ]
+          }
+        ]
+      },
+      "0xF4": {
+        "name": "IICIrMask",
+        "bytes": 1,
+        "bitField": [
+          {
+            "name": "M_IIC_BUSY",
+            "byte": 0,
+            "start": 0,
+            "length": 1,
+            "map": [
+              "Unmasked",
+              "Masked (default)"
+            ]
+          },
+          {
+            "name": "M_IIC_NACK",
+            "byte": 0,
+            "start": 1,
+            "length": 1,
+            "map": [
+              "Unmasked",
+              "Masked (default)"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "0x0A": {
+    "name": "Volga"
+  },
+  "0x0B": {
+    "name": "GPI"
+  },
+  "0x0C": {
+    "name": "Wake Output"
+  },
+  "0x0E": {
+    "name": "OTP Memory"
+  },
+  "0x0F": {
+    "name": "Headset Detect"
+  }
+}

@@ -1,0 +1,239 @@
+
+Description:       Keil MDK for ARM Cortex-M0
+Architecture:      ARMv6-M
+Path:              ADK/HAP/lib/ARM/ArmCC/ARMCM0
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       Keil MDK for ARM Cortex-M3
+Architecture:      ARMv7-M
+Path:              ADK/HAP/lib/ARM/ArmCC/ARMCM3
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       Keil MDK for ARM Cortex-M4
+Architecture:      ARMv7E-M
+Path:              ADK/HAP/lib/ARM/ArmCC/ARMCM4
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       Keil MDK for ARM Cortex-M4F
+Architecture:      ARMv7E-M with FPv4-SP extension
+Path:              ADK/HAP/lib/ARM/ArmCC/ARMCM4_FP
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       Clang for Android ARMv8-A (arm64-v8a)
+Architecture:      ARMv8-A
+Path:              ADK/HAP/lib/ARM/Clang/aarch64-linux-android/arm64-v8a
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       Clang for Android ARMv7-A (armeabi-v7a)
+Architecture:      ARMv7-A
+Path:              ADK/HAP/lib/ARM/Clang/arm-linux-androideabi/armeabi-v7a
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for Android ARMv8-A (arm64-v8a)
+Architecture:      ARMv8-A
+Path:              ADK/HAP/lib/ARM/GCC/aarch64-linux-android/arm64-v8a
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for ARMv8-A
+Architecture:      ARMv8-A
+Path:              ADK/HAP/lib/ARM/GCC/aarch64-unknown-linux-gnu/armv8-a
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for Android ARMv7-A (armeabi-v7a)
+Architecture:      ARMv7-A
+Path:              ADK/HAP/lib/ARM/GCC/arm-linux-androideabi/armeabi-v7a
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for ARM Cortex-M0
+Architecture:      ARMv6-M
+Path:              ADK/HAP/lib/ARM/GCC/arm-none-eabi/thumb/v6-m
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for ARM Cortex-R4
+Architecture:      ARMv7-R
+Path:              ADK/HAP/lib/ARM/GCC/arm-none-eabi/thumb/v7-ar
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for ARM Cortex-R4
+Architecture:      ARMv7-R with FPv3-SP extensions
+Path:              ADK/HAP/lib/ARM/GCC/arm-none-eabi/thumb/v7-ar/fpv3/softfp
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for ARM Cortex-M3
+Architecture:      ARMv7-M
+Path:              ADK/HAP/lib/ARM/GCC/arm-none-eabi/thumb/v7-m
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for ARM Cortex-M4
+Architecture:      ARMv7E-M
+Path:              ADK/HAP/lib/ARM/GCC/arm-none-eabi/thumb/v7e-m
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for ARM Cortex-M4F
+Architecture:      ARMv7E-M with FPv4-SP extension
+Path:              ADK/HAP/lib/ARM/GCC/arm-none-eabi/thumb/v7e-m/fpv4-sp/hard
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for ARMv5TE soft float ABI
+Architecture:      ARMv5TE
+Path:              ADK/HAP/lib/ARM/GCC/arm-unknown-linux-gnueabi/armv5te
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for ARMv6 soft float ABI
+Architecture:      ARMv6
+Path:              ADK/HAP/lib/ARM/GCC/arm-unknown-linux-gnueabi/armv6
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for ARMv7-A soft float ABI
+Architecture:      ARMv7-A
+Path:              ADK/HAP/lib/ARM/GCC/arm-unknown-linux-gnueabi/armv7-a
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for ARM ARMv6 hard float ABI
+Architecture:      ARMv6
+Path:              ADK/HAP/lib/ARM/GCC/arm-unknown-linux-gnueabihf/armv6
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for ARMv7-A Neon
+Architecture:      ARMv7-A
+Path:              ADK/HAP/lib/ARM/GCC/arm-unknown-linux-gnueabihf/armv7-a
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       IAR for ARM Cortex-M0
+Architecture:      ARMv6-M
+Path:              ADK/HAP/lib/ARM/IAR/arm-none-eabi/thumb/v6-m
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       IAR for ARM Cortex-M3
+Architecture:      ARMv7-M
+Path:              ADK/HAP/lib/ARM/IAR/arm-none-eabi/thumb/v7-m
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       IAR for ARM Cortex-M4
+Architecture:      ARMv7E-M
+Path:              ADK/HAP/lib/ARM/IAR/arm-none-eabi/thumb/v7e-m
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       IAR for ARM Cortex-M4F
+Architecture:      ARMv7E-M with FPv4-SP extension
+Path:              ADK/HAP/lib/ARM/IAR/arm-none-eabi/thumb/v7e-m/fpv4-sp/hard
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       Windows CE 7.0 ARMv7-A
+Architecture:      ARMv7-A
+Path:              ADK/HAP/lib/ARM/MSVC/armv7-wince7
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for MIPS on Poky Linux 0.9
+Architecture:      MIPS
+Path:              ADK/HAP/lib/MIPS/GCC/mips-poky-linux-uclibc
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for Linux MIPS16 ISR gcc-4.4.2, uClibc 0.9.30
+Architecture:      MIPS
+Path:              ADK/HAP/lib/MIPS/GCC/mips16el-gcc4.4.2-uclibc0.9.30-linux-gnu
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for MIPS32 o32 ABI
+Architecture:      MIPS32 Release 2
+Path:              ADK/HAP/lib/MIPS/GCC/mipsbe-multilib-linux-gnu
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for MIPS32 o32 ABI
+Architecture:      MIPS32 Release 2
+Path:              ADK/HAP/lib/MIPS/GCC/mipsel-multilib-linux-gnu
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for NDS32 N10
+Architecture:      NDS32
+Path:              ADK/HAP/lib/NDS/GCC/nds32le-elf-mculib
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for TC32
+Architecture:      TC32
+Path:              ADK/HAP/lib/TC32/GCC/tc32-elf
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for ESP32
+Architecture:      Xtensa
+Path:              ADK/HAP/lib/Xtensa/GCC/xtensa-esp32-elf
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for LX106
+Architecture:      Xtensa
+Path:              ADK/HAP/lib/Xtensa/GCC/xtensa-lx106-elf
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       Xtensa for QCA4010
+Architecture:      QCA4010
+Path:              ADK/HAP/lib/Xtensa/GCC/xtensa-qca4010-elf
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for Linux i586 gcc-4.8.3, glibc-2.19
+Architecture:      i586
+Path:              ADK/HAP/lib/i586/GCC/i586-gcc4.8.3-glibc2.19-linux-gnu
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for Linux i586
+Architecture:      i586
+Path:              ADK/HAP/lib/i586/GCC/i586-unknown-linux-gnu
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for Linux i686
+Architecture:      i686
+Path:              ADK/HAP/lib/i686/GCC/i686-unknown-linux-gnu
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       Clang for macOS
+Architecture:      x86-64
+Path:              ADK/HAP/lib/x86_64/Clang/x86_64-apple-darwin17.4.0
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       GCC for Linux x86-64
+Architecture:      x86-64
+Path:              ADK/HAP/lib/x86_64/GCC/x86_64-unknown-linux-gnu
+
+------------------------------------------------------------------------------------------------------------------------
+
+Description:       MSVC for Windows x64
+Architecture:      x86_x64
+Path:              ADK/HAP/lib/x86_64/MSVC/win64-x64
+

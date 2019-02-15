@@ -1,0 +1,11 @@
+Description:       Windows CE 7.0 ARMv7-A
+Architecture:      ARMv7-A
+Compiler URL:      https://visualstudio.microsoft.com/
+Compiler version:  Windows Embedded Compact 7 (Visual Studio 2008 Service Pack 1)
+Compile flags:     /W3
+                   /Y-
+                   /Zl
+                   /wd4715
+                   /wd4716 
+Data cache:        processor may have data cache
+Byte ordering:     little endian

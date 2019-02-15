@@ -1,0 +1,30 @@
+Description:       GCC for Android ARMv7-A (armeabi-v7a)
+Architecture:      ARMv7-A
+Multilib name:     armeabi-v7a
+Compiler URL:      https://developer.android.com/ndk/downloads/index.html
+Compiler version:  r17b, toolchain: arm-linux-androideabi, platform: android-27
+Compile flags:     -Os
+                   -Wall
+                   -Werror
+                   -Wextra
+                   -Wno-padded
+                   -fPIC
+                   -fPIE
+                   -fconserve-stack
+                   -fdata-sections
+                   -ffreestanding
+                   -ffunction-sections
+                   -fno-delete-null-pointer-checks
+                   -fno-stack-protector
+                   -fno-strict-aliasing
+                   -fno-strict-overflow
+                   -g0
+                   -march=armv7-a
+                   -mfloat-abi=softfp
+                   -mfpu=vfpv3-d16
+                   -mthumb
+                   -pedantic
+                   -pedantic-errors
+                   -std=c99
+Data cache:        processor may have data cache
+Byte ordering:     little endian

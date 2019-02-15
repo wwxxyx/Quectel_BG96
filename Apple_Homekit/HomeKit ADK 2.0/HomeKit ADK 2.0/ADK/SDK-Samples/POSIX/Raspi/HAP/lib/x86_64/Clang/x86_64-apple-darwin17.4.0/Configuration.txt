@@ -1,0 +1,29 @@
+Description:       Clang for macOS
+Architecture:      x86-64
+Compile flags:     -Os
+                   -Wall
+                   -Werror
+                   -Weverything
+                   -Wextra
+                   -Wno-documentation-unknown-command
+                   -Wno-gcc-compat
+                   -Wno-gnu-zero-variadic-macro-arguments
+                   -Wno-missing-noreturn
+                   -Wno-nullability-extension
+                   -Wno-padded
+                   -Wno-unknown-warning-option
+                   -Wno-unreachable-code-break
+                   -fPIC
+                   -fdata-sections
+                   -ffreestanding
+                   -ffunction-sections
+                   -fmacro-backtrace-limit=0
+                   -fno-stack-protector
+                   -fno-strict-aliasing
+                   -fno-strict-overflow
+                   -g0
+                   -pedantic
+                   -pedantic-errors
+                   -std=c99
+Data cache:        processor may have data cache
+Byte ordering:     little endian

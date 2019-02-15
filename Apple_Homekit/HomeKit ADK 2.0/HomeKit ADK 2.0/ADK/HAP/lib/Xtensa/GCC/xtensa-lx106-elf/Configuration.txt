@@ -1,0 +1,22 @@
+Description:       GCC for LX106
+Architecture:      Xtensa
+Compile flags:     -Os
+                   -Wall
+                   -Werror
+                   -Wextra
+                   -Wno-padded
+                   -fconserve-stack
+                   -fdata-sections
+                   -ffreestanding
+                   -ffunction-sections
+                   -fno-delete-null-pointer-checks
+                   -fno-stack-protector
+                   -fno-strict-aliasing
+                   -fno-strict-overflow
+                   -g0
+                   -mlongcalls
+                   -pedantic
+                   -pedantic-errors
+                   -std=c99
+Data cache:        processor may have data cache
+Byte ordering:     little endian

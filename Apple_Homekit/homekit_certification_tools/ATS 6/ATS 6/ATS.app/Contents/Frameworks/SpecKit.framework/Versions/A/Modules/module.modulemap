@@ -1,0 +1,11 @@
+framework module SpecKit {
+  umbrella header "SpecKit.h"
+
+  export *
+  module * { export * }
+}
+
+module SpecKit.Swift {
+    header "SpecKit-Swift.h"
+    requires objc
+}

@@ -1,0 +1,27 @@
+Description:       GCC for Android ARMv8-A (arm64-v8a)
+Architecture:      ARMv8-A
+Multilib name:     arm64-v8a
+Compiler URL:      https://developer.android.com/ndk/downloads/index.html
+Compiler version:  r17b, toolchain: aarch64-linux-android, platform: android-27
+Compile flags:     -Os
+                   -Wall
+                   -Werror
+                   -Wextra
+                   -Wno-padded
+                   -fPIC
+                   -fPIE
+                   -fconserve-stack
+                   -fdata-sections
+                   -ffreestanding
+                   -ffunction-sections
+                   -fno-delete-null-pointer-checks
+                   -fno-stack-protector
+                   -fno-strict-aliasing
+                   -fno-strict-overflow
+                   -g0
+                   -march=armv8-a
+                   -pedantic
+                   -pedantic-errors
+                   -std=c99
+Data cache:        processor may have data cache
+Byte ordering:     little endian

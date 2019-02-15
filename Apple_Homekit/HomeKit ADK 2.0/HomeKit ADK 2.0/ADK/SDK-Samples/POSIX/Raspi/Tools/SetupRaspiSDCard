@@ -1,0 +1,325 @@
+#!/usr/bin/env bash
+#
+# Package: HomeKit-ADK
+# Version: 2.0 (16A62)
+#
+# Disclaimer: IMPORTANT: This Apple software is supplied to you, by Apple Inc. ("Apple"), in your
+# capacity as a current, and in good standing, Licensee in the MFi Licensing Program. Use of this
+# Apple software is governed by and subject to the terms and conditions of your MFi License,
+# including, but not limited to, the restrictions specified in the provision entitled "Public
+# Software", and is further subject to your agreement to the following additional terms, and your
+# agreement that the use, installation, modification or redistribution of this Apple software
+# constitutes acceptance of these additional terms. If you do not agree with these additional terms,
+# you may not use, install, modify or redistribute this Apple software.
+#
+# Subject to all of these terms and in consideration of your agreement to abide by them, Apple grants
+# you, for as long as you are a current and in good-standing MFi Licensee, a personal, non-exclusive
+# license, under Apple's copyrights in this Apple software (the "Apple Software"), to use,
+# reproduce, and modify the Apple Software in source form, and to use, reproduce, modify, and
+# redistribute the Apple Software, with or without modifications, in binary form, in each of the
+# foregoing cases to the extent necessary to develop and/or manufacture "Proposed Products" and
+# "Licensed Products" in accordance with the terms of your MFi License. While you may not
+# redistribute the Apple Software in source form, should you redistribute the Apple Software in binary
+# form, you must retain this notice and the following text and disclaimers in all such redistributions
+# of the Apple Software. Neither the name, trademarks, service marks, or logos of Apple Inc. may be
+# used to endorse or promote products derived from the Apple Software without specific prior written
+# permission from Apple. Except as expressly stated in this notice, no other rights or licenses,
+# express or implied, are granted by Apple herein, including but not limited to any patent rights that
+# may be infringed by your derivative works or by other works in which the Apple Software may be
+# incorporated. Apple may terminate this license to the Apple Software by removing it from the list
+# of Licensed Technology in the MFi License, or otherwise in accordance with the terms of such MFi License.
+#
+# Unless you explicitly state otherwise, if you provide any ideas, suggestions, recommendations, bug
+# fixes or enhancements to Apple in connection with this software ("Feedback"), you hereby grant to
+# Apple a non-exclusive, fully paid-up, perpetual, irrevocable, worldwide license to make, use,
+# reproduce, incorporate, modify, display, perform, sell, make or have made derivative works of,
+# distribute (directly or indirectly) and sublicense, such Feedback in connection with Apple products
+# and services. Providing this Feedback is voluntary, but if you do provide Feedback to Apple, you
+# acknowledge and agree that Apple may exercise the license granted above without the payment of
+# royalties or further consideration to Participant.
+#
+# The Apple Software is provided by Apple on an "AS IS" basis. APPLE MAKES NO WARRANTIES, EXPRESS OR
+# IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY
+# AND FITNESS FOR A PARTICULAR PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND OPERATION ALONE OR
+# IN COMBINATION WITH YOUR PRODUCTS.
+#
+# IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES
+# (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+# PROFITS; OR BUSINESS INTERRUPTION) ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION, MODIFICATION
+# AND/OR DISTRIBUTION OF THE APPLE SOFTWARE, HOWEVER CAUSED AND WHETHER UNDER THEORY OF CONTRACT, TORT
+# (INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
+# POSSIBILITY OF SUCH DAMAGE.
+#
+# Copyright (C) 2018 Apple Inc. All Rights Reserved.
+#
+
+set -eu -o pipefail
+
+export LC_ALL=en_GB.UTF-8
+export LANG=en_GB.UTF-8
+
+################################################################################
+# Environment variables.
+################################################################################
+PI_HOSTNAME="${PI_HOSTNAME:-raspberrypi}"
+PI_PASSWORD="${PI_PASSWORD:-raspberry}"
+PI_COUNTRY="${PI_COUNTRY:-}"
+
+################################################################################
+# Setup SD-card.
+################################################################################
+echo "================================================================================"
+echo "Setting up Raspberry Pi SD-card"
+echo "================================================================================"
+if [ "${SKIP_WRITE_SD:-0}" != "1" ]; then
+    if [ -n "${1-}" ]; then
+        filePath="${1}"
+    else
+        echo "SetupRaspiSDCard is a tool to write a Raspbian image to an SD-card."
+        echo
+        echo "USAGE"
+        echo "     SetupRaspiSDCard imageFile"
+        echo
+        echo "DESCRIPTION"
+        echo "     SetupRaspiSDCard writes a Raspbian image to an SD-card and offers to"
+        echo "     change the hostname of the Raspberry Pi and the password for user 'pi'."
+        echo "     'imageFile' can be also be provided as a zipped file."
+        echo
+        exit
+    fi
+    if [ -f "${filePath}" ]; then
+        # check if image is zipped
+        fileType=$(file -b --mime-type "${filePath}")
+        if [[ "${fileType}" = "application/zip" ]]; then
+            if [[ $(unzip -Z1 "${filePath}" | wc -l) -gt 1 ]]; then
+                echo "ERROR: Zip file contains more than one file: \`${filePath}\`"
+                echo
+                echo "SD-card image was not deployed."
+                echo
+                exit
+            fi
+        fi
+
+        # Find disk name.
+        echo "Please remove SD-card from host."
+        read -s -p "Press [return] to continue."
+        echo
+        echo "================================================================================"
+        diskutil list
+        echo "================================================================================"
+        echo "Please insert Raspberry Pi SD-card into host."
+        read -s -p "Press [return] to continue."
+        echo
+        echo "================================================================================"
+        sleep 10
+        diskutil list
+        echo "================================================================================"
+        read -p "Please type Raspberry Pi SD-card device name: /dev/disk" diskNumber
+
+
+        read -s -p "Erase this disk: \`/dev/disk$diskNumber\`? [Y/N]" -n 1 confirm
+        echo
+        [ "$confirm" == "y" ] || [ "$confirm" == "Y" ]
+        echo "================================================================================"
+
+        # Erase SD-card.
+        echo "Erasing SD-card: /dev/disk$diskNumber"
+        diskutil unmountDisk "/dev/disk$diskNumber"
+        sudo diskutil eraseDisk FAT32 RASPBIAN MBRFormat "/dev/disk$diskNumber"
+        diskutil unmountDisk "/dev/disk$diskNumber"
+        sleep 5
+
+        # Flash SD-card.
+        echo "================================================================================"
+        echo "Setting up SD-card: /dev/disk$diskNumber"
+        echo "Image file: ${filePath}"
+        if [[ "${fileType}" = "application/zip" ]]; then
+            echo "Unzipping and writing image to SD-card (Check \`dd\` progress with ^T):"
+            unzip -p "${filePath}" | sudo dd bs=1m of="/dev/rdisk$diskNumber"
+        else
+            echo "Writing image to SD-card (Check \`dd\` progress with ^T):"
+            sudo dd bs=1m if="${filePath}" of="/dev/rdisk$diskNumber"
+        fi
+        sleep 10
+
+        # Eject SD-card.
+        sudo diskutil eject "/dev/rdisk$diskNumber"
+
+        # SD-card setup complete.
+        echo "================================================================================"
+        echo "SD-card set up completed."
+        echo "You can now remove SD-card from host!"
+        echo
+    else
+        echo
+        echo "ERROR: Image file not found: \`${filePath}\`"
+        echo
+        echo "SD-card image was not deployed."
+        echo
+        exit
+    fi
+else
+    echo
+    echo "Skipping to write image to a new SD-card."
+    echo "Assuming you already wrote an image to the SD-card."
+    echo
+fi
+echo "================================================================================"
+
+################################################################################
+# Setup Raspi.
+################################################################################
+
+# Collect new Raspi hostname.
+newPiHostname=""
+while [ -z ${newPiHostname} ]; do
+    echo "Please enter new hostname for Raspberry Pi ([return] to keep '${PI_HOSTNAME}')."
+    read -p "New hostname: " newPiHostname
+    if [ -z ${newPiHostname} ]; then
+        newPiHostname="${PI_HOSTNAME}"
+    else
+        echo
+        hostnameMaxLength=63
+        regexHostname="^[a-z0-9-]{1,${hostnameMaxLength}}\$"
+        if [[ ! ${newPiHostname} =~ ${regexHostname} ]]; then
+            echo "A hostname may contain only ASCII letters 'a' through 'z' (case-insensitive),"
+            echo "the digits '0' through '9', and the hyphen. The hostname length should not"
+            echo "exceed ${hostnameMaxLength}. Please try again."
+            echo
+            newPiHostname=""
+        fi
+    fi
+done
+echo
+
+# Collect new Raspi password.
+newPiPassword=""
+while [ -z ${newPiPassword} ]; do
+    echo "Please enter new password for user 'pi' ([return] to keep '${PI_PASSWORD}')."
+    read -s -p "New password: " newPiPassword
+    echo
+    if [ -z ${newPiPassword} ]; then
+        newPiPassword="${PI_PASSWORD}"
+    else
+        read -s -p "Please retype password: " newPiPassword2
+        echo
+        if [ "${newPiPassword}" != "${newPiPassword2}" ]; then
+            echo "Sorry, passwords do not match, please try again."
+            newPiPassword=""
+        fi
+    fi
+done
+echo
+
+# Collect regulatory domain.
+while [ -z "${PI_COUNTRY}" ]; do
+    echo "Please enter the country in which the Raspberry Pi will be used ([return] to show list of country codes)."
+    read -p "Country code: " PI_COUNTRY
+    if [ -z "${PI_COUNTRY}" ]; then
+        # Print all country codes.
+        i=0
+        colWidth=43
+        colsPerLine=$(( $(tput cols) / (colWidth + 3) ))
+        if (( !colsPerLine )); then
+            colsPerLine=1
+        fi
+        numLines=$(grep -E '^[A-Z]{2}\t' "/usr/share/zoneinfo/iso3166.tab" | wc -l)
+        linesPerCol=$(( (numLines + (colsPerLine - 1) ) / colsPerLine ))
+        paddingLines=$(( linesPerCol * colsPerLine - numLines ))
+
+        countries="$(grep -E '^[A-Z]{2}\t' "/usr/share/zoneinfo/iso3166.tab")"$'\n'
+        for (( i=0; i<paddingLines; i++ )); do
+            countries="${countries}"$'~~\t(padding)\n'
+        done
+
+        echo -n "${countries}" | \
+            awk -F'\t' '{ printf "%d\t%s\n", (NR - 1) % '"${linesPerCol}"', $0 }' | \
+            LC_ALL=C sort -n | \
+            awk -F'\t' '
+                NR > 1 && !((NR - 1) % '${colsPerLine}') { printf "\n" }
+                $2 != "~~" { printf "\x1B[32m%s\x1B[0m %-'"${colWidth}"'s", $2, $3 }'
+        echo
+    elif [[ ! "${PI_COUNTRY}" =~ [A-Z]{2} ]]; then
+        echo "Invalid country code."
+        PI_COUNTRY=""
+    elif ! grep -E '^'"${PI_COUNTRY}"'\t' "/usr/share/zoneinfo/iso3166.tab"; then
+        echo "Unknown country code."
+        PI_COUNTRY=""
+    fi
+done
+echo
+
+# Collect 1 KB of cryptographically secure randomness.
+randomBytes="$(dd if=/dev/urandom bs=32 count=32 2>/dev/null | xxd -ps -u | tr -d '\n')"
+
+# Connect to Raspi.
+echo "================================================================================"
+echo "1. Put SD-card with prepared Raspberry Pi image into Raspberry Pi."
+echo "2. Connect Raspberry Pi to host via Ethernet / USB."
+echo "3. Power Raspberry Pi."
+read -s -p "Press [ENTER] to continue."
+echo
+echo "================================================================================"
+echo "Giving Raspberry Pi some time to boot..."
+sleep 60
+
+# Update Raspi configuration.
+expect <<EOF
+    set timeout -1
+    spawn ssh -o ConnectTimeout=30 -o ServerAliveInterval=300 \
+        -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
+        pi@${PI_HOSTNAME}.local
+    expect "password: "
+    send "${PI_PASSWORD}\n"
+    expect "pi@${PI_HOSTNAME}:"
+    send "sudo su\n"
+    expect "root@${PI_HOSTNAME}:/home/pi#"
+
+    # Deploy randomness.
+    send "echo -n '${randomBytes}' | perl -ne 's/(\\[0-9a-f\\]\\{2\\})/print chr hex \\\$1/gie' > /dev/urandom\n"
+
+    # Update Raspi hostname.
+    send "sed -i s/${PI_HOSTNAME}/${newPiHostname}/ /etc/hostname\n"
+    expect "root@${PI_HOSTNAME}:/home/pi#"
+    send "sed -i \"s/127.0.1.1.*${PI_HOSTNAME}/127.0.1.1\\\t${newPiHostname}/g\" /etc/hosts\n"
+    expect "root@${PI_HOSTNAME}:/home/pi#"
+    send "rm /etc/ssh/ssh_host_*\n"
+    expect "root@${PI_HOSTNAME}:/home/pi#"
+    send "dpkg-reconfigure openssh-server\n"
+    expect "root@${PI_HOSTNAME}:/home/pi#"
+
+    # Update Raspi password.
+    send "passwd pi\n"
+    expect "Enter new UNIX password:"
+    send "${newPiPassword}\n"
+    expect "Retype new UNIX password:"
+    send "${newPiPassword}\n"
+    expect "passwd: password updated successfully"
+    expect "root@${PI_HOSTNAME}:/home/pi#"
+
+    # Set country settings.
+    send "cat <<EOF > '/etc/wpa_supplicant/wpa_supplicant.conf'\n"
+    send "country=${PI_COUNTRY}\n"
+    send "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev\n"
+    send "update_config=1\n"
+    send "EOF\n"
+    expect "root@${PI_HOSTNAME}:/home/pi#"
+
+    # Unblock Wi-Fi if an image is deployed that disables Wi-Fi until country code is set.
+    send "if \\[ -f '/run/wifi-country-unset' \\]; then rfkill unblock wifi; fi\n"
+    expect "root@${PI_HOSTNAME}:/home/pi#"
+
+    # Expand file system.
+    send "raspi-config --expand-rootfs\n"
+    expect "root@${PI_HOSTNAME}:/home/pi#"
+
+    # Reboot Raspi.
+    send "rm -f /root/.bash_history && history -cw && reboot\n"
+    expect eof
+EOF
+sleep 60
+
+echo "================================================================================"
+echo "Setup complete."
+echo "Log in with \`ssh pi@${newPiHostname}.local\` and the previously supplied password."
+echo "================================================================================"

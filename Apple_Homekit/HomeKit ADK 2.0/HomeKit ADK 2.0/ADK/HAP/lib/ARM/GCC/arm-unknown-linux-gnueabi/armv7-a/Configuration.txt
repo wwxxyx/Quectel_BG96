@@ -1,0 +1,27 @@
+Description:       GCC for ARMv7-A soft float ABI
+Architecture:      ARMv7-A
+Multilib name:     armv7-a
+Compiler:          Generated using crosstool-NG and `.config` file.
+Compile flags:     -Os
+                   -Wall
+                   -Werror
+                   -Wextra
+                   -Wno-padded
+                   -fconserve-stack
+                   -fdata-sections
+                   -ffreestanding
+                   -ffunction-sections
+                   -fno-delete-null-pointer-checks
+                   -fno-stack-protector
+                   -fno-strict-aliasing
+                   -fno-strict-overflow
+                   -g0
+                   -march=armv7-a
+                   -mfloat-abi=softfp
+                   -mfpu=neon
+                   -mthumb
+                   -pedantic
+                   -pedantic-errors
+                   -std=c99
+Data cache:        processor may have data cache
+Byte ordering:     little endian

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Firmware Updater Bundle Name</key>
+	<string>Firmware Update.app</string>
+	<key>VID</key>
+	<integer>5843</integer>
+	<key>PIDs</key>
+	<dict>
+		<key>33</key>
+		<dict>
+			<key>ComProbe Name</key>
+			<string>ComProbe BPA 600</string>
+			<key>Image File Name</key>
+			<string>fte_bpa_600_27FA</string>
+			<key>Image File Extension</key>
+			<string>dfu</string>
+		</dict>
+		<key>34</key>
+		<dict>
+			<key>ComProbe Name</key>
+			<string>ComProbe BPA 100</string>
+			<key>Image File Name</key>
+			<string>fte_bpa_100_27FB</string>
+			<key>Image File Extension</key>
+			<string>dfu</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

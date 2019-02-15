@@ -1,0 +1,11 @@
+framework module ReactiveIO {
+  umbrella header "ReactiveIO.h"
+
+  export *
+  module * { export * }
+}
+
+module ReactiveIO.Swift {
+    header "ReactiveIO-Swift.h"
+    requires objc
+}

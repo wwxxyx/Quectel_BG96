@@ -1,0 +1,16 @@
+Description:       GCC for Linux MIPS16 ISR gcc-4.4.2, uClibc 0.9.30
+Architecture:      MIPS
+Compile flags:     -Os
+                   -Wall
+                   -Werror
+                   -Wno-padded
+                   -fPIC
+                   -fdata-sections
+                   -ffreestanding
+                   -ffunction-sections
+                   -fno-strict-aliasing
+                   -fno-strict-overflow
+                   -g0
+                   -std=c99
+Data cache:        processor may have data cache
+Byte ordering:     little endian

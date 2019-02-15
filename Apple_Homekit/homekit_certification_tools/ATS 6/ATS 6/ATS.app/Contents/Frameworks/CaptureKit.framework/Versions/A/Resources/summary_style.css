@@ -1,0 +1,62 @@
+.messagesTable {
+    overflow:hidden;
+    white-space:nowrap;
+    width: 288px;
+}
+
+.messagesTable td {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+td.label {
+    font-weight: bold;
+    text-align: right;
+}
+
+.title {
+    color: inherit;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: left;
+}
+
+.sectionTitle {
+    color: inherit;
+    margin: 0 auto;
+    width: 600px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 9px;
+    margin-top: 27px;
+    color: #515E6D;
+}
+
+.sectionBody {
+    width: 572px; /* 600px - padding*2 */
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #C5C5C5;
+    background-color: #F7F7F7;
+    padding: 14px;
+}
+
+.field {
+    padding: 3px;
+}
+
+.fieldTitle {
+    margin-right: 7px;
+    font-weight: bold;
+}
+
+.fieldValue {
+    
+}
+
+.fieldNote {
+    font-size: 9px;
+    margin-left: 7px;
+}
