@@ -1,0 +1,29 @@
+	
+#Vysor Android Control on PC for Windows
+---------------------------------------
+
+Put your Android operating system on Windows
+
+Vysor allows you to use the Android operating system from your Smartphone onto your Windows operating system. Vysor may be used with Chrome or with the Windows operating system. When Vysor is active, you may use the Android operating system to control your Android mobile device, to play the games from your Android device, or use the apps that are currently installed on your Android device. You may use this app as a convenient way of interacting with your Smartphone or tablet, and it also works as a replacement for your current Android emulator, which is good for developers.
+
+
+
+1)https://www.pcmobitech.com/howto-download-install-and-use-vysor-app-in-chrome-browser-pc/
+
+
+2)https://askubuntu.com/questions/299345/how-to-enable-webgl-in-chrome-on-ubuntu
+
+3)https://chrome.google.com/webstore/detail/vysor/gidgenkbbabolejbgbpnhbimgjbffefm/related?utm_source=inline-install-disabled
+---------------------------------------------------------------------------------------------
+
+For WebGL to work in Google Chrome (and Chromium), Here are the steps to enable WebGL in Google Chrome.
+-------------------------------------------------------------------------------------------------------
+Step 1: Open Google Chrome
+
+Step 2: Type chrome://flags in the address bar
+
+Step 3: Go to chrome://settings and enable Use hardware acceleration when available. By default it is off since version 43.  
+         enable the two things 1) Override software rendering list -----Enabled
+                               2) WebGL Draft Extensions-----Enabled
+
+
